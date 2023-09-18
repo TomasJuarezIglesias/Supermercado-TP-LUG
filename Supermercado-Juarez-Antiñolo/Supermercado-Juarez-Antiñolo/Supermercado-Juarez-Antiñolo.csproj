@@ -46,8 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInicio.Designer.cs">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProducto.Designer.cs">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProducto.resx">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -69,6 +87,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{ed3f6eab-f884-45ef-8a26-c369d0315927}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{ec2f7b68-fdb5-4f64-a263-c9f6c28bc27e}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

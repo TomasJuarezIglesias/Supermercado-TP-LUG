@@ -14,7 +14,7 @@ namespace DataAccess
 
         public DBConnection()
         {
-            _connection = new SqlConnection("Data Source = LocalHost; Initial Catalog = .; Integrated Security = True");
+            _connection = new SqlConnection("Data Source =LocalHost; Initial Catalog =Supermercado-LUG; Integrated Security = True");
         }
 
         private void OpenConnection()
