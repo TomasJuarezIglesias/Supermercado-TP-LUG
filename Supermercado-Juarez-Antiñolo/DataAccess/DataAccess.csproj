@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessCategoria.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DataAccessProducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

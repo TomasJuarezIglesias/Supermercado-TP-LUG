@@ -16,7 +16,11 @@ namespace Supermercado_Juarez_Antiñolo
         {
             FormProducto frm = new FormProducto();
             frm.Show();
-            this.Hide();
+        }
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            FormCategorias frm = new FormCategorias();
+            frm.Show();
         }
     }
 }

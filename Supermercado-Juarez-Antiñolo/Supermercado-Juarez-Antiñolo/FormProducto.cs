@@ -105,11 +105,6 @@ namespace Supermercado_Juarez_Antiñolo
             DGprodView.DataSource = gestor.listar();
         }
 
-        private void btnOut_Click(object sender, EventArgs e)
-        {
-            Form inicio = new FormInicio();
-            inicio.Show();
-            this.Hide();            
-        }
+        
     }
 }

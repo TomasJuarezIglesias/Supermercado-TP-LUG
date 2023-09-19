@@ -30,7 +30,7 @@ namespace DataAccess
         {
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("In_id", id);
-            return conect.Write("delete_Producto", parameters);
+            return conect.Write("delete_producto", parameters);
         }
 
         public List<EntityProducto> listar()
