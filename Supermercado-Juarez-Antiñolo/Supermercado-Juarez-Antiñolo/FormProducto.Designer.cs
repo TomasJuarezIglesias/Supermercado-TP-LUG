@@ -142,7 +142,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Solo para porrar y modificar";
+            this.label8.Text = "Solo para borrar y modificar";
             // 
             // btnAgregar
             // 

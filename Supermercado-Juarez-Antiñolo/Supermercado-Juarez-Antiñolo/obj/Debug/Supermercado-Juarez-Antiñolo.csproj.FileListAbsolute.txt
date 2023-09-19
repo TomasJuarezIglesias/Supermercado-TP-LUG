@@ -46,3 +46,5 @@ C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\Superme
 C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\Supermercado-Juarez-Antiñolo\obj\Debug\Supermercado-Juarez-Antiñolo.exe
 C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\Supermercado-Juarez-Antiñolo\obj\Debug\Supermercado-Juarez-Antiñolo.pdb
 C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\Supermercado-Juarez-Antiñolo\obj\Debug\Supermercado_Juarez_Antiñolo.FormCategorias.resources
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\Supermercado-Juarez-Antiñolo\obj\Debug\Supermercado_Juarez_Antiñolo.FormCliente.resources
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\Supermercado-Juarez-Antiñolo\obj\Debug\Supermercado_Juarez_Antiñolo.FormMedios_de_Pago.resources

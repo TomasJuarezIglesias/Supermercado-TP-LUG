@@ -105,6 +105,6 @@ namespace Supermercado_Juarez_Antiñolo
             DGprodView.DataSource = gestor.listar();
         }
 
-        
+
     }
 }

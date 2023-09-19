@@ -236,11 +236,23 @@
     <Compile Include="FormCategoria.Designer.cs">
       <DependentUpon>FormCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormInicio.Designer.cs">
       <DependentUpon>FormInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedios_de_Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMedios_de_Pago.Designer.cs">
+      <DependentUpon>FormMedios_de_Pago.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProducto.cs">
       <SubType>Form</SubType>
@@ -253,8 +265,14 @@
     <EmbeddedResource Include="FormCategoria.resx">
       <DependentUpon>FormCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedios_de_Pago.resx">
+      <DependentUpon>FormMedios_de_Pago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProducto.resx">
       <DependentUpon>FormProducto.cs</DependentUpon>
@@ -268,6 +286,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -295,6 +314,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\-.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
