@@ -1,0 +1,9 @@
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\bin\Debug\Entity.dll
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\bin\Debug\Entity.pdb
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\lukit\OneDrive\Escritorio\Project\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.pdb
