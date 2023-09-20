@@ -38,7 +38,7 @@ namespace Supermercado_Juarez_Antiñolo
             if (txtDniCliente.Text == "" || txtDniCliente.Text == "" || txtNroTarjeta.Text == "" || cmbTiposTarjetas.Text == "") { MessageBox.Show("Rellene campos"); }
             EntityMedioPago medioPago = new EntityMedioPago();
             medioPago.Id_cliente = int.Parse(txtDniCliente.Text);
-            medioPago.TipoTarjeta = gestor.BuscarId(cmbTiposTarjetas.Text);
+            medioPago.Id_Tipo_Tarjeta = gestor.BuscarId(cmbTiposTarjetas.Text);
             medioPago.NroTarjeta = int.Parse(txtNroTarjeta.Text);
             medioPago.FechaCaducidad = txtFecha.Value;
             medioPago.Cvv = int.Parse(txtCvv.Text);
@@ -63,7 +63,7 @@ namespace Supermercado_Juarez_Antiñolo
             EntityMedioPago medioPago = new EntityMedioPago();
             medioPago.Id_cliente = int.Parse(txtDniCliente.Text);
             medioPago.Id = int.Parse(txtId.Text);
-            medioPago.TipoTarjeta = gestor.BuscarId(cmbTiposTarjetas.Text);
+            medioPago.Id_Tipo_Tarjeta = gestor.BuscarId(cmbTiposTarjetas.Text);
             medioPago.NroTarjeta = int.Parse(txtNroTarjeta.Text);
             medioPago.FechaCaducidad = txtFecha.Value;
             medioPago.Cvv = int.Parse(txtCvv.Text);
@@ -86,6 +86,17 @@ namespace Supermercado_Juarez_Antiñolo
             }
             MessageBox.Show("Se eliminó correctamente");
             mostrarLista();
+        }
+
+        private void DGmediosView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = DGmediosView.Rows[e.RowIndex];
+            txtId.Text = selectedRow.Cells["Id"].Value.ToString();
+            txtDniCliente.Text = selectedRow.Cells["Id_cliente"].Value.ToString();
+            cmbTiposTarjetas.Text = selectedRow.Cells["Id_Tipo_Tarjeta"].Value.ToString();
+            txtNroTarjeta.Text = selectedRow.Cells["NroTarjeta"].Value.ToString();
+            txtFecha.Value = (DateTime)selectedRow.Cells["FechaCaducidad"].Value;
+            txtCvv.Text = selectedRow.Cells["Cvv"].Value.ToString();
         }
     }
 }

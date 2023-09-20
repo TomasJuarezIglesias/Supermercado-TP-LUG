@@ -27,7 +27,7 @@ namespace DataAccess
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("In_id_cliente" , medioPago.Id_cliente),
-                new SqlParameter("In_tipo_tarjeta" , medioPago.TipoTarjeta),
+                new SqlParameter("In_tipo_tarjeta" , medioPago.Id_Tipo_Tarjeta),
                 new SqlParameter("In_nro_tarjeta" , medioPago.NroTarjeta),
                 new SqlParameter("In_fecha_caducidad", medioPago.FechaCaducidad),
                 new SqlParameter("In_cvv" , medioPago.Cvv)
@@ -45,7 +45,7 @@ namespace DataAccess
                 EntityMedioPago medio = new EntityMedioPago();
                 medio.Id =  int.Parse(registro["id"].ToString());
                 medio.Id_cliente = int.Parse(registro["id_cliente"].ToString());
-                medio.TipoTarjeta = int.Parse(registro["id_tipo_tarjeta"].ToString());
+                medio.Id_Tipo_Tarjeta = int.Parse(registro["id_tipo_tarjeta"].ToString());
                 medio.NroTarjeta = int.Parse(registro["nro_tarjeta"].ToString()) ;
                 medio.FechaCaducidad = (DateTime)registro["fecha_caducidad"];
                 medio.Cvv = int.Parse(registro["cvv"].ToString());
@@ -76,7 +76,7 @@ namespace DataAccess
             {
             new SqlParameter("In_id" , medioPago.Id),
             new SqlParameter ("In_id_cliente", medioPago.Id_cliente),
-            new SqlParameter("In_tipo_tarjeta" , medioPago.TipoTarjeta),
+            new SqlParameter("In_tipo_tarjeta" , medioPago.Id_Tipo_Tarjeta),
             new SqlParameter("In_nro_tarjeta", medioPago.NroTarjeta),
             new SqlParameter("In_fecha_caducidad" , medioPago.FechaCaducidad),
             new SqlParameter("In_cvv", medioPago.Cvv)

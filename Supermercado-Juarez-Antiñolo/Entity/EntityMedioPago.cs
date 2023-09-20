@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entity
 {
     public class EntityMedioPago
     {
+		private int _id;
+
+		public int Id
+		{
+			get { return _id; }
+			set { _id = value; }
+		}		
 		private int _id_cliente;
 
 		public int Id_cliente
@@ -15,19 +18,13 @@ namespace Entity
 			get { return _id_cliente; }
 			set { _id_cliente = value; }
 		}
-		private int _id;
 
-		public int Id
-		{
-			get { return _id; }
-			set { _id = value; }
-		}
-		private int _tipoTarjeta;
+		private int _id_tipo_Tarjeta;
 
-		public int TipoTarjeta
+		public int Id_Tipo_Tarjeta
 		{
-			get { return _tipoTarjeta; }
-			set { _tipoTarjeta = value; }
+			get { return _id_tipo_Tarjeta; }
+			set { _id_tipo_Tarjeta = value; }
 		}
 		private int _nroTarjeta;
 

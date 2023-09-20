@@ -34,6 +34,7 @@ namespace Supermercado_Juarez_Antiñolo
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if ( txtApellido.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "") { MessageBox.Show("Rellene campos"); return; }
             cliente = new EntityCliente();
             cliente.Dni = int.Parse(txtDni.Text);
             cliente.Nombre = txtNombre.Text;
@@ -50,6 +51,7 @@ namespace Supermercado_Juarez_Antiñolo
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if(txtDni.Text == "" || txtApellido.Text == "" || txtNombre.Text == "" || txtTelefono.Text == "") { MessageBox.Show("Rellene campos"); return; }
             cliente = new EntityCliente();
             cliente.Dni = int.Parse(txtDni.Text);
             cliente.Nombre = txtNombre.Text;
@@ -66,6 +68,7 @@ namespace Supermercado_Juarez_Antiñolo
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (txtDni.Text == "") { MessageBox.Show("Rellene campos"); return; }
             cliente = new EntityCliente();
             cliente.Dni = int.Parse(txtDni.Text);
             if (!gestor.Eliminar(cliente))

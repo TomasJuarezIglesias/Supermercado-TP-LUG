@@ -129,6 +129,7 @@
             this.DGmediosView.Size = new System.Drawing.Size(466, 269);
             this.DGmediosView.TabIndex = 59;
             this.DGmediosView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.DGmediosView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGmediosView_CellContentClick);
             // 
             // btnModificar
             // 

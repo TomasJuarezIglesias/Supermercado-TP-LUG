@@ -32,6 +32,7 @@ namespace Supermercado_Juarez_Antiñolo
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (txtNombre.Text == "" || txtDescripcion.Text == "") { MessageBox.Show("Rellene campos"); return; }
             categoria = new EntityCategoria();
             categoria.Nombre = txtNombre.Text;
             categoria.Descripcion = txtDescripcion.Text;
@@ -46,6 +47,7 @@ namespace Supermercado_Juarez_Antiñolo
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (txtId.Text == ""  ){ MessageBox.Show("Rellene campos"); return; }
             categoria = new EntityCategoria();
             categoria.Id = int.Parse(txtId.Text);
             if (!gestor.Eliminar(categoria))
@@ -59,6 +61,7 @@ namespace Supermercado_Juarez_Antiñolo
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            if (txtId.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "") { MessageBox.Show("Rellene campos"); return; }
             categoria = new EntityCategoria();
             categoria.Id = int.Parse(txtId.Text);
             categoria.Nombre = txtNombre.Text;
