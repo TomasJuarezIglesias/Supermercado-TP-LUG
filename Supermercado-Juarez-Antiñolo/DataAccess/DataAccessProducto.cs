@@ -17,12 +17,14 @@ namespace DataAccess
 
         public bool Create(Entity.EntityProducto producto)
         {
-            SqlParameter[] parameters = new SqlParameter[]{
-             new SqlParameter("In_nombre", producto.Nombre),
-            new SqlParameter("In_descripcion", producto.Descripcion),
-            new SqlParameter("In_id_categoria", producto.Id_Categoria),
-            new SqlParameter("In_precio", producto.Precio),
-            new SqlParameter("In_stock", producto.Stock) };
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("In_nombre", producto.Nombre),
+                new SqlParameter("In_descripcion", producto.Descripcion),
+                new SqlParameter("In_id_categoria", producto.Id_Categoria),
+                new SqlParameter("In_precio", producto.Precio),
+                new SqlParameter("In_stock", producto.Stock) 
+            };
             return conect.Write("insert_producto" , parameters);
         }
 
@@ -40,13 +42,7 @@ namespace DataAccess
             table = conect.Read("select_Productos", null);
             foreach(DataRow registro in table.Rows)
             {
-                EntityProducto prod = new EntityProducto();
-                prod.Id =int.Parse(registro["id"].ToString());
-                prod.Nombre = registro["nombre"].ToString();
-                prod.Descripcion = registro["descripcion"].ToString();
-                prod.Id_Categoria = int.Parse(registro["id_categoria"].ToString());
-                prod.Precio = double.Parse(registro["precio"].ToString());
-                prod.Stock = int.Parse(registro["stock"].ToString() );
+                EntityProducto prod = SqlMapper.MapProducto(registro);
                 list.Add( prod );
             }
             return list;
@@ -59,9 +55,7 @@ namespace DataAccess
             table = conect.Read("select_categoria", null);
             foreach (DataRow registro in table.Rows)
             {
-                EntityCategoria cat= new EntityCategoria();
-                cat.Id     = int.Parse(registro["id"].ToString());
-                cat.Nombre = registro["nombre"].ToString();
+                EntityCategoria cat = SqlMapper.MapCategoria(registro);
                 list.Add(cat);
             }
             return list;

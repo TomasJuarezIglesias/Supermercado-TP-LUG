@@ -2,15 +2,8 @@
 
 namespace Entity
 {
-    public class EntityMedioPago
+    public class EntityMedioPago : Entity
     {
-		private int _id;
-
-		public int Id
-		{
-			get { return _id; }
-			set { _id = value; }
-		}		
 		private int _id_cliente;
 
 		public int Id_cliente

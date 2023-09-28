@@ -40,10 +40,7 @@ namespace DataAccess
             table = conn.Read("select_categoria", null);
             foreach (DataRow registro in table.Rows)
             {
-                EntityCategoria categoria = new EntityCategoria();
-                categoria.Id = int.Parse(registro["id"].ToString());
-                categoria.Nombre = registro["nombre"].ToString();
-                categoria.Descripcion = registro["descripcion"].ToString();
+                EntityCategoria categoria = SqlMapper.MapCategoria(registro);
                 list.Add(categoria);
             }
             return list;    

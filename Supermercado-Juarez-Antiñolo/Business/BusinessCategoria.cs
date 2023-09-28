@@ -12,19 +12,32 @@ namespace Business
 
         DataAccessCategoria MPcat = new DataAccessCategoria();
 
-        public bool agregar(EntityCategoria categoria)
+        public BusinessRespuesta<bool> agregar(EntityCategoria categoria)
         {
-            return MPcat.Insert(categoria);
+            if (string.IsNullOrEmpty(categoria.Nombre) || string.IsNullOrEmpty(categoria.Descripcion))
+                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+            MPcat.Insert(categoria);
+            return new BusinessRespuesta<bool>(true, true, "Agregado correctamente!");
         }
 
-        public bool Eliminar(EntityCategoria categoria)
+        public BusinessRespuesta<bool> Eliminar(string id)
         {
-            return MPcat.Delete(categoria);
+            if (!string.IsNullOrEmpty(id))
+                return new BusinessRespuesta<bool>(false, false, "Elija una categoria");
+            MPcat.Delete(new EntityCategoria() { Id = int.Parse(id) });
+            return new BusinessRespuesta<bool>(true, true, $"Se elimino la categoria {id} satisfactoriamente");
         }
 
-        public List<EntityCategoria> listar()
+        public BusinessRespuesta<List<EntityCategoria>> listar()
         {
-            return MPcat.selectAll();
+            try
+            {
+                return new BusinessRespuesta<List<EntityCategoria>>(true, MPcat.selectAll());
+            }
+            catch (Exception)
+            {
+                return new BusinessRespuesta<List<EntityCategoria>>(false, null, "Ha ocurrido un error en la busqueda");
+            }
         }
 
         public bool modificar(EntityCategoria categoria)
