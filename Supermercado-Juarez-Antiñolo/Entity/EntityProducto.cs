@@ -6,16 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class EntityProducto
+    public class EntityProducto: Entity
     {
-		private int _id;
-
-		public int Id
-		{
-			get { return _id; }
-			set { _id = value; }
-		}
-
 		private string _nombre;
 
 		public string Nombre

@@ -11,7 +11,12 @@ namespace DataAccess
 {
     public class DataAccessCiente
     {
-        DBConnection conn = new DBConnection();
+        DBConnection conn;
+
+        public DataAccessCiente()
+        {
+            conn = new DBConnection();
+        }
 
         public bool delete(EntityCliente cliente)
         {
@@ -41,11 +46,7 @@ namespace DataAccess
             table = conn.Read("select_cliente", null);
             foreach( DataRow registro in table.Rows )
             {
-                EntityCliente cliente = new EntityCliente();
-                cliente.Dni = int.Parse(registro["dni"].ToString());
-                cliente.Nombre = registro["nombre"].ToString();
-                cliente.Apellido = registro["apellido"].ToString();
-                cliente.Telefono = registro["telefono"].ToString() ;
+                EntityCliente cliente = SqlMapper.MapCliente(registro);
                 list.Add(cliente);
             }
             return list;

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class EntityTipoTarjeta: Entity
+    public abstract class Entity
     {
-		private string _nombre;
+		private int _id;
 
-		public string Nombre
+		public int Id
 		{
-			get { return _nombre; }
-			set { _nombre = value; }
+			get { return _id; }
+			set { _id = value; }
 		}
 
 	}

@@ -14,7 +14,7 @@ using Entity;
 namespace Supermercado_Juarez_Antiñolo
 {
     
-    public partial class FormCategorias : MetroForm
+    public partial class FormCategorias : NuevoForm
     {
         public FormCategorias()
         {
@@ -32,30 +32,16 @@ namespace Supermercado_Juarez_Antiñolo
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "" || txtDescripcion.Text == "") { MessageBox.Show("Rellene campos"); return; }
             categoria = new EntityCategoria();
             categoria.Nombre = txtNombre.Text;
             categoria.Descripcion = txtDescripcion.Text;
-            if (!gestor.agregar(categoria))
-            {
-                MessageBox.Show("No se pudo agregar");
-                return;
-            }
-            MessageBox.Show("Se agregó correctamente");
+            this.RevisarRespuestaServicio(gestor.agregar(categoria));
             mostrarLista();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == ""  ){ MessageBox.Show("Rellene campos"); return; }
-            categoria = new EntityCategoria();
-            categoria.Id = int.Parse(txtId.Text);
-            if (!gestor.Eliminar(categoria))
-            {
-                MessageBox.Show("No se pudo eliminar");
-                return;
-            }
-            MessageBox.Show("Se elimino correctamente");
+            this.RevisarRespuestaServicio(gestor.Eliminar(txtId.Text));
             mostrarLista();
         }
 
