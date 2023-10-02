@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Supermercado_Juarez_Antiñolo
 {
-    public class NuevoForm: MetroForm
+    public class NuevoForm : MetroForm
     {
         protected void RevisarRespuestaServicio<T>(BusinessRespuesta<T> respuesta)
         {
@@ -20,7 +20,7 @@ namespace Supermercado_Juarez_Antiñolo
             }
             else
             {
-
+                MessageBox.Show(respuesta.Mensaje, "Bien!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

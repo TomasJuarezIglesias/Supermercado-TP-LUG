@@ -24,7 +24,7 @@ namespace DataAccess
 
         public static EntityCategoria MapCategoria(DataRow registro)
         {
-            return new EntityCategoria() 
+            return new EntityCategoria()
             {
                 Id = int.Parse(registro["id"].ToString()),
                 Nombre = registro["nombre"].ToString(),
