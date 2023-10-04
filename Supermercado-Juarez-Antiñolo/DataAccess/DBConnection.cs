@@ -89,7 +89,7 @@ namespace DataAccess
             }
 
             CloseConnection();
-            return canInsert is -1 ? false : true;
+            return  canInsert is -1 ? false : true;
         }
 
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entity;
 
 namespace UI
 {
@@ -14,11 +15,11 @@ namespace UI
         {
             if (!respuesta.Ok)
             {
-                MessageBox.Show(respuesta.Mensaje, "Epa!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(respuesta.Mensaje, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (!string.IsNullOrEmpty(respuesta.Mensaje))
-                MessageBox.Show(respuesta.Mensaje, "Bien!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(respuesta.Mensaje, "Great!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

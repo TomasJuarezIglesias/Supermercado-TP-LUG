@@ -5,31 +5,59 @@ using System.Text;
 using System.Threading.Tasks;
 using Entity;
 using DataAccess;
+using System.Net;
+
 namespace Business
 {
     public class BusinessCliente
     {
-        
+
         DataAccessCiente Mpcliente = new DataAccessCiente();
 
-        public bool Agregar(EntityCliente cliente)
+        public BusinessRespuesta<bool> Agregar(EntityCliente cliente)
         {
-            return Mpcliente.Insert(cliente);
+            if (string.IsNullOrEmpty(cliente.Nombre) || string.IsNullOrEmpty(cliente.Apellido))
+                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+
+            return Mpcliente.Insert(cliente) ?
+                new BusinessRespuesta<bool>(true, true, "Agregado Correctamente!") :
+                 new BusinessRespuesta<bool>(false, false, "Error al agregar");
         }
 
-        public bool Eliminar(EntityCliente cliente)
+        public BusinessRespuesta<bool> Eliminar(EntityCliente cliente)
         {
-           return Mpcliente.delete(cliente);
+            try
+            {
+                return Mpcliente.delete(cliente) ?
+                 new BusinessRespuesta<bool>(true, true, "Eliminado Correctamente!") :
+                    new BusinessRespuesta<bool>(false, false, "No se pudó eliminar, revise el dni solicitado");
+            }
+            catch
+            {
+                return new BusinessRespuesta<bool>(false, false, "Formato incorrecto para el dni");
+            }
         }
 
-        public List<EntityCliente> listar()
+        public BusinessRespuesta<List<EntityCliente>> listar()
         {
-           return Mpcliente.SelectAll();
+            try
+            {
+                return new BusinessRespuesta<List<EntityCliente>>(true, Mpcliente.SelectAll());
+            }
+            catch (Exception)
+            {
+                return new BusinessRespuesta<List<EntityCliente>>(false, null, "Ha ocurrido un error en la busqueda");
+            }
         }
 
-        public bool Modificar(EntityCliente cliente)
+        public BusinessRespuesta<bool> Modificar(EntityCliente cliente)
         {
-            return Mpcliente.Update(cliente);
+            if (string.IsNullOrEmpty(cliente.Nombre) || string.IsNullOrEmpty(cliente.Apellido))
+                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+
+            return Mpcliente.Update(cliente) ?
+             new BusinessRespuesta<bool>(true, true, "Se modificó Correctamente!") :
+                new BusinessRespuesta<bool>(false, false, "Error al modificar");
         }
     }
 }

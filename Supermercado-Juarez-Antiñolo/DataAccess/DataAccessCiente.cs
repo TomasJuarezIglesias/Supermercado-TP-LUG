@@ -11,12 +11,7 @@ namespace DataAccess
 {
     public class DataAccessCiente
     {
-        DBConnection conn;
-
-        public DataAccessCiente()
-        {
-            conn = new DBConnection();
-        }
+        DBConnection conn = new DBConnection();
 
         public bool delete(EntityCliente cliente)
         {
@@ -41,9 +36,8 @@ namespace DataAccess
 
         public List<EntityCliente> SelectAll()
         {
-            DataTable table = new DataTable();
+            DataTable table = conn.Read("select_cliente", null);
             List<EntityCliente> list = new List<EntityCliente>();
-            table = conn.Read("select_cliente", null);
             foreach( DataRow registro in table.Rows )
             {
                 EntityCliente cliente = SqlMapper.MapCliente(registro);

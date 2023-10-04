@@ -15,7 +15,7 @@ namespace DataAccess
     {
         DBConnection conect = new DBConnection();
 
-        public bool Create(Entity.EntityProducto producto)
+        public bool Insert(Entity.EntityProducto producto)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -28,14 +28,14 @@ namespace DataAccess
             return conect.Write("insert_producto" , parameters);
         }
 
-        public bool delete(int id)
+        public bool Delete(int id)
         {
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("In_id", id);
             return conect.Write("delete_producto", parameters);
         }
 
-        public List<EntityProducto> listar()
+        public List<EntityProducto> SelectAll()
         {
             List<EntityProducto> list = new List<EntityProducto>();
             DataTable table = new DataTable();

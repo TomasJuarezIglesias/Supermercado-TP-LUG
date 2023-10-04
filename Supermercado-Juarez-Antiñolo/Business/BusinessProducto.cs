@@ -14,50 +14,74 @@ namespace Business
     public class BusinessProducto
     {
         DataAccessProducto MPproducto = new DataAccessProducto();
-        List<EntityCategoria> categorias = new List<EntityCategoria>();
+        public List<EntityCategoria> categorias;
 
-        public bool agregar(EntityProducto producto)
+        public BusinessProducto()
         {
-            return MPproducto.Create(producto);
+          categorias = MPproducto.LoadCategorias();
         }
 
-        public bool eliminar(int id)
+        public BusinessRespuesta<bool> agregar(EntityProducto producto , string categoria)
         {
-            return MPproducto.delete(id);
+            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion) || string.IsNullOrEmpty(categoria))
+                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+            producto.Id_Categoria = devolverIdCateg(categoria);
+            return MPproducto.Insert(producto) ?
+                new BusinessRespuesta<bool>(true, true, "Agregado Correctamente!") :
+                new BusinessRespuesta<bool>(false, false, "Error al agregar");
         }
 
-        public List<EntityProducto> listar()
+        public BusinessRespuesta<bool> eliminar(string id)
         {
-            return MPproducto.listar();
-        }
-
-        public List<string> LoadCategorias()
-        {
-            categorias = MPproducto.LoadCategorias();
-            List<string> result = new List<string>();
-            foreach (var categoria in categorias)
+            try
             {
-                result.Add(categoria.Nombre);
+                return MPproducto.Delete(int.Parse(id)) ?
+                      new BusinessRespuesta<bool>(true, true, "Se eliminó correctamente!") :
+                      new BusinessRespuesta<bool>(false, false, "No se pudó eliminar, revise el id solicitado");
             }
-            return result;
-        }
-
-        public bool modificar(EntityProducto producto)
-        {
-            return MPproducto.Update(producto);
-        }
-
-        public int obtenerIdCategoria(string nombre)
-        {
-            
-           foreach (var categoria in categorias)
+            catch 
             {
-                if (categoria.Nombre.Equals(nombre))
+                return new BusinessRespuesta<bool>(false, false, " Formato incorrecto en el ID");
+            }
+        }
+
+        public BusinessRespuesta<List<EntityProducto>> listar()
+        {
+            try
+            {
+                return new BusinessRespuesta<List<EntityProducto>>(true, MPproducto.SelectAll());
+            }
+            catch (Exception)
+            {
+                return new BusinessRespuesta<List<EntityProducto>>(false, null, "Ha ocurrido un error en la busqueda");
+            }
+        }
+
+        public BusinessRespuesta<bool> modificar(EntityProducto producto , string categoria)
+        {
+            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion) || string.IsNullOrEmpty(categoria))
+                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+            producto.Id_Categoria = devolverIdCateg(categoria);
+            if (MPproducto.Update(producto))
+                return new BusinessRespuesta<bool>(true, true, "Modificado Correctamente!");
+            else
+            {
+                return new BusinessRespuesta<bool>(false, false, "Error al modificar");
+            }
+        }
+
+
+        public int devolverIdCateg(string name)
+        {
+            foreach (var item in categorias)
+            {
+                if(item.Nombre == name)
                 {
-                    return categoria.Id;
+                    return item.Id;
                 }
             }
             return 0;
         }
+
     }
 }

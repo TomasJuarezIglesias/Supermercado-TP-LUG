@@ -18,7 +18,7 @@ namespace DataAccess
                 Dni = int.Parse(registro["dni"].ToString()),
                 Nombre = registro["nombre"].ToString(),
                 Apellido = registro["apellido"].ToString(),
-                Telefono = registro["telefono"].ToString(),
+                Telefono = int.Parse(registro["telefono"].ToString()),
             };
         }
 

@@ -16,3 +16,12 @@ C:\Users\Juli\Desktop\Cursitos\.NET\Supermercado-TP-LUG\Supermercado-Juarez-Anti
 C:\Users\Juli\Desktop\Cursitos\.NET\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 C:\Users\Juli\Desktop\Cursitos\.NET\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Juli\Desktop\Cursitos\.NET\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\bin\Debug\Entity.dll
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\bin\Debug\Entity.pdb
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\DataAccess\obj\Debug\DataAccess.pdb

@@ -12,27 +12,33 @@ namespace Business
 
         DataAccessCategoria MPcat = new DataAccessCategoria();
 
-        public BusinessRespuesta<bool> agregar(EntityCategoria categoria)
+        public BusinessRespuesta<bool> Agregar(EntityCategoria categoria)
         {
             if (string.IsNullOrEmpty(categoria.Nombre) || string.IsNullOrEmpty(categoria.Descripcion))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");
-            MPcat.Insert(categoria);
-            return new BusinessRespuesta<bool>(true, true, "Agregado correctamente!");
+            return MPcat.Insert(categoria) ?
+            new BusinessRespuesta<bool>(true, true, "Agregado correctamente!") :
+            new BusinessRespuesta<bool>(false, false, "Error al agregar");
         }
 
         public BusinessRespuesta<bool> Eliminar(string id)
         {
-            if (!string.IsNullOrEmpty(id))
-                return new BusinessRespuesta<bool>(false, false, "Elija una categoria");
-            MPcat.Delete(new EntityCategoria() { Id = int.Parse(id) });
-            return new BusinessRespuesta<bool>(true, true, $"Se elimino la categoria {id} satisfactoriamente");
+                try
+                {
+                    MPcat.Delete(new EntityCategoria() { Id = int.Parse(id) }); 
+                    return new BusinessRespuesta<bool>(true, true, $"Se elimino la categoria {id} satisfactoriamente");
+                }
+                catch 
+                { 
+                    return new BusinessRespuesta<bool>(false, false, "Formato incorrecto para la categoria");
+                }
         }
 
-        public BusinessRespuesta<List<EntityCategoria>> listar()
+        public BusinessRespuesta<List<EntityCategoria>> Listar()
         {
             try
             {
-                return new BusinessRespuesta<List<EntityCategoria>>(true, MPcat.selectAll());
+                return new BusinessRespuesta<List<EntityCategoria>>(true, MPcat.SelectAll());
             }
             catch (Exception)
             {
@@ -40,9 +46,20 @@ namespace Business
             }
         }
 
-        public bool modificar(EntityCategoria categoria)
+        public BusinessRespuesta<bool> Modificar (string id, EntityCategoria categoria)
         {
-            return MPcat.Update(categoria);
+            if (string.IsNullOrEmpty(categoria.Nombre) || string.IsNullOrEmpty(categoria.Descripcion))
+                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+            try
+            {
+                categoria.Id = int.Parse(id);
+                MPcat.Update(categoria);
+                return new BusinessRespuesta<bool>(true, true, "Se modificó correctamente!");
+            }
+            catch
+            {
+                return new BusinessRespuesta<bool>(false, false, "Elija una categoria");
+            }
         }
     }
 }

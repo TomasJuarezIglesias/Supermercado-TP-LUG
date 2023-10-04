@@ -32,9 +32,9 @@ namespace Entity
 			set { _apellido = value; }
 		}
 
-		private string _telefono;
+		private int _telefono;
 
-		public string Telefono
+		public int Telefono
 		{
 			get { return _telefono; }
 			set { _telefono = value; }

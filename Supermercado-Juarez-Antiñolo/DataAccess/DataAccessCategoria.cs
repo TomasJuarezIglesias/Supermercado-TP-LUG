@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entity;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -33,11 +32,10 @@ namespace DataAccess
             return conn.Write("insert_categoria", parameters);
         }
 
-        public List<EntityCategoria> selectAll()
+        public List<EntityCategoria> SelectAll()
         {
             List<EntityCategoria> list = new List<EntityCategoria>();
-            DataTable table = new DataTable();
-            table = conn.Read("select_categoria", null);
+            DataTable table = conn.Read("select_categoria", null);
             foreach (DataRow registro in table.Rows)
             {
                 EntityCategoria categoria = SqlMapper.MapCategoria(registro);
