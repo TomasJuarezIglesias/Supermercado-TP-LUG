@@ -35,16 +35,17 @@ namespace UI
             {
                 cliente.Dni = int.Parse(txtDni.Text);
                 cliente.Telefono = int.Parse(txtTelefono.Text);
+                cliente.Nombre = txtNombre.Text;
+                cliente.Apellido = txtApellido.Text;
+                this.RevisarRespuestaServicio(gestor.Agregar(cliente));
+                mostrarLista();
             }
             catch
             {
                 MessageBox.Show("Formato incorrecto en DNI o telefono");
                 return;
             }
-            cliente.Nombre = txtNombre.Text;
-            cliente.Apellido = txtApellido.Text;
-            this.RevisarRespuestaServicio(gestor.Agregar(cliente));
-            mostrarLista();
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -89,5 +90,14 @@ namespace UI
             frm.Show();
             this.Close();
         }
+
+        private void btnAggMedioPago_Click(object sender, EventArgs e)
+        {
+            FormMedioPago frm = new FormMedioPago();    
+            frm.Show();
+            this.Close();
+        }
+
+
     }
 }

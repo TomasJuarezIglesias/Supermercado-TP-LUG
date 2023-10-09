@@ -10,46 +10,46 @@ namespace Business
 {
     public class BusinessMedioPago
     {
-
-        List<EntityTipoTarjeta> tiposTarjeta = new List<EntityTipoTarjeta>();
-        DataAccessMedioPago MPmedioPago = new DataAccessMedioPago();
-
-        public bool agregar(EntityMedioPago medioPago)
-        {
-            return MPmedioPago.insert(medioPago);
-        }
-
-        public int BuscarId(string nombre)
-        {
-            foreach (var item in tiposTarjeta)
-            {
-                if(nombre == item.Nombre)
-                {
-                    return item.Id;
-                }
-            }
-            return 0;
-        }
-
-        public bool eliminar(EntityMedioPago medioPago)
-        {
-            return MPmedioPago.delete(medioPago);
-        }
-
-        public List<EntityMedioPago> listar()
-        {
-            return MPmedioPago.selectAll();
-        }
-
-        public List<EntityTipoTarjeta> loadTipoTarjeta()
+        public BusinessMedioPago()
         {
             tiposTarjeta = MPmedioPago.selectTipoTarjeta();
-            return tiposTarjeta;
         }
 
-        public bool modificar(EntityMedioPago medioPago)
+        public List<EntityTipoTarjeta> tiposTarjeta;
+        DataAccessMedioPago MPmedioPago = new DataAccessMedioPago();
+
+        public BusinessRespuesta<bool> agregar(EntityMedioPago medioPago)
         {
-            return MPmedioPago.Update(medioPago);
+            return MPmedioPago.insert(medioPago) ?
+                 new BusinessRespuesta<bool>(true, true, "Se agregó exitosamente!") :
+                 new BusinessRespuesta<bool>(false, false, "Error. No se pudo agregar");
+        }
+
+        public BusinessRespuesta<bool> eliminar(EntityMedioPago medioPago)
+        {
+            return MPmedioPago.delete(medioPago) ?
+                new BusinessRespuesta<bool>(true, true, "Se eliminó correctamente!") :
+                new BusinessRespuesta<bool>(false, false, "Error, no se pudo eliminar");
+        }
+
+        public BusinessRespuesta<List<EntityMedioPago>> listar()
+        {
+            try
+            {
+                return new BusinessRespuesta<List<EntityMedioPago>>(true, MPmedioPago.selectAll());
+            }
+            catch
+            {
+                return new BusinessRespuesta<List<EntityMedioPago>>(false, null, "Ha ocurrido un error");
+            }
+        }
+
+        public BusinessRespuesta<bool> modificar(EntityMedioPago medioPago)
+        {
+            return
+            MPmedioPago.Update(medioPago) ?
+            new BusinessRespuesta<bool>(true, true, "Se modificó correctamente") :
+            new BusinessRespuesta<bool>(false, false, "No se pudo modificar");
         }
     }
 }

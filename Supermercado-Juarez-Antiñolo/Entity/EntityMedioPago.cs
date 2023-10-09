@@ -2,7 +2,7 @@
 
 namespace Entity
 {
-    public class EntityMedioPago : Entity
+    public class EntityMedioPago 
     {
 		private int _id_cliente;
 

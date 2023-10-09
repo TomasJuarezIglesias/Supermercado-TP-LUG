@@ -39,15 +39,5 @@ namespace Entity
 			get { return _telefono; }
 			set { _telefono = value; }
 		}
-
-		private int _nroTarjeta;
-
-		public int NroTarjeta
-		{
-			get { return _nroTarjeta; }
-			set { _nroTarjeta = value; }
-		}
-
-
 	}
 }

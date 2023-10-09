@@ -36,7 +36,6 @@ namespace DataAccess
         {
             return new EntityMedioPago()
             {
-                Id = int.Parse(registro["id"].ToString()),
                 Id_cliente = int.Parse(registro["id_cliente"].ToString()),
                 Id_Tipo_Tarjeta = int.Parse(registro["id_tipo_tarjeta"].ToString()),
                 NroTarjeta = int.Parse(registro["nro_tarjeta"].ToString()),

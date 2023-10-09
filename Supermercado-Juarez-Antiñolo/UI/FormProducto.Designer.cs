@@ -46,6 +46,7 @@
             this.DGproductoView = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGproductoView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,9 +173,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(163, 59);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 13);
+            this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "id( Eliminar o Modificar )";
+            this.label6.Text = "Codigo de Producto";
             // 
             // DGproductoView
             // 
@@ -205,11 +206,22 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "PRODUCTO";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Gestionar Categorias";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.DGproductoView);
@@ -256,5 +268,6 @@
         private System.Windows.Forms.DataGridView DGproductoView;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -17,12 +17,6 @@ namespace UI
             InitializeComponent();
         }
 
-        private void btnCategorias_Click(object sender, EventArgs e)
-        {
-            FormCategoria frm = new FormCategoria();
-            frm.Show();
-            this.Hide();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -38,6 +32,11 @@ namespace UI
             this.Hide();
         }
 
-
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            btnGestion1.Visible = true;
+            btnGestion2.Visible = true;
+            btnAdmin.Visible = false;
+        }
     }
 }

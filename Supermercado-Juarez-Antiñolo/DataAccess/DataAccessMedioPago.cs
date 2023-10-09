@@ -17,7 +17,7 @@ namespace DataAccess
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-            new SqlParameter("In_id" , medioPago.Id),
+            new SqlParameter("In_nro_tarjeta" , medioPago.NroTarjeta),
             };
             return conn.Write("delete_medio_pago", parameters);
         }
@@ -66,7 +66,6 @@ namespace DataAccess
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("In_id" , medioPago.Id),
                 new SqlParameter ("In_id_cliente", medioPago.Id_cliente),
                 new SqlParameter("In_tipo_tarjeta" , medioPago.Id_Tipo_Tarjeta),
                 new SqlParameter("In_nro_tarjeta", medioPago.NroTarjeta),

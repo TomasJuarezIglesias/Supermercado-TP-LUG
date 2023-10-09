@@ -50,5 +50,12 @@ namespace UI
             frm.Show();
             this.Close();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FormProducto frm = new FormProducto();
+            frm.Show();
+            this.Close();
+        }
     }
 }

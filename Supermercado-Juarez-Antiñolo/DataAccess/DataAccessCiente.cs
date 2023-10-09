@@ -29,7 +29,7 @@ namespace DataAccess
                 new SqlParameter("In_dni" , cliente.Dni),
                 new SqlParameter("In_nombre" , cliente.Nombre),
                 new SqlParameter("In_apellido" , cliente.Apellido),
-                new SqlParameter("In_telefono" , cliente.Telefono)
+                new SqlParameter("In_telefono" , cliente.Telefono),
             };
             return conn.Write("insert_cliente", parameters);
         }

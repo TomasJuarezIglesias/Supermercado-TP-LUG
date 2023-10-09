@@ -39,7 +39,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.DGcatView = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGcatView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,24 +139,23 @@
             this.DGcatView.Size = new System.Drawing.Size(475, 374);
             this.DGcatView.TabIndex = 10;
             // 
-            // btnVolver
+            // btnSalir
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.Crimson;
-            this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnVolver.Location = new System.Drawing.Point(713, 9);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
-            this.btnVolver.TabIndex = 11;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
+            this.btnSalir.Location = new System.Drawing.Point(713, 9);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 17;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FormCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.DGcatView);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnModificar);
@@ -189,7 +188,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView DGcatView;
-        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 
