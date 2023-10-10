@@ -153,9 +153,14 @@
             // 
             // DGclienteView
             // 
+            this.DGclienteView.AllowUserToAddRows = false;
+            this.DGclienteView.AllowUserToDeleteRows = false;
+            this.DGclienteView.AllowUserToResizeColumns = false;
+            this.DGclienteView.AllowUserToResizeRows = false;
             this.DGclienteView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGclienteView.Location = new System.Drawing.Point(285, 50);
             this.DGclienteView.Name = "DGclienteView";
+            this.DGclienteView.ReadOnly = true;
             this.DGclienteView.Size = new System.Drawing.Size(503, 403);
             this.DGclienteView.TabIndex = 12;
             // 

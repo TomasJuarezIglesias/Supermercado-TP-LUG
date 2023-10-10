@@ -65,5 +65,7 @@ namespace DataAccess
                 Stock = int.Parse(registro["stock"].ToString()),
             };
         }
+
+
     }
 }

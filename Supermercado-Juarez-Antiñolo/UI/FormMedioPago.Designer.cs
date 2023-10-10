@@ -43,13 +43,14 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.DGmediosView = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGmediosView)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 76);
+            this.label7.Location = new System.Drawing.Point(37, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 18;
@@ -57,7 +58,7 @@
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(12, 91);
+            this.txtDni.Location = new System.Drawing.Point(40, 108);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(121, 20);
             this.txtDni.TabIndex = 17;
@@ -65,21 +66,21 @@
             // cmbTarjeta
             // 
             this.cmbTarjeta.FormattingEnabled = true;
-            this.cmbTarjeta.Location = new System.Drawing.Point(12, 137);
+            this.cmbTarjeta.Location = new System.Drawing.Point(40, 154);
             this.cmbTarjeta.Name = "cmbTarjeta";
             this.cmbTarjeta.Size = new System.Drawing.Size(121, 21);
             this.cmbTarjeta.TabIndex = 19;
             // 
             // txtNumeroTarjeta
             // 
-            this.txtNumeroTarjeta.Location = new System.Drawing.Point(12, 43);
+            this.txtNumeroTarjeta.Location = new System.Drawing.Point(40, 60);
             this.txtNumeroTarjeta.Name = "txtNumeroTarjeta";
             this.txtNumeroTarjeta.Size = new System.Drawing.Size(121, 20);
             this.txtNumeroTarjeta.TabIndex = 20;
             // 
             // txtCvv
             // 
-            this.txtCvv.Location = new System.Drawing.Point(15, 232);
+            this.txtCvv.Location = new System.Drawing.Point(43, 249);
             this.txtCvv.Name = "txtCvv";
             this.txtCvv.Size = new System.Drawing.Size(121, 20);
             this.txtCvv.TabIndex = 22;
@@ -87,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 122);
+            this.label1.Location = new System.Drawing.Point(40, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 23;
@@ -96,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 26);
+            this.label2.Location = new System.Drawing.Point(37, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 24;
@@ -105,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 163);
+            this.label3.Location = new System.Drawing.Point(40, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 25;
@@ -114,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 216);
+            this.label4.Location = new System.Drawing.Point(40, 233);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 13);
             this.label4.TabIndex = 26;
@@ -122,14 +123,14 @@
             // 
             // datePick
             // 
-            this.datePick.Location = new System.Drawing.Point(15, 179);
+            this.datePick.Location = new System.Drawing.Point(43, 196);
             this.datePick.Name = "datePick";
             this.datePick.Size = new System.Drawing.Size(200, 20);
             this.datePick.TabIndex = 27;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(28, 275);
+            this.btnAgregar.Location = new System.Drawing.Point(61, 275);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 28;
@@ -139,7 +140,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(28, 333);
+            this.btnModificar.Location = new System.Drawing.Point(121, 304);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 29;
@@ -149,7 +150,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(28, 304);
+            this.btnEliminar.Location = new System.Drawing.Point(1, 304);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 31;
@@ -159,9 +160,14 @@
             // 
             // DGmediosView
             // 
+            this.DGmediosView.AllowUserToAddRows = false;
+            this.DGmediosView.AllowUserToDeleteRows = false;
+            this.DGmediosView.AllowUserToResizeColumns = false;
+            this.DGmediosView.AllowUserToResizeRows = false;
             this.DGmediosView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGmediosView.Location = new System.Drawing.Point(323, 56);
             this.DGmediosView.Name = "DGmediosView";
+            this.DGmediosView.ReadOnly = true;
             this.DGmediosView.Size = new System.Drawing.Size(456, 312);
             this.DGmediosView.TabIndex = 32;
             // 
@@ -176,11 +182,22 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(-4, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(209, 25);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "MEDIOS DE PAGO";
+            // 
             // FormMedioPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.DGmediosView);
             this.Controls.Add(this.btnEliminar);
@@ -221,5 +238,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView DGmediosView;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label label5;
     }
 }

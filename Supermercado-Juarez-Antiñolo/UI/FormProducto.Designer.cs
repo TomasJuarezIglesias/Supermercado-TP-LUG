@@ -179,9 +179,14 @@
             // 
             // DGproductoView
             // 
+            this.DGproductoView.AllowUserToAddRows = false;
+            this.DGproductoView.AllowUserToDeleteRows = false;
+            this.DGproductoView.AllowUserToResizeColumns = false;
+            this.DGproductoView.AllowUserToResizeRows = false;
             this.DGproductoView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGproductoView.Location = new System.Drawing.Point(287, 50);
+            this.DGproductoView.Location = new System.Drawing.Point(290, 50);
             this.DGproductoView.Name = "DGproductoView";
+            this.DGproductoView.ReadOnly = true;
             this.DGproductoView.Size = new System.Drawing.Size(509, 379);
             this.DGproductoView.TabIndex = 15;
             // 
@@ -200,7 +205,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 9);
+            this.label7.Location = new System.Drawing.Point(8, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 24);
             this.label7.TabIndex = 17;

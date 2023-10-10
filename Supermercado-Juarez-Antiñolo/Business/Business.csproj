@@ -46,6 +46,7 @@
     <Compile Include="BusinessProducto.cs" />
     <Compile Include="BusinessMedioPago.cs" />
     <Compile Include="BusinessRespuesta.cs" />
+    <Compile Include="BusinessVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,8 @@
 ﻿using Entity;
 using Business;
 using System;
+using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace UI
 {
@@ -8,17 +10,27 @@ namespace UI
     {
         public FormCategoria()
         {
-            InitializeComponent();
-            mostarDatos();
+            InitializeComponent(); 
+            CrearDG();
+            MostrarDatos();
         }
 
-        private void mostarDatos()
+        private void MostrarDatos()
         {
-            DGcatView.DataSource = null;
-            DGcatView.DataSource = gestor.Listar().Data;
+            DGcatView.Rows.Clear();
+            foreach (var cat in gestor.Listar().Data)
+            {
+                DGcatView.Rows.Add(cat.Nombre, cat.Descripcion);
+            }
         }
 
-        BusinessCategoria gestor = new BusinessCategoria();
+        private void CrearDG()
+        {
+            DGcatView.AutoGenerateColumns = false;
+            DGcatView.Columns.Add("Nombre", "Nombre");
+            DGcatView.Columns.Add("Descripcion", "Descripcion");
+        }
+            BusinessCategoria gestor = new BusinessCategoria();
 
         private void btnAgregar_Click(object sender, System.EventArgs e)
         {
@@ -26,22 +38,27 @@ namespace UI
             categoria.Nombre = txtNombre.Text;
             categoria.Descripcion = txtCategoria.Text;
             this.RevisarRespuestaServicio(gestor.Agregar(categoria));
-            mostarDatos();
+            MostrarDatos();
         }
-
-        private void btnEliminar_Click(object sender, System.EventArgs e)
+        private void DGcatView_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
-            this.RevisarRespuestaServicio(gestor.Eliminar(txtId.Text));
-            mostarDatos();
-        }
-
-        private void btnModificar_Click(object sender, System.EventArgs e)
-        {
-            EntityCategoria categoria = new EntityCategoria {
-                Nombre = txtNombre.Text,
-                Descripcion = txtCategoria.Text};
-            this.RevisarRespuestaServicio(gestor.Modificar(txtId.Text, categoria));
-            mostarDatos();
+            if (e.RowIndex is -1) { return; }
+            DialogResult res = MessageBox.Show("Presione SI para eliminar \nPresione NO para modificar ", "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                
+            }
+            if(res== DialogResult.No)
+            {
+                EntityCategoria categoria = new EntityCategoria
+                {
+                    Id = gestor.Listar().Data[e.RowIndex].Id,
+                    Nombre = txtNombre.Text,
+                    Descripcion = txtCategoria.Text
+                };
+                this.RevisarRespuestaServicio(gestor.Modificar(categoria));
+                MostrarDatos();
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

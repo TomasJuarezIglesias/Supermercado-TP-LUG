@@ -33,6 +33,7 @@
             this.btnGestion2 = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnComprar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BIENVENIDOS
@@ -85,12 +86,26 @@
             this.btnComprar.TabIndex = 8;
             this.btnComprar.Text = "Realizar Compra";
             this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
+            this.btnSalir.Location = new System.Drawing.Point(713, 12);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 17;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Visible = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnGestion2);
@@ -110,5 +125,6 @@
         private System.Windows.Forms.Button btnGestion2;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnComprar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
