@@ -14,6 +14,33 @@ namespace DataAccess
 
         DBConnection conect = new DBConnection();
 
+        public List<EntityDetalle> getAllDetails(int nro)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_nro_venta" , nro),
+            };
+            DataTable Table = conect.Read("select_detalles", parameters);
+            List<EntityDetalle> list = new List<EntityDetalle>();
+            foreach (DataRow registro in Table.Rows)
+            {
+                list.Add(SqlMapper.MapDetalle(registro));
+            }
+            return list;
+        }
+
+        public List<EntityVenta> getAllVentas()
+        {
+            DataTable table = conect.Read("select_ventas", null);
+            List<EntityVenta> list = new List<EntityVenta>();
+            foreach (DataRow registro in table.Rows)
+            {
+                EntityVenta venta = SqlMapper.MapVenta(registro);
+                list.Add(venta);
+            } 
+            return list;
+        }
+
         public int getId()
         {
             DataTable table = new DataTable();
@@ -21,7 +48,7 @@ namespace DataAccess
             return table.Rows[0][0] != null ? (int)table.Rows[0][0] : 0;
         }
 
-        public bool insert(EntityVenta venta)
+        public bool Insert(EntityVenta venta)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -34,7 +61,7 @@ namespace DataAccess
             return conect.Write("insert_venta", parameters);
         }
 
-        public bool insertDetails(List<EntityDetalle> detallesActuales)
+        public bool InsertDetails(List<EntityDetalle> detallesActuales)
         {
             foreach (var item in detallesActuales)
             {

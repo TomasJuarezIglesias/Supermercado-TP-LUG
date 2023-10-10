@@ -21,11 +21,10 @@ namespace Business
             new BusinessRespuesta<bool>(false, false, "Error al agregar");
         }
 
-        public BusinessRespuesta<bool> Eliminar(int id)
+        public BusinessRespuesta<bool> Eliminar(EntityCategoria cat)
         {
-            EntityCategoria categoria = new EntityCategoria() { Id = id };
-            return MPcat.Delete(categoria) ?
-                 new BusinessRespuesta<bool>(true, true, $"Se elimino la categoria {id} satisfactoriamente") :
+            return MPcat.Delete(cat) ?
+                 new BusinessRespuesta<bool>(true, true, $"Se elimino la categoria {cat.Nombre} satisfactoriamente") :
                     new BusinessRespuesta<bool>(false, false, "Formato incorrecto para la categoria");
         }
 

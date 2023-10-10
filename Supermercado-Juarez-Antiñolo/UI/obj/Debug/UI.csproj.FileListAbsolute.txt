@@ -37,3 +37,4 @@ C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormProducto.resources
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormMedioPago.resources
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormComprar.resources
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormDetalles.resources

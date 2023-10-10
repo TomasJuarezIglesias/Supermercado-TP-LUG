@@ -46,7 +46,12 @@ namespace UI
             DialogResult res = MessageBox.Show("Presione SI para eliminar \nPresione NO para modificar ", "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
-                
+                EntityCategoria categoria = new EntityCategoria
+                {
+                    Id = gestor.Listar().Data[e.RowIndex].Id,
+                };
+                this.RevisarRespuestaServicio(gestor.Eliminar(categoria));
+                MostrarDatos();
             }
             if(res== DialogResult.No)
             {
@@ -74,5 +79,6 @@ namespace UI
             frm.Show();
             this.Close();
         }
+
     }
 }

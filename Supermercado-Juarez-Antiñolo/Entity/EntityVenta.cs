@@ -16,13 +16,15 @@ namespace Entity
 			set { _id_cliente = value; }
 		}
 
-		private int _total;
 
-		public int Total
+		private double _total;
+
+		public double Total
 		{
 			get { return _total; }
 			set { _total = value; }
 		}
+
 
 		private DateTime _fecha;
 

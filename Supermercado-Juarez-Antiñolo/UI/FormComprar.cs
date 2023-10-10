@@ -139,5 +139,12 @@ namespace UI
                 }
             }
         }
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            FormCliente frm = new FormCliente();
+            frm.Show();
+            this.Close();
+        }
     }
 }

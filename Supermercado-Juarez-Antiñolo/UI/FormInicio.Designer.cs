@@ -34,6 +34,8 @@
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnComprar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnGestion3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BIENVENIDOS
@@ -91,6 +93,9 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Crimson;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Location = new System.Drawing.Point(713, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
@@ -100,11 +105,23 @@
             this.btnSalir.Visible = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnGestion3
+            // 
+            this.btnGestion3.Location = new System.Drawing.Point(208, 98);
+            this.btnGestion3.Name = "btnGestion3";
+            this.btnGestion3.Size = new System.Drawing.Size(108, 42);
+            this.btnGestion3.TabIndex = 18;
+            this.btnGestion3.Text = "Gestion Ventas Realizadas";
+            this.btnGestion3.UseVisualStyleBackColor = true;
+            this.btnGestion3.Visible = false;
+            this.btnGestion3.Click += new System.EventHandler(this.btnGestion3_Click);
+            // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGestion3);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.btnAdmin);
@@ -126,5 +143,7 @@
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Button btnSalir;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnGestion3;
     }
 }

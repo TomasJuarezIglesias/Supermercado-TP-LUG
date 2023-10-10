@@ -36,6 +36,7 @@ namespace UI
         {
             btnGestion1.Visible = true;
             btnGestion2.Visible = true;
+            btnGestion3.Visible = true;
             btnAdmin.Visible = false;
             btnComprar.Visible = false;
             btnSalir.Visible = true;
@@ -52,9 +53,17 @@ namespace UI
         {
             btnGestion1.Visible = false;
             btnGestion2.Visible = false;
+            btnGestion3.Visible = false;
             btnAdmin.Visible = true;
             btnComprar.Visible = true;
             btnSalir.Visible = false;
+        }
+
+        private void btnGestion3_Click(object sender, EventArgs e)
+        {
+            FormDetalles frm = new FormDetalles();
+            frm.Show();
+            this.Hide();
         }
     }
 }
