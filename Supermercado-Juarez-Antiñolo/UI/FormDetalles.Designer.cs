@@ -42,10 +42,12 @@
             // 
             // DGdetallesView
             // 
+            this.DGdetallesView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGdetallesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGdetallesView.Location = new System.Drawing.Point(12, 201);
+            this.DGdetallesView.Location = new System.Drawing.Point(2, 201);
             this.DGdetallesView.Name = "DGdetallesView";
-            this.DGdetallesView.Size = new System.Drawing.Size(593, 237);
+            this.DGdetallesView.ReadOnly = true;
+            this.DGdetallesView.Size = new System.Drawing.Size(460, 237);
             this.DGdetallesView.TabIndex = 0;
             // 
             // cmbDetalles
@@ -96,10 +98,13 @@
             // 
             // DGventaView
             // 
+            this.DGventaView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGventaView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGventaView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGventaView.Location = new System.Drawing.Point(160, 44);
             this.DGventaView.Name = "DGventaView";
-            this.DGventaView.Size = new System.Drawing.Size(445, 151);
+            this.DGventaView.ReadOnly = true;
+            this.DGventaView.Size = new System.Drawing.Size(312, 151);
             this.DGventaView.TabIndex = 7;
             // 
             // btnSalir

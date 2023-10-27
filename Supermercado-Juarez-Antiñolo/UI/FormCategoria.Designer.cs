@@ -99,6 +99,7 @@
             this.DGcatView.AllowUserToDeleteRows = false;
             this.DGcatView.AllowUserToResizeColumns = false;
             this.DGcatView.AllowUserToResizeRows = false;
+            this.DGcatView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGcatView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGcatView.Location = new System.Drawing.Point(313, 41);
             this.DGcatView.Name = "DGcatView";

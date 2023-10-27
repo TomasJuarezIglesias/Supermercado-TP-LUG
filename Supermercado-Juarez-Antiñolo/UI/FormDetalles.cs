@@ -35,10 +35,8 @@ namespace UI
 
         private void cargarCmb()
         {
-            foreach (var item in gestor.listarVentas().Data)
-            {
-                cmbDetalles.Items.Add(item.Id);
-            }
+            cmbDetalles.DataSource = gestor.listarVentas().Data;
+            cmbDetalles.DisplayMember = "Id";
         }
 
         BusinessVenta gestor = new BusinessVenta();

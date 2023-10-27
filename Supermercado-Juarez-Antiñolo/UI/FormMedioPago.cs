@@ -17,17 +17,19 @@ namespace UI
         public FormMedioPago()
         {
             InitializeComponent();
-            gestor.tiposTarjeta.ForEach(item => cmbTarjeta.Items.Add(item.Nombre));
+            cmbTarjeta.DataSource = gestor.tiposTarjeta;
+            cmbTarjeta.DisplayMember = "Nombre";
             crearDG();
             MostrarLista();
         }
 
         private void MostrarLista()
         {
-           DGmediosView.Rows.Clear();
+            DGmediosView.Rows.Clear();
+            EntityTipoTarjeta tarj = (EntityTipoTarjeta)cmbTarjeta.SelectedItem;
             foreach (var medios in gestor.listar().Data)
             {
-                DGmediosView.Rows.Add(medios.NroTarjeta, gestor.tiposTarjeta.FirstOrDefault( item => item.Id == medios.Id_Tipo_Tarjeta)?.Nombre , medios.Id_cliente , medios.FechaCaducidad , medios.Cvv);
+                DGmediosView.Rows.Add(medios.NroTarjeta, tarj.Id , medios.Id_cliente , medios.FechaCaducidad , medios.Cvv);
             }
         }
 
@@ -47,13 +49,14 @@ namespace UI
         {
             try
             {
+                EntityTipoTarjeta tarj = (EntityTipoTarjeta)cmbTarjeta.SelectedItem;
                 EntityMedioPago medio = new EntityMedioPago
                 {
                     Id_cliente = int.Parse(txtDni.Text),
                     NroTarjeta = int.Parse(txtNumeroTarjeta.Text),
                     FechaCaducidad = datePick.Value,
                     Cvv = int.Parse(txtCvv.Text),
-                    Id_Tipo_Tarjeta = gestor.tiposTarjeta.FirstOrDefault(item => item.Nombre == cmbTarjeta.Text)?.Id ?? 0,
+                    Id_Tipo_Tarjeta = tarj.Id,
                 };
                 this.RevisarRespuestaServicio(gestor.agregar(medio));
                 MostrarLista();
@@ -83,13 +86,14 @@ namespace UI
         {
             try
             {
+                EntityTipoTarjeta tarj = (EntityTipoTarjeta)cmbTarjeta.SelectedItem;
                 EntityMedioPago medio = new EntityMedioPago
                 {
                     Id_cliente = int.Parse(txtDni.Text),
                     NroTarjeta = int.Parse(txtNumeroTarjeta.Text),
                     FechaCaducidad = datePick.Value,
                     Cvv = int.Parse(txtCvv.Text),
-                    Id_Tipo_Tarjeta = gestor.tiposTarjeta.FirstOrDefault(item => item.Nombre == cmbTarjeta.Text)?.Id ?? 0,
+                    Id_Tipo_Tarjeta = tarj.Id,
                 };
                 this.RevisarRespuestaServicio(gestor.modificar(medio));
                 MostrarLista();

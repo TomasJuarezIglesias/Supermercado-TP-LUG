@@ -21,11 +21,11 @@ namespace Business
           categorias = MPproducto.LoadCategorias();
         }
 
-        public BusinessRespuesta<bool> agregar(EntityProducto producto , string categoria)
+        public BusinessRespuesta<bool> agregar(EntityProducto producto )
         {
-            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion) || string.IsNullOrEmpty(categoria))
+            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");
-            producto.Id_Categoria = devolverIdCateg(categoria);
+           
             return MPproducto.Insert(producto) ?
                 new BusinessRespuesta<bool>(true, true, "Agregado Correctamente!") :
                 new BusinessRespuesta<bool>(false, false, "Error al agregar");
@@ -57,11 +57,10 @@ namespace Business
             }
         }
 
-        public BusinessRespuesta<bool> modificar(EntityProducto producto , string categoria)
+        public BusinessRespuesta<bool> modificar(EntityProducto producto )
         {
-            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion) || string.IsNullOrEmpty(categoria))
+            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");
-            producto.Id_Categoria = devolverIdCateg(categoria);
             if (MPproducto.Update(producto))
                 return new BusinessRespuesta<bool>(true, true, "Modificado Correctamente!");
             else
@@ -69,19 +68,5 @@ namespace Business
                 return new BusinessRespuesta<bool>(false, false, "Error al modificar");
             }
         }
-
-
-        public int devolverIdCateg(string name)
-        {
-            foreach (var item in categorias)
-            {
-                if(item.Nombre == name)
-                {
-                    return item.Id;
-                }
-            }
-            return 0;
-        }
-
     }
 }

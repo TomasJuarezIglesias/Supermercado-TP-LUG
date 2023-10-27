@@ -17,11 +17,8 @@ namespace UI
         public FormProducto()
         {
             InitializeComponent();
-
-            foreach (var item in gestor.categorias)
-            {
-                cmbCategoria.Items.Add(item.Nombre);
-            }
+            cmbCategoria.DataSource = gestor.categorias;
+            cmbCategoria.DisplayMember = "Nombre";
             crearDG();
             MostrarLista();
         }
@@ -37,36 +34,30 @@ namespace UI
             DGproductoView.Columns.Add("Stock", "Stock");
         } 
 
+        //Se esta cargando la categoria con la actual del cmb, falta buscar con cada producto la correspondiente categoria
         private void MostrarLista()
         {
             DGproductoView.Rows.Clear();
+            
             foreach (var item in gestor.listar().Data)
             {
-                DGproductoView.Rows.Add(item.Id, item.Nombre, item.Descripcion, buscarNombre(item.Id_Categoria), item.Precio, item.Stock);
+                string cat = gestor.categorias.FirstOrDefault(cate => cate.Id == item.Id_Categoria).Nombre;
+                DGproductoView.Rows.Add(item.Id, item.Nombre, item.Descripcion, cat , item.Precio, item.Stock);
             }
     }
-        private string buscarNombre(int value)
-        {
-            foreach (var item in gestor.categorias)
-            {
-                if (item.Id ==value)
-                {
-                    return item.Nombre;
-                }
-            }
-            return "";
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             EntityProducto producto = new EntityProducto();
             try
             {
+                EntityCategoria categoria = (EntityCategoria)cmbCategoria.SelectedItem;
+                producto.Id_Categoria = categoria.Id;
                 producto.Precio = int.Parse(txtPrecio.Text);
                 producto.Stock = int.Parse(txtStock.Text);
                 producto.Nombre = txtNombre.Text;
                 producto.Descripcion = txtDescripcion.Text;
-                this.RevisarRespuestaServicio(gestor.agregar( producto, cmbCategoria.Text));
+                this.RevisarRespuestaServicio(gestor.agregar(producto));
                 MostrarLista();
             }
             catch 
@@ -86,12 +77,14 @@ namespace UI
             EntityProducto producto = new EntityProducto();
             try
             {
+                EntityCategoria categoria = (EntityCategoria)cmbCategoria.SelectedItem;
+                producto.Id_Categoria = categoria.Id;
                 producto.Precio = int.Parse(txtPrecio.Text);
                 producto.Stock = int.Parse(txtStock.Text);
                 producto.Id = int.Parse(txtId.Text);
                 producto.Nombre = txtNombre.Text;
                 producto.Descripcion = txtDescripcion.Text;
-                this.RevisarRespuestaServicio(gestor.modificar(producto, cmbCategoria.Text));
+                this.RevisarRespuestaServicio(gestor.modificar(producto));
                 MostrarLista();
             }
             catch

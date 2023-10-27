@@ -20,6 +20,8 @@ namespace UI
             cargarCmb();
             crearDG();
             actualizar();
+            cmbProducto.SelectedIndex = -1;
+            cmbDni.SelectedIndex = -1;
         }
 
         BusinessVenta gestor = new BusinessVenta();
@@ -45,6 +47,7 @@ namespace UI
             montoAcumulado = 0;
             lblMonto.Text = "0";
             DGdetalleView.Rows.Clear();
+            gestor.detallesActuales.Clear();
         }
 
         private void cargarCmb()
@@ -61,13 +64,16 @@ namespace UI
         {
             try
             {
+                EntityProducto prod = (EntityProducto)cmbProducto.SelectedItem;
                 EntityDetalle detail = new EntityDetalle
                 {
                     Nro_Venta = ventaActual,
-                    Id_Producto = gestorProducto.listar().Data.FirstOrDefault(item => cmbProducto.Text == item.Nombre).Id,
+                    Id_Producto = prod.Id,
                     CantProducto = (int)numericCantidad.Value,
-                    SubTotal = (int)((int)numericCantidad.Value * gestorProducto.listar().Data.FirstOrDefault(item => cmbProducto.Text == item.Nombre).Precio),
+                    SubTotal = (int)((int)numericCantidad.Value * prod.Precio),
                 };
+                prod.Stock -= (int)numericCantidad.Value;
+                gestorProducto.modificar(prod);
                 gestor.detallesActuales.Add(detail);
                 mostrarLista();
             }
@@ -80,9 +86,10 @@ namespace UI
         private void mostrarLista()
         {
             DGdetalleView.Rows.Clear();
+            montoAcumulado = 0;
             foreach (var item in gestor.detallesActuales)
             {
-                DGdetalleView.Rows.Add( gestorProducto.listar().Data.FirstOrDefault(producto => item.Id_Producto == producto.Id).Nombre , item.CantProducto, item.SubTotal);
+                DGdetalleView.Rows.Add(gestorProducto.listar().Data.FirstOrDefault(producto => item.Id_Producto == producto.Id).Nombre, item.CantProducto, item.SubTotal);
                 montoAcumulado += item.SubTotal;
             }
             lblMonto.Text = montoAcumulado.ToString();
@@ -90,30 +97,23 @@ namespace UI
 
         private void btnFinalizarVenta_Click(object sender, EventArgs e)
         {
-            try
+            EntityVenta venta = new EntityVenta
             {
-                EntityVenta venta = new EntityVenta
-                {
-                    Id = ventaActual,
-                    ID_Cliente = int.Parse(cmbDni.Text),
-                    Total = montoAcumulado,
-                    Fecha = datePick.Value,
-                    Nro_Tarjeta = int.Parse(cmbTarjeta.Text),
-                };
-                if (montoAcumulado <= 0) { MessageBox.Show("Agregue productos antes de finalizar"); return; }
-                this.RevisarRespuestaServicio(gestor.agregar(venta));
-                actualizar();
-            }
-            catch
-            {
-                MessageBox.Show("Campos incompletos o incorrectos");
-            }
+                Id = ventaActual,
+                ID_Cliente = int.Parse(cmbDni.Text),
+                Total = montoAcumulado,
+                Fecha = datePick.Value,
+                Nro_Tarjeta = int.Parse(cmbTarjeta.Text),
+            };
+            if (montoAcumulado <= 0) { MessageBox.Show("Agregue productos antes de finalizar"); return; }
+            this.RevisarRespuestaServicio(gestor.agregar(venta));
+            actualizar();
         }
 
         private void DGdetalleView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex is -1) { return; }
-            DialogResult res = MessageBox.Show("Desea borrar el producto seleccionado?" , "Confirmación" , MessageBoxButtons.YesNo , MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("Desea borrar el producto seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 gestor.detallesActuales.Remove(gestor.detallesActuales[e.RowIndex]);
@@ -133,10 +133,11 @@ namespace UI
             cmbTarjeta.Items.Clear();
             foreach (var item in GestorMedioPago.listar().Data)
             {
-                if(item.Id_cliente.ToString() == cmbDni.Text)
+                if (item.Id_cliente.ToString() == cmbDni.Text)
                 {
-                    cmbTarjeta.Items.Add(item.NroTarjeta);
+                    cmbTarjeta.Items.Add(item);
                 }
+                cmbTarjeta.DisplayMember = "NroTarjeta";
             }
         }
 
@@ -145,6 +146,13 @@ namespace UI
             FormCliente frm = new FormCliente();
             frm.Show();
             this.Close();
+        }
+
+        private void cmbProducto_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            EntityProducto prod = (EntityProducto)cmbProducto.SelectedItem;
+            numericCantidad.Maximum = prod.Stock;
+            if (prod.Stock <= 0) { MessageBox.Show("No hay stock del producto seleccionado"); cmbProducto.SelectedIndex = -1; }
         }
     }
 }

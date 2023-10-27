@@ -183,6 +183,8 @@
             this.DGproductoView.AllowUserToDeleteRows = false;
             this.DGproductoView.AllowUserToResizeColumns = false;
             this.DGproductoView.AllowUserToResizeRows = false;
+            this.DGproductoView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGproductoView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGproductoView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGproductoView.Location = new System.Drawing.Point(290, 50);
             this.DGproductoView.Name = "DGproductoView";

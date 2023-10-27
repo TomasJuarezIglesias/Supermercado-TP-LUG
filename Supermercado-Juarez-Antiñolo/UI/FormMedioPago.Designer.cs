@@ -164,6 +164,7 @@
             this.DGmediosView.AllowUserToDeleteRows = false;
             this.DGmediosView.AllowUserToResizeColumns = false;
             this.DGmediosView.AllowUserToResizeRows = false;
+            this.DGmediosView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGmediosView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGmediosView.Location = new System.Drawing.Point(323, 56);
             this.DGmediosView.Name = "DGmediosView";

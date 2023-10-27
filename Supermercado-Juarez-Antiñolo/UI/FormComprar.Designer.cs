@@ -62,7 +62,7 @@
             // 
             // cmbDni
             // 
-            this.cmbDni.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbDni.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbDni.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbDni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDni.FormattingEnabled = true;
@@ -149,6 +149,7 @@
             this.DGdetalleView.AllowUserToDeleteRows = false;
             this.DGdetalleView.AllowUserToResizeColumns = false;
             this.DGdetalleView.AllowUserToResizeRows = false;
+            this.DGdetalleView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGdetalleView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGdetalleView.Location = new System.Drawing.Point(224, 77);
             this.DGdetalleView.Name = "DGdetalleView";
@@ -177,6 +178,7 @@
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(153, 21);
             this.cmbProducto.TabIndex = 11;
+            this.cmbProducto.SelectionChangeCommitted += new System.EventHandler(this.cmbProducto_SelectionChangeCommitted);
             // 
             // label7
             // 

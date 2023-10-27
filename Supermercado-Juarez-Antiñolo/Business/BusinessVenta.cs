@@ -37,7 +37,6 @@ namespace Business
                 return new BusinessRespuesta<bool>(true, true, "Se registro la venta");
             }
             return new BusinessRespuesta<bool>(false, false, "No se pudo completar la venta");
-            
         }
 
         public BusinessRespuesta<List<EntityDetalle>> listarDetalles(string nroVenta)

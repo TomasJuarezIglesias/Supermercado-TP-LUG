@@ -157,8 +157,9 @@
             this.DGclienteView.AllowUserToDeleteRows = false;
             this.DGclienteView.AllowUserToResizeColumns = false;
             this.DGclienteView.AllowUserToResizeRows = false;
+            this.DGclienteView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGclienteView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGclienteView.Location = new System.Drawing.Point(285, 50);
+            this.DGclienteView.Location = new System.Drawing.Point(295, 50);
             this.DGclienteView.Name = "DGclienteView";
             this.DGclienteView.ReadOnly = true;
             this.DGclienteView.Size = new System.Drawing.Size(503, 403);
