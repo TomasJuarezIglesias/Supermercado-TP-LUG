@@ -55,5 +55,10 @@ namespace Business
              new BusinessRespuesta<bool>(true, true, "Se modificó Correctamente!") :
                 new BusinessRespuesta<bool>(false, false, "Error al modificar");
         }
+
+        public bool xml()
+        {
+            return Mpcliente.xml();
+        }
     }
 }

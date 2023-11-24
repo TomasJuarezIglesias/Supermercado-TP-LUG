@@ -95,7 +95,7 @@ namespace DataAccess
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = new SqlCommand { Connection = _connection, CommandType = CommandType.StoredProcedure, CommandText = sp };
                 adapter.Fill(ds);
-                ds.WriteXml(@"C: \Users\lukit\source\repos\Supermercado - TP - LUG\ArchivosXml" + nombreArchivo);
+                ds.WriteXml(@"C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\ArchivosXml\" + nombreArchivo);
                 CloseConnection();
                 return true;
             }

@@ -31,9 +31,7 @@
             this.BIENVENIDOS = new System.Windows.Forms.Label();
             this.btnGestion1 = new System.Windows.Forms.Button();
             this.btnGestion2 = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnComprar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnGestion3 = new System.Windows.Forms.Button();
             this.btnMetodosPago = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -56,87 +54,57 @@
             this.btnGestion1.TabIndex = 2;
             this.btnGestion1.Text = "Gestion Clientes";
             this.btnGestion1.UseVisualStyleBackColor = true;
-            this.btnGestion1.Visible = false;
             this.btnGestion1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnGestion2
             // 
-            this.btnGestion2.Location = new System.Drawing.Point(112, 98);
+            this.btnGestion2.Location = new System.Drawing.Point(104, 98);
             this.btnGestion2.Name = "btnGestion2";
             this.btnGestion2.Size = new System.Drawing.Size(75, 42);
             this.btnGestion2.TabIndex = 5;
             this.btnGestion2.Text = "Gestion Producto";
             this.btnGestion2.UseVisualStyleBackColor = true;
-            this.btnGestion2.Visible = false;
             this.btnGestion2.Click += new System.EventHandler(this.btnProducto_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(217, 160);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(117, 77);
-            this.btnAdmin.TabIndex = 6;
-            this.btnAdmin.Text = "Administrador";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(349, 160);
+            this.btnComprar.Location = new System.Drawing.Point(449, 98);
             this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(117, 77);
+            this.btnComprar.Size = new System.Drawing.Size(117, 42);
             this.btnComprar.TabIndex = 8;
             this.btnComprar.Text = "Realizar Compra";
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(713, 12);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 17;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Visible = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // btnGestion3
             // 
-            this.btnGestion3.Location = new System.Drawing.Point(208, 98);
+            this.btnGestion3.Location = new System.Drawing.Point(194, 98);
             this.btnGestion3.Name = "btnGestion3";
             this.btnGestion3.Size = new System.Drawing.Size(108, 42);
             this.btnGestion3.TabIndex = 18;
             this.btnGestion3.Text = "Gestion Ventas Realizadas";
             this.btnGestion3.UseVisualStyleBackColor = true;
-            this.btnGestion3.Visible = false;
             this.btnGestion3.Click += new System.EventHandler(this.btnGestion3_Click);
             // 
             // btnMetodosPago
             // 
-            this.btnMetodosPago.Location = new System.Drawing.Point(333, 98);
+            this.btnMetodosPago.Location = new System.Drawing.Point(322, 98);
             this.btnMetodosPago.Name = "btnMetodosPago";
             this.btnMetodosPago.Size = new System.Drawing.Size(108, 42);
             this.btnMetodosPago.TabIndex = 19;
             this.btnMetodosPago.Text = "Gestion de Metodos de Pago";
             this.btnMetodosPago.UseVisualStyleBackColor = true;
-            this.btnMetodosPago.Visible = false;
             this.btnMetodosPago.Click += new System.EventHandler(this.btnMetodosPago_Click);
             // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnMetodosPago);
             this.Controls.Add(this.btnGestion3);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnComprar);
-            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnGestion2);
             this.Controls.Add(this.btnGestion1);
             this.Controls.Add(this.BIENVENIDOS);
@@ -152,9 +120,7 @@
         private System.Windows.Forms.Label BIENVENIDOS;
         private System.Windows.Forms.Button btnGestion1;
         private System.Windows.Forms.Button btnGestion2;
-        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnComprar;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGestion3;
         private System.Windows.Forms.Button btnMetodosPago;
     }

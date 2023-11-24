@@ -46,12 +46,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtNombre = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtCategoria = new Bunifu.UI.WinForms.BunifuTextBox();
             this.DGcatView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnAgregar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnModificar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGcatView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,15 +96,6 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(2, 273);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(277, 35);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Recuerde que si hay productos cargados con la categoria, no podrá eliminarla\r\n";
             // 
             // txtNombre
             // 
@@ -276,7 +267,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGcatView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DGcatView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGcatView.ColumnHeadersHeight = 40;
             this.DGcatView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.DGcatView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.DGcatView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -501,10 +492,21 @@
             this.btnModificar.UseDefaultRadiusAndThickness = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(-1, 415);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(259, 35);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Recuerde que las categorias no se pueden borrar debido a la dependencia de los pr" +
+    "oductos";
+            // 
             // FormCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -529,12 +531,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label label6;
         private Bunifu.UI.WinForms.BunifuTextBox txtNombre;
         private Bunifu.UI.WinForms.BunifuTextBox txtCategoria;
         private Bunifu.UI.WinForms.BunifuDataGridView DGcatView;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAgregar;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnModificar;
+        private System.Windows.Forms.Label label6;
     }
 }
 

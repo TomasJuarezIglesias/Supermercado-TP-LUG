@@ -1,4 +1,5 @@
 ﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -69,6 +70,11 @@ namespace DataAccess
             new SqlParameter("In_stock", producto.Stock) };
 
             return conect.Write("update_producto", parameters);
+        }
+
+        public bool xml()
+        {
+            return conect.WriteXml("select_Productos", "Productos.xml");
         }
     }
 }

@@ -176,7 +176,7 @@ namespace UI
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            FormCliente frm = new FormCliente();
+            FormRegistrarse frm = new FormRegistrarse();
             if (montoAcumulado > 0)
             {
                 foreach (var item in gestor.detallesActuales)

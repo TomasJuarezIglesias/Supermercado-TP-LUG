@@ -100,5 +100,14 @@ namespace UI
             frm.Show();
             this.Close();
         }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            if (gestor.xml())
+            {
+                MessageBox.Show("Impresion correcta!"); return;
+            }
+            MessageBox.Show("Error en la impresion");
+        }
     }
 }

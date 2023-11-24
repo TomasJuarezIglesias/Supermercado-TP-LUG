@@ -49,17 +49,19 @@
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegistro = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_numeric = new UI.lbl_numeric();
             this.btnSeleccionar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.DGdetalleView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnFinalizarVentas = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.lbl_numeric = new UI.lbl_numeric();
-            this.btnRegistro = new System.Windows.Forms.Button();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetalleView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbDni
@@ -216,6 +218,21 @@
             this.panel1.Size = new System.Drawing.Size(317, 41);
             this.panel1.TabIndex = 22;
             // 
+            // btnRegistro
+            // 
+            this.btnRegistro.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRegistro.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRegistro.FlatAppearance.BorderSize = 0;
+            this.btnRegistro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegistro.Location = new System.Drawing.Point(214, 0);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(103, 41);
+            this.btnRegistro.TabIndex = 27;
+            this.btnRegistro.Text = "REGISTRARSE";
+            this.btnRegistro.UseVisualStyleBackColor = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -228,6 +245,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(212, 159);
             this.panel2.TabIndex = 23;
+            // 
+            // lbl_numeric
+            // 
+            this.lbl_numeric.Location = new System.Drawing.Point(10, 83);
+            this.lbl_numeric.Name = "lbl_numeric";
+            this.lbl_numeric.Size = new System.Drawing.Size(137, 44);
+            this.lbl_numeric.TabIndex = 27;
             // 
             // btnSeleccionar
             // 
@@ -484,34 +508,29 @@
             this.btnFinalizarVentas.UseDefaultRadiusAndThickness = true;
             this.btnFinalizarVentas.Click += new System.EventHandler(this.btnFinalizarVentas_Click);
             // 
-            // lbl_numeric
+            // bunifuPictureBox1
             // 
-            this.lbl_numeric.Location = new System.Drawing.Point(10, 83);
-            this.lbl_numeric.Name = "lbl_numeric";
-            this.lbl_numeric.Size = new System.Drawing.Size(137, 44);
-            this.lbl_numeric.TabIndex = 27;
-            // 
-            // btnRegistro
-            // 
-            this.btnRegistro.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnRegistro.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.btnRegistro.FlatAppearance.BorderSize = 0;
-            this.btnRegistro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistro.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegistro.Location = new System.Drawing.Point(214, 0);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(103, 41);
-            this.btnRegistro.TabIndex = 27;
-            this.btnRegistro.Text = "REGISTRARSE";
-            this.btnRegistro.UseVisualStyleBackColor = false;
-            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BorderRadius = 45;
+            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
+            this.bunifuPictureBox1.IsCircle = true;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(462, 3);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(90, 90);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 27;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // FormComprar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(956, 561);
+            this.Controls.Add(this.bunifuPictureBox1);
             this.Controls.Add(this.btnFinalizarVentas);
             this.Controls.Add(this.DGdetalleView);
             this.Controls.Add(this.panel3);
@@ -523,7 +542,6 @@
             this.Controls.Add(this.lblMonto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormComprar";
             this.Text = "FormComprar";
             this.panel1.ResumeLayout(false);
@@ -533,6 +551,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetalleView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,5 +581,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSeleccionar;
         private lbl_numeric lbl_numeric;
         private System.Windows.Forms.Button btnRegistro;
+        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
     }
 }

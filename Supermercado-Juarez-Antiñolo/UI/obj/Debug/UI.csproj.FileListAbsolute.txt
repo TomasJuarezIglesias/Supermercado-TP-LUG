@@ -72,3 +72,4 @@ C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.exe
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.pdb
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.lbl_numeric.resources
+C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormRegistrarse.resources

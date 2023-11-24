@@ -1,4 +1,5 @@
 ﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -52,6 +53,11 @@ namespace DataAccess
                 new SqlParameter("In_telefono" , cliente.Telefono)
             };
             return conn.Write("update_cliente", parameters);
+        }
+
+        public bool xml()
+        {
+            return conn.WriteXml("select_cliente", "Clientes.xml");
         }
     }
 }

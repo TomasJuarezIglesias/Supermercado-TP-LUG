@@ -62,5 +62,10 @@ namespace Business
                 return new BusinessRespuesta<bool>(false, false, "Error al modificar");
             }
         }
+
+        public bool xml()
+        {
+            return MPproducto.xml();
+        }
     }
 }
