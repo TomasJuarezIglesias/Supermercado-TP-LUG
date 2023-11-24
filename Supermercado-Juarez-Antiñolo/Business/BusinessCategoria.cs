@@ -1,10 +1,8 @@
-﻿using System;
+﻿using DataAccess;
+using Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess;
-using Entity;
 namespace Business
 {
     public class BusinessCategoria
@@ -16,16 +14,27 @@ namespace Business
         {
             if (string.IsNullOrEmpty(categoria.Nombre) || string.IsNullOrEmpty(categoria.Descripcion))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");
-            return MPcat.Insert(categoria) ?
-            new BusinessRespuesta<bool>(true, true, "Agregado correctamente!") :
-            new BusinessRespuesta<bool>(false, false, "Error al agregar");
+            try
+            {
+                return new BusinessRespuesta<bool>(true, MPcat.Insert(categoria), "Agregado correctamente!");
+            }
+            catch
+            {
+                return new BusinessRespuesta<bool>(false, false, "Error al agregar");
+            }
         }
 
         public BusinessRespuesta<bool> Eliminar(EntityCategoria cat)
         {
-            return MPcat.Delete(cat) ?
-                 new BusinessRespuesta<bool>(true, true, $"Se elimino la categoria {cat.Nombre} satisfactoriamente") :
-                    new BusinessRespuesta<bool>(false, false, "Formato incorrecto para la categoria");
+            cat.Id = Listar().Data.FirstOrDefault(item => item.Nombre == cat.Nombre).Id;
+            try
+            {
+                return new BusinessRespuesta<bool>(true, MPcat.Delete(cat), $"Se elimino la categoria {cat.Nombre} satisfactoriamente");
+            }
+            catch
+            {
+                return new BusinessRespuesta<bool>(false, false, "Formato incorrecto para la categoria");
+            }
         }
 
         public BusinessRespuesta<List<EntityCategoria>> Listar()
@@ -40,15 +49,21 @@ namespace Business
             }
         }
 
-        public BusinessRespuesta<bool> Modificar(EntityCategoria categoria)
+        public BusinessRespuesta<bool> Modificar(EntityCategoria cat)
         {
-            if (string.IsNullOrEmpty(categoria.Nombre) || string.IsNullOrEmpty(categoria.Descripcion))
-                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
-
-            return MPcat.Update(categoria) ?
-                 new BusinessRespuesta<bool>(true, true, "Se modificó correctamente!") :
-                    new BusinessRespuesta<bool>(false, false, "Elija una categoria");
-
+            cat.Id = Listar().Data.FirstOrDefault(item => item.Nombre == cat.Nombre).Id;
+            if (string.IsNullOrEmpty(cat.Nombre) || string.IsNullOrEmpty(cat.Descripcion))
+            {
+                return new BusinessRespuesta<bool>(false, false, "Error en los campos");
+            }
+            try
+            {
+                return new BusinessRespuesta<bool>(true, MPcat.Update(cat), "Se modificó correctamente!");
+            }
+            catch
+            {
+                return new BusinessRespuesta<bool>(false, false, "Error al Modificar");
+            }
         }
     }
 }

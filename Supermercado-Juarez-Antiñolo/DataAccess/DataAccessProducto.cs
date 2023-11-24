@@ -1,16 +1,12 @@
-﻿using System;
+﻿using Entity;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entity;
 
 
 namespace DataAccess
 {
-    
+
     public class DataAccessProducto
     {
         DBConnection conect = new DBConnection();
@@ -23,9 +19,9 @@ namespace DataAccess
                 new SqlParameter("In_descripcion", producto.Descripcion),
                 new SqlParameter("In_id_categoria", producto.Id_Categoria),
                 new SqlParameter("In_precio", producto.Precio),
-                new SqlParameter("In_stock", producto.Stock) 
+                new SqlParameter("In_stock", producto.Stock)
             };
-            return conect.Write("insert_producto" , parameters);
+            return conect.Write("insert_producto", parameters);
         }
 
         public bool Delete(int id)
@@ -40,14 +36,14 @@ namespace DataAccess
             List<EntityProducto> list = new List<EntityProducto>();
             DataTable table = new DataTable();
             table = conect.Read("select_Productos", null);
-            foreach(DataRow registro in table.Rows)
+            foreach (DataRow registro in table.Rows)
             {
                 EntityProducto prod = SqlMapper.MapProducto(registro);
-                list.Add( prod );
+                list.Add(prod);
             }
             return list;
         }
-            
+
         public List<EntityCategoria> LoadCategorias()
         {
             List<EntityCategoria> list = new List<EntityCategoria>();
@@ -61,7 +57,7 @@ namespace DataAccess
             return list;
         }
 
-        
+
         public bool Update(EntityProducto producto)
         {
             SqlParameter[] parameters = new SqlParameter[] {

@@ -1,8 +1,7 @@
-﻿using Entity;
-using Business;
+﻿using Business;
+using Entity;
 using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
 
 namespace UI
 {
@@ -10,7 +9,8 @@ namespace UI
     {
         public FormCategoria()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             CrearDG();
             MostrarDatos();
         }
@@ -30,38 +30,20 @@ namespace UI
             DGcatView.Columns.Add("Nombre", "Nombre");
             DGcatView.Columns.Add("Descripcion", "Descripcion");
         }
-            BusinessCategoria gestor = new BusinessCategoria();
+        BusinessCategoria gestor = new BusinessCategoria();
 
-        private void btnAgregar_Click(object sender, System.EventArgs e)
-        {
-            EntityCategoria categoria = new EntityCategoria();
-            categoria.Nombre = txtNombre.Text;
-            categoria.Descripcion = txtCategoria.Text;
-            this.RevisarRespuestaServicio(gestor.Agregar(categoria));
-            MostrarDatos();
-        }
+
         private void DGcatView_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
             if (e.RowIndex is -1) { return; }
-            DialogResult res = MessageBox.Show("Presione SI para eliminar \nPresione NO para modificar ", "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("¿Desea Eliminar la categoria? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 EntityCategoria categoria = new EntityCategoria
                 {
-                    Id = gestor.Listar().Data[e.RowIndex].Id,
+                    Nombre = txtNombre.Text,
                 };
                 this.RevisarRespuestaServicio(gestor.Eliminar(categoria));
-                MostrarDatos();
-            }
-            if(res== DialogResult.No)
-            {
-                EntityCategoria categoria = new EntityCategoria
-                {
-                    Id = gestor.Listar().Data[e.RowIndex].Id,
-                    Nombre = txtNombre.Text,
-                    Descripcion = txtCategoria.Text
-                };
-                this.RevisarRespuestaServicio(gestor.Modificar(categoria));
                 MostrarDatos();
             }
         }
@@ -80,5 +62,24 @@ namespace UI
             this.Close();
         }
 
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            EntityCategoria categoria = new EntityCategoria();
+            categoria.Nombre = txtNombre.Text;
+            categoria.Descripcion = txtCategoria.Text;
+            this.RevisarRespuestaServicio(gestor.Agregar(categoria));
+            MostrarDatos();
+        }
+
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+            EntityCategoria categoria = new EntityCategoria
+            {
+                Nombre = txtNombre.Text,
+                Descripcion = txtCategoria.Text
+            };
+            this.RevisarRespuestaServicio(gestor.Modificar(categoria));
+            MostrarDatos();
+        }
     }
 }

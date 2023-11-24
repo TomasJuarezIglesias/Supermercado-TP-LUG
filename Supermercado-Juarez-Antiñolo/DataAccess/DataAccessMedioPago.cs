@@ -1,11 +1,7 @@
 ﻿using Entity;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -51,7 +47,7 @@ namespace DataAccess
         public List<EntityTipoTarjeta> selectTipoTarjeta()
         {
             List<EntityTipoTarjeta> list = new List<EntityTipoTarjeta>();
-            
+
             DataTable table = new DataTable();
             table = conn.Read("select_tipo_tarjeta", null);
             foreach (DataRow registro in table.Rows)

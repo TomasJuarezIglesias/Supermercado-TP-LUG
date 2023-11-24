@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Business;
 using Entity;
-using Business;
+using System;
+using System.Windows.Forms;
 
 namespace UI
 {
@@ -17,6 +10,7 @@ namespace UI
         public FormCliente()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             mostrarLista();
         }
 
@@ -28,7 +22,23 @@ namespace UI
 
         BusinessCliente gestor = new BusinessCliente();
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FormInicio frm = new FormInicio();
+            frm.Show();
+            this.Close();
+        }
+
+        private void DGclienteView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex is -1) { return; }
+            txtDni.Text = DGclienteView.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
+            txtNombre.Text = DGclienteView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+            txtApellido.Text = DGclienteView.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
+            txtTelefono.Text = DGclienteView.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             EntityCliente cliente = new EntityCliente();
             try
@@ -45,10 +55,9 @@ namespace UI
                 MessageBox.Show("Formato incorrecto en DNI o telefono");
                 return;
             }
-            
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             EntityCliente cliente = new EntityCliente();
             try
@@ -64,7 +73,7 @@ namespace UI
             mostrarLista();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnModificar_Click_1(object sender, EventArgs e)
         {
             EntityCliente cliente = new EntityCliente();
             try
@@ -84,20 +93,12 @@ namespace UI
             mostrarLista();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+
+        private void btnMetodosPago_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
+            FormMedioPago frm = new FormMedioPago();
             frm.Show();
             this.Close();
         }
-
-        private void btnAggMedioPago_Click(object sender, EventArgs e)
-        {
-            FormMedioPago frm = new FormMedioPago();    
-            frm.Show();
-            this.Close();
-        }
-
-
     }
 }

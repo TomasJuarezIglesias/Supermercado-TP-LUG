@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataAccess;
 using Entity;
-using DataAccess;
-using System.Data.SqlClient;
-using System.Data;
-using System.Runtime.Remoting.Contexts;
+using System;
+using System.Collections.Generic;
 
 namespace Business
 {
@@ -18,14 +12,14 @@ namespace Business
 
         public BusinessProducto()
         {
-          categorias = MPproducto.LoadCategorias();
+            categorias = MPproducto.LoadCategorias();
         }
 
-        public BusinessRespuesta<bool> agregar(EntityProducto producto )
+        public BusinessRespuesta<bool> agregar(EntityProducto producto)
         {
             if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");
-           
+
             return MPproducto.Insert(producto) ?
                 new BusinessRespuesta<bool>(true, true, "Agregado Correctamente!") :
                 new BusinessRespuesta<bool>(false, false, "Error al agregar");
@@ -39,7 +33,7 @@ namespace Business
                       new BusinessRespuesta<bool>(true, true, "Se eliminó correctamente!") :
                       new BusinessRespuesta<bool>(false, false, "No se pudó eliminar, revise el id solicitado");
             }
-            catch 
+            catch
             {
                 return new BusinessRespuesta<bool>(false, false, " Formato incorrecto en el ID");
             }
@@ -57,7 +51,7 @@ namespace Business
             }
         }
 
-        public BusinessRespuesta<bool> modificar(EntityProducto producto )
+        public BusinessRespuesta<bool> modificar(EntityProducto producto)
         {
             if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");

@@ -1,11 +1,7 @@
 ﻿using Entity;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -38,7 +34,7 @@ namespace DataAccess
         {
             DataTable table = conn.Read("select_cliente", null);
             List<EntityCliente> list = new List<EntityCliente>();
-            foreach( DataRow registro in table.Rows )
+            foreach (DataRow registro in table.Rows)
             {
                 EntityCliente cliente = SqlMapper.MapCliente(registro);
                 list.Add(cliente);

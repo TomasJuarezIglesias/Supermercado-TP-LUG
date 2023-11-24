@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess;
+﻿using DataAccess;
 using Entity;
+using System.Collections.Generic;
 
 namespace Business
 {
@@ -32,7 +28,7 @@ namespace Business
 
         public BusinessRespuesta<bool> agregar(EntityVenta venta)
         {
-            if ( MPventa.Insert(venta) && MPventa.InsertDetails(detallesActuales))
+            if (MPventa.Insert(venta) && MPventa.InsertDetails(detallesActuales) && venta.Total > 0)
             {
                 return new BusinessRespuesta<bool>(true, true, "Se registro la venta");
             }
@@ -46,9 +42,9 @@ namespace Business
                 int nro = int.Parse(nroVenta);
                 return new BusinessRespuesta<List<EntityDetalle>>(true, MPventa.getAllDetails(nro));
             }
-            catch 
+            catch
             {
-                return new BusinessRespuesta<List<EntityDetalle>>(false, null, "Ocurrió un eror"); 
+                return new BusinessRespuesta<List<EntityDetalle>>(false, null, "Ocurrió un eror");
             }
         }
     }

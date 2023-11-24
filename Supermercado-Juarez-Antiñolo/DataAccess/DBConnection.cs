@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DataAccess
 {
@@ -26,7 +22,6 @@ namespace DataAccess
         {
             _connection.Close();
         }
-
 
         public DataTable Read(string sp, SqlParameter[] parameters)
         {
@@ -57,7 +52,6 @@ namespace DataAccess
             return dataTable;
         }
 
-
         public bool Write(string sp, SqlParameter[] sqlParameters)
         {
             if (sqlParameters.Length is 0) return false;
@@ -79,7 +73,7 @@ namespace DataAccess
                 sqlCommand.Parameters.Clear();
                 sqlCommand.Parameters.AddRange(sqlParameters);
 
-                
+
                 canInsert = sqlCommand.ExecuteNonQuery();
                 transaction.Commit();
             }
@@ -89,9 +83,26 @@ namespace DataAccess
             }
 
             CloseConnection();
-            return  canInsert is -1 ? false : true;
+            return canInsert is -1 ? false : true;
         }
 
-
+        public bool WriteXml(string sp, string nombreArchivo)
+        {
+            try
+            {
+                OpenConnection();
+                DataSet ds = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = new SqlCommand { Connection = _connection, CommandType = CommandType.StoredProcedure, CommandText = sp };
+                adapter.Fill(ds);
+                ds.WriteXml(@"C: \Users\lukit\source\repos\Supermercado - TP - LUG\ArchivosXml" + nombreArchivo);
+                CloseConnection();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

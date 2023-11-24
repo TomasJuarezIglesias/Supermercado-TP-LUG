@@ -117,4 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSeleccionar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHgAAAAXCAYAAADAxotdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABiSURBVGhD7dExEQAgDMBAlNRy8YeM7i0IQEEuw08Zs2L3
+        iT0joj5v8C+IwsFwDoZzMJyD4RwM52A4B8M5GM7BcA6GczCcg+EcDOdgOAfDORjOwXAOhnMwnIPhVmTX
+        Lwgguy4APM+fsvS/HAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnFinalizarVentas.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMkAAAAWCAYAAABqrrj/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABnSURBVHhe7dOhEYAwAMBAJunKsB9j4FswuN5lgRevonOM
+        a97jWgvYmfc3yS4AP5NAMAkEk0AwCQSTQDAJBJNAMAkEk0AwCQSTQDAJBJNAMAkEk0AwCQSTQDAJBJNA
+        OMY5n10APud8XqzhKVVHvsZxAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Business;
 using Entity;
-using Business;
+using System;
+using System.Windows.Forms;
 
 namespace UI
 {
@@ -17,43 +10,54 @@ namespace UI
         public FormMedioPago()
         {
             InitializeComponent();
-            cmbTarjeta.DataSource = gestor.tiposTarjeta;
-            cmbTarjeta.DisplayMember = "Nombre";
-            crearDG();
-            MostrarLista();
         }
 
         private void MostrarLista()
         {
-            DGmediosView.Rows.Clear();
-            EntityTipoTarjeta tarj = (EntityTipoTarjeta)cmbTarjeta.SelectedItem;
+            lbl_DG.DG.Rows.Clear();
             foreach (var medios in gestor.listar().Data)
             {
-                DGmediosView.Rows.Add(medios.NroTarjeta, tarj.Id , medios.Id_cliente , medios.FechaCaducidad , medios.Cvv);
+                lbl_DG.DG.Rows.Add(medios.NroTarjeta, medios.Id_Tipo_Tarjeta, medios.Id_cliente, medios.FechaCaducidad, medios.Cvv);
             }
         }
 
         private void crearDG()
         {
-            DGmediosView.AutoGenerateColumns = false;
-            DGmediosView.Columns.Add("Nro Tarjeta", "Nro Tarjeta");
-            DGmediosView.Columns.Add("Tipo Tarjeta", "Tipo Tarjeta");
-            DGmediosView.Columns.Add("Dni Cliente", "DNI cliente");
-            DGmediosView.Columns.Add("Fecha Caducidad", "Fecha Caducidad");
-            DGmediosView.Columns.Add("Codigo Seguridad", " Codigo Seguridad");
+            lbl_DG.DG.AutoGenerateColumns = false;
+            lbl_DG.DG.Columns.Add("Nro Tarjeta", "Nro Tarjeta");
+            lbl_DG.DG.Columns.Add("Tipo Tarjeta", "Tipo Tarjeta");
+            lbl_DG.DG.Columns.Add("Dni Cliente", "DNI cliente");
+            lbl_DG.DG.Columns.Add("Fecha Caducidad", "Fecha Caducidad");
+            lbl_DG.DG.Columns.Add("Codigo Seguridad", " Codigo Seguridad");
         }
 
         BusinessMedioPago gestor = new BusinessMedioPago();
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FormInicio frm = new FormInicio();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void DGmediosView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1) { return; }
+            txtDni.Text = lbl_DG.DG.Rows[e.RowIndex].Cells["Dni cliente"].Value.ToString();
+            lbl_txtBox.txt.Text = lbl_DG.DG.Rows[e.RowIndex].Cells["Nro Tarjeta"].Value.ToString();
+            lbl_cmb.cmb.Text = lbl_DG.DG.Rows[e.RowIndex].Cells["Tipo Tarjeta"].Value.ToString();
+            txtCvv.Text = lbl_DG.DG.Rows[e.RowIndex].Cells["Codigo Seguridad"].Value.ToString();
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             try
             {
-                EntityTipoTarjeta tarj = (EntityTipoTarjeta)cmbTarjeta.SelectedItem;
+                EntityTipoTarjeta tarj = (EntityTipoTarjeta)lbl_cmb.cmb.SelectedItem;
                 EntityMedioPago medio = new EntityMedioPago
                 {
                     Id_cliente = int.Parse(txtDni.Text),
-                    NroTarjeta = int.Parse(txtNumeroTarjeta.Text),
+                    NroTarjeta = int.Parse(lbl_txtBox.txt.Text),
                     FechaCaducidad = datePick.Value,
                     Cvv = int.Parse(txtCvv.Text),
                     Id_Tipo_Tarjeta = tarj.Id,
@@ -67,12 +71,12 @@ namespace UI
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             try
             {
                 EntityMedioPago medio = new EntityMedioPago();
-                medio.NroTarjeta = int.Parse(txtNumeroTarjeta.Text);
+                medio.NroTarjeta = int.Parse(lbl_txtBox.txt.Text);
                 this.RevisarRespuestaServicio(gestor.eliminar(medio));
                 MostrarLista();
             }
@@ -82,15 +86,15 @@ namespace UI
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnModificar_Click_1(object sender, EventArgs e)
         {
             try
             {
-                EntityTipoTarjeta tarj = (EntityTipoTarjeta)cmbTarjeta.SelectedItem;
+                EntityTipoTarjeta tarj = (EntityTipoTarjeta)lbl_cmb.cmb.SelectedItem;
                 EntityMedioPago medio = new EntityMedioPago
                 {
                     Id_cliente = int.Parse(txtDni.Text),
-                    NroTarjeta = int.Parse(txtNumeroTarjeta.Text),
+                    NroTarjeta = int.Parse(lbl_txtBox.txt.Text),
                     FechaCaducidad = datePick.Value,
                     Cvv = int.Parse(txtCvv.Text),
                     Id_Tipo_Tarjeta = tarj.Id,
@@ -104,11 +108,16 @@ namespace UI
             }
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void FormMedioPago_Load(object sender, EventArgs e)
         {
-            FormCliente frm = new FormCliente();
-            frm.Show();
-            this.Hide();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            lbl_cmb.cmb.DataSource = gestor.tiposTarjeta;
+            lbl_cmb.cmb.DisplayMember = "Nombre";
+            crearDG();
+            MostrarLista();
+            lbl_txtBox.lbl.Text = "Numero de Tarjeta";
+            lbl_DG.lbl.Text = "Medios de pago:";
+            lbl_cmb.lbl.Text = "Tipo Tarejta";
         }
     }
 }

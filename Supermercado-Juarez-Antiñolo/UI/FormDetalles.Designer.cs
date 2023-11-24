@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DGdetallesView = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalles));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cmbDetalles = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnMostrarDetalles = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
-            this.DGventaView = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DGdetallesView)).BeginInit();
+            this.DGventaView = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.DGdetallesView = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.btnMostrar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DGventaView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGdetallesView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // DGdetallesView
-            // 
-            this.DGdetallesView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DGdetallesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGdetallesView.Location = new System.Drawing.Point(2, 201);
-            this.DGdetallesView.Name = "DGdetallesView";
-            this.DGdetallesView.ReadOnly = true;
-            this.DGdetallesView.Size = new System.Drawing.Size(460, 237);
-            this.DGdetallesView.TabIndex = 0;
             // 
             // cmbDetalles
             // 
             this.cmbDetalles.FormattingEnabled = true;
-            this.cmbDetalles.Location = new System.Drawing.Point(9, 60);
+            this.cmbDetalles.Location = new System.Drawing.Point(13, 25);
             this.cmbDetalles.Name = "cmbDetalles";
             this.cmbDetalles.Size = new System.Drawing.Size(121, 21);
             this.cmbDetalles.TabIndex = 1;
@@ -61,21 +61,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 44);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Número de Venta";
-            // 
-            // btnMostrarDetalles
-            // 
-            this.btnMostrarDetalles.Location = new System.Drawing.Point(24, 88);
-            this.btnMostrarDetalles.Name = "btnMostrarDetalles";
-            this.btnMostrarDetalles.Size = new System.Drawing.Size(75, 23);
-            this.btnMostrarDetalles.TabIndex = 3;
-            this.btnMostrarDetalles.Text = "Mostrar";
-            this.btnMostrarDetalles.UseVisualStyleBackColor = true;
-            this.btnMostrarDetalles.Click += new System.EventHandler(this.btnMostrarDetalles_Click);
             // 
             // label2
             // 
@@ -96,17 +86,6 @@
             this.lblMonto.Size = new System.Drawing.Size(0, 20);
             this.lblMonto.TabIndex = 6;
             // 
-            // DGventaView
-            // 
-            this.DGventaView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DGventaView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DGventaView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGventaView.Location = new System.Drawing.Point(160, 44);
-            this.DGventaView.Name = "DGventaView";
-            this.DGventaView.ReadOnly = true;
-            this.DGventaView.Size = new System.Drawing.Size(312, 151);
-            this.DGventaView.TabIndex = 7;
-            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Crimson;
@@ -121,37 +100,257 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // DGventaView
+            // 
+            this.DGventaView.AllowCustomTheming = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.DGventaView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGventaView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGventaView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGventaView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGventaView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGventaView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DGventaView.ColumnHeadersHeight = 40;
+            this.DGventaView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.DGventaView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.DGventaView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGventaView.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.DGventaView.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGventaView.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.DGventaView.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.DGventaView.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.DGventaView.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.DGventaView.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DGventaView.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.DGventaView.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.DGventaView.CurrentTheme.Name = null;
+            this.DGventaView.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DGventaView.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.DGventaView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGventaView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.DGventaView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGventaView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DGventaView.EnableHeadersVisualStyles = false;
+            this.DGventaView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.DGventaView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.DGventaView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.DGventaView.HeaderForeColor = System.Drawing.Color.White;
+            this.DGventaView.Location = new System.Drawing.Point(12, 37);
+            this.DGventaView.Name = "DGventaView";
+            this.DGventaView.RowHeadersVisible = false;
+            this.DGventaView.RowTemplate.Height = 40;
+            this.DGventaView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGventaView.Size = new System.Drawing.Size(442, 99);
+            this.DGventaView.TabIndex = 20;
+            this.DGventaView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // DGdetallesView
+            // 
+            this.DGdetallesView.AllowCustomTheming = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.DGdetallesView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DGdetallesView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGdetallesView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGdetallesView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DGdetallesView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGdetallesView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.DGdetallesView.ColumnHeadersHeight = 40;
+            this.DGdetallesView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.DGdetallesView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.DGdetallesView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGdetallesView.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.DGdetallesView.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGdetallesView.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.DGdetallesView.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.DGdetallesView.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.DGdetallesView.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.DGdetallesView.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DGdetallesView.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.DGdetallesView.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.DGdetallesView.CurrentTheme.Name = null;
+            this.DGdetallesView.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DGdetallesView.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.DGdetallesView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.DGdetallesView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.DGdetallesView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGdetallesView.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DGdetallesView.EnableHeadersVisualStyles = false;
+            this.DGdetallesView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.DGdetallesView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.DGdetallesView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.DGdetallesView.HeaderForeColor = System.Drawing.Color.White;
+            this.DGdetallesView.Location = new System.Drawing.Point(12, 142);
+            this.DGdetallesView.Name = "DGdetallesView";
+            this.DGdetallesView.RowHeadersVisible = false;
+            this.DGdetallesView.RowTemplate.Height = 40;
+            this.DGdetallesView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGdetallesView.Size = new System.Drawing.Size(442, 296);
+            this.DGdetallesView.TabIndex = 21;
+            this.DGdetallesView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // btnMostrar
+            // 
+            this.btnMostrar.AllowAnimations = true;
+            this.btnMostrar.AllowMouseEffects = true;
+            this.btnMostrar.AllowToggling = false;
+            this.btnMostrar.AnimationSpeed = 200;
+            this.btnMostrar.AutoGenerateColors = false;
+            this.btnMostrar.AutoRoundBorders = false;
+            this.btnMostrar.AutoSizeLeftIcon = true;
+            this.btnMostrar.AutoSizeRightIcon = true;
+            this.btnMostrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnMostrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMostrar.BackgroundImage")));
+            this.btnMostrar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnMostrar.ButtonText = "Mostrar";
+            this.btnMostrar.ButtonTextMarginLeft = 0;
+            this.btnMostrar.ColorContrastOnClick = 45;
+            this.btnMostrar.ColorContrastOnHover = 45;
+            this.btnMostrar.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnMostrar.CustomizableEdges = borderEdges1;
+            this.btnMostrar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnMostrar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnMostrar.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnMostrar.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnMostrar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnMostrar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMostrar.ForeColor = System.Drawing.Color.White;
+            this.btnMostrar.IconLeft = null;
+            this.btnMostrar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMostrar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnMostrar.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnMostrar.IconMarginLeft = 11;
+            this.btnMostrar.IconPadding = 10;
+            this.btnMostrar.IconRight = null;
+            this.btnMostrar.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMostrar.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnMostrar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnMostrar.IconSize = 25;
+            this.btnMostrar.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnMostrar.IdleBorderRadius = 0;
+            this.btnMostrar.IdleBorderThickness = 0;
+            this.btnMostrar.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnMostrar.IdleIconLeftImage = null;
+            this.btnMostrar.IdleIconRightImage = null;
+            this.btnMostrar.IndicateFocus = false;
+            this.btnMostrar.Location = new System.Drawing.Point(13, 52);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnMostrar.OnDisabledState.BorderRadius = 1;
+            this.btnMostrar.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnMostrar.OnDisabledState.BorderThickness = 1;
+            this.btnMostrar.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnMostrar.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnMostrar.OnDisabledState.IconLeftImage = null;
+            this.btnMostrar.OnDisabledState.IconRightImage = null;
+            this.btnMostrar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnMostrar.onHoverState.BorderRadius = 1;
+            this.btnMostrar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnMostrar.onHoverState.BorderThickness = 1;
+            this.btnMostrar.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnMostrar.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnMostrar.onHoverState.IconLeftImage = null;
+            this.btnMostrar.onHoverState.IconRightImage = null;
+            this.btnMostrar.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnMostrar.OnIdleState.BorderRadius = 1;
+            this.btnMostrar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnMostrar.OnIdleState.BorderThickness = 1;
+            this.btnMostrar.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnMostrar.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnMostrar.OnIdleState.IconLeftImage = null;
+            this.btnMostrar.OnIdleState.IconRightImage = null;
+            this.btnMostrar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnMostrar.OnPressedState.BorderRadius = 1;
+            this.btnMostrar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnMostrar.OnPressedState.BorderThickness = 1;
+            this.btnMostrar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnMostrar.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnMostrar.OnPressedState.IconLeftImage = null;
+            this.btnMostrar.OnPressedState.IconRightImage = null;
+            this.btnMostrar.Size = new System.Drawing.Size(91, 28);
+            this.btnMostrar.TabIndex = 22;
+            this.btnMostrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMostrar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnMostrar.TextMarginLeft = 0;
+            this.btnMostrar.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnMostrar.UseDefaultRadiusAndThickness = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cmbDetalles);
+            this.panel1.Controls.Add(this.btnMostrar);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(460, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(148, 97);
+            this.panel1.TabIndex = 23;
+            // 
             // FormDetalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.DGdetallesView);
             this.Controls.Add(this.DGventaView);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblMonto);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnMostrarDetalles);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbDetalles);
-            this.Controls.Add(this.DGdetallesView);
             this.Name = "FormDetalles";
             this.Text = "DETALLES DE VENTA";
-            ((System.ComponentModel.ISupportInitialize)(this.DGdetallesView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGventaView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGdetallesView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DGdetallesView;
         private System.Windows.Forms.ComboBox cmbDetalles;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnMostrarDetalles;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblMonto;
-        private System.Windows.Forms.DataGridView DGventaView;
         private System.Windows.Forms.Button btnSalir;
+        private Bunifu.UI.WinForms.BunifuDataGridView DGventaView;
+        private Bunifu.UI.WinForms.BunifuDataGridView DGdetallesView;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnMostrar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

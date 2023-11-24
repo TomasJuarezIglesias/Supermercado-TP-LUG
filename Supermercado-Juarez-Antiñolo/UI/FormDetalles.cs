@@ -1,13 +1,7 @@
 ﻿using Business;
 using Entity;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -17,6 +11,7 @@ namespace UI
         public FormDetalles()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             cargarCmb();
             crearDG();
         }
@@ -43,7 +38,14 @@ namespace UI
         BusinessProducto gestorProducto = new BusinessProducto();
         BusinessCliente gestorClientes = new BusinessCliente();
 
-        private void btnMostrarDetalles_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FormInicio frm = new FormInicio();
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
         {
             DGventaView.Rows.Clear();
             foreach (var item in gestor.listarVentas().Data)
@@ -60,13 +62,6 @@ namespace UI
                 EntityProducto prod = gestorProducto.listar().Data.FirstOrDefault(producto => item.Id_Producto == producto.Id);
                 DGdetallesView.Rows.Add(prod.Nombre, item.CantProducto, item.SubTotal);
             }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            FormInicio frm = new FormInicio();
-            frm.Show();
-            this.Close();
         }
     }
 }
