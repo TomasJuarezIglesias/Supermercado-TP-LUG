@@ -8,7 +8,12 @@ namespace DataAccess
     public class DataAccessVenta
     {
 
-        DBConnection conect = new DBConnection();
+        private readonly DBConnection conect;
+
+        public DataAccessVenta()
+        {
+            conect = DBConnection.GetInstance;
+        }
 
         public List<EntityDetalle> getAllDetails(int nro)
         {

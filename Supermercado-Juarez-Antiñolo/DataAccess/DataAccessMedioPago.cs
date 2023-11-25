@@ -7,7 +7,13 @@ namespace DataAccess
 {
     public class DataAccessMedioPago
     {
-        DBConnection conn = new DBConnection();
+
+        private readonly DBConnection conn;
+
+        public DataAccessMedioPago()
+        {
+            conn = DBConnection.GetInstance;
+        }
 
         public bool delete(EntityMedioPago medioPago)
         {

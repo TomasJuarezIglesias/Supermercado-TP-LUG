@@ -10,7 +10,13 @@ namespace DataAccess
 
     public class DataAccessProducto
     {
-        DBConnection conect = new DBConnection();
+
+        private readonly DBConnection conect;
+
+        public DataAccessProducto()
+        {
+            conect = DBConnection.GetInstance;
+        }
 
         public bool Insert(Entity.EntityProducto producto)
         {

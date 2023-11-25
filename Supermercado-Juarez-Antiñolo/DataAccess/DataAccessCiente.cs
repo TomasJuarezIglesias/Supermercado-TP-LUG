@@ -8,7 +8,13 @@ namespace DataAccess
 {
     public class DataAccessCiente
     {
-        DBConnection conn = new DBConnection();
+
+        private readonly DBConnection conn;
+
+        public DataAccessCiente()
+        {
+            conn = DBConnection.GetInstance;
+        }
 
         public bool delete(EntityCliente cliente)
         {

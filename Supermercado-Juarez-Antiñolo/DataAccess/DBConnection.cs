@@ -6,9 +6,22 @@ namespace DataAccess
 {
     internal class DBConnection
     {
+        public static DBConnection GetInstance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DBConnection();
+                }
+                return instance;
+            }
+        }
+        private static DBConnection instance = null;
+
         private readonly SqlConnection _connection;
 
-        public DBConnection()
+        private DBConnection()
         {
             _connection = new SqlConnection("Data Source =LocalHost; Initial Catalog =Supermercado-LUG; Integrated Security = True");
         }
