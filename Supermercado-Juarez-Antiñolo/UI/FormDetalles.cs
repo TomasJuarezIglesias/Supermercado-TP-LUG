@@ -14,7 +14,12 @@ namespace UI
             this.StartPosition = FormStartPosition.CenterScreen;
             cargarCmb();
             crearDG();
+            
         }
+
+        BusinessVenta gestorVenta = new BusinessVenta();
+        BusinessProducto gestorProducto = new BusinessProducto();
+        BusinessCliente gestorClientes = new BusinessCliente();
 
         private void crearDG()
         {
@@ -30,13 +35,11 @@ namespace UI
 
         private void cargarCmb()
         {
-            cmbDetalles.DataSource = gestor.listarVentas().Data;
+            cmbDetalles.DataSource = gestorVenta.listarVentas().Data;
             cmbDetalles.DisplayMember = "Id";
         }
 
-        BusinessVenta gestor = new BusinessVenta();
-        BusinessProducto gestorProducto = new BusinessProducto();
-        BusinessCliente gestorClientes = new BusinessCliente();
+      
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -48,7 +51,8 @@ namespace UI
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             DGventaView.Rows.Clear();
-            foreach (var item in gestor.listarVentas().Data)
+
+            foreach (var item in gestorVenta.listarVentas().Data)
             {
                 if (item.Id.ToString() == cmbDetalles.Text)
                 {
@@ -56,12 +60,24 @@ namespace UI
                     DGventaView.Rows.Add(cliente.Nombre + "" + cliente.Apellido, item.Total, item.Fecha);
                 }
             }
+
             DGdetallesView.Rows.Clear();
-            foreach (var item in gestor.listarDetalles(cmbDetalles.Text).Data)
+            foreach (var item in gestorVenta.listarDetalles(cmbDetalles.Text).Data)
             {
                 EntityProducto prod = gestorProducto.listar().Data.FirstOrDefault(producto => item.Id_Producto == producto.Id);
                 DGdetallesView.Rows.Add(prod.Nombre, item.CantProducto, item.SubTotal);
             }
+        }
+
+        private void BtnGenerateXML_Click(object sender, EventArgs e)
+        {
+            if (cmbDetalles.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Debe seleccionar un numero de venta");
+                return;
+            }
+
+            gestorVenta.GenerateXML(Convert.ToInt32(cmbDetalles.Text));
         }
     }
 }

@@ -86,23 +86,31 @@ namespace DataAccess
             return canInsert is -1 ? false : true;
         }
 
-        public bool WriteXml(string sp, string nombreArchivo)
+        public bool WriteXml(string sp, string nombreArchivo, SqlParameter[] parameters = null)
         {
+            bool canCreate = false;
             try
             {
                 OpenConnection();
                 DataSet ds = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = new SqlCommand { Connection = _connection, CommandType = CommandType.StoredProcedure, CommandText = sp };
+                if (parameters != null)
+                {
+                    adapter.SelectCommand.Parameters.Clear();
+                    adapter.SelectCommand.Parameters.AddRange(parameters);
+                }
                 adapter.Fill(ds);
-                ds.WriteXml(@"C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\ArchivosXml\" + nombreArchivo);
-                CloseConnection();
-                return true;
+                ds.WriteXml(@"C:\Users\Usuario\Desktop\Supermercado-TP-LUG" + nombreArchivo);
+                
+                canCreate = true;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                Console.WriteLine(ex);
             }
+            CloseConnection();
+            return canCreate;
         }
     }
 }

@@ -72,5 +72,15 @@ namespace DataAccess
             }
             return true;
         }
+
+        public bool GenerateVentaXML(int numeroVenta)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_venta_id", SqlDbType.Int){ Value = numeroVenta}
+            };
+
+            return conect.WriteXml("sp_select_venta_xml", $"Detalle-{numeroVenta}", parameters);
+        }
     }
 }

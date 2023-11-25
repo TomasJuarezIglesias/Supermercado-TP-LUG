@@ -144,21 +144,36 @@ namespace UI
 
         private void btnFinalizarVentas_Click(object sender, EventArgs e)
         {
-            EntityVenta venta = new EntityVenta
+            try
             {
-                Id = ventaActual,
-                ID_Cliente = int.Parse(cmbDni.Text),
-                Total = montoAcumulado,
-                Fecha = DateTime.Now,
-                Nro_Tarjeta = int.Parse(cmbTarjeta.Text),
-            };
-            this.RevisarRespuestaServicio(gestor.agregar(venta));
-            actualizar();
+                EntityVenta venta = new EntityVenta
+                {
+                    Id = ventaActual,
+                    ID_Cliente = int.Parse(cmbDni.Text),
+                    Total = montoAcumulado,
+                    Fecha = DateTime.Now,
+                    Nro_Tarjeta = int.Parse(cmbTarjeta.Text),
+                };
+                this.RevisarRespuestaServicio(gestor.agregar(venta));
+                actualizar();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Verifique los datos ingresados");
+            }
         } 
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            if(cmbProducto.SelectedIndex == -1 || lbl_numeric.numeric.Value.Equals(0))
+            {
+                string mensaje = cmbProducto.SelectedIndex is -1 ? "Debe seleccionar un producto" : "No se puede agregar cantidad = 0";
+                MessageBox.Show(mensaje);
+                return;
+            }
+
             EntityProducto prod = (EntityProducto)cmbProducto.SelectedItem;
+
             EntityDetalle detail = new EntityDetalle
             {
                 Nro_Venta = ventaActual,

@@ -47,5 +47,11 @@ namespace Business
                 return new BusinessRespuesta<List<EntityDetalle>>(false, null, "Ocurrió un eror");
             }
         }
+
+        public bool GenerateXML(int numeroVenta)
+        {
+            return MPventa.GenerateVentaXML(numeroVenta);
+        }
+
     }
 }

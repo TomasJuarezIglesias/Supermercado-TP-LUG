@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetalles));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cmbDetalles = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.DGdetallesView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnMostrar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnGenerateXML = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGventaView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetallesView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -52,6 +54,7 @@
             // 
             // cmbDetalles
             // 
+            this.cmbDetalles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDetalles.FormattingEnabled = true;
             this.cmbDetalles.Location = new System.Drawing.Point(13, 25);
             this.cmbDetalles.Name = "cmbDetalles";
@@ -320,12 +323,105 @@
             this.panel1.Size = new System.Drawing.Size(148, 97);
             this.panel1.TabIndex = 23;
             // 
+            // BtnGenerateXML
+            // 
+            this.BtnGenerateXML.AllowAnimations = true;
+            this.BtnGenerateXML.AllowMouseEffects = true;
+            this.BtnGenerateXML.AllowToggling = false;
+            this.BtnGenerateXML.AnimationSpeed = 200;
+            this.BtnGenerateXML.AutoGenerateColors = false;
+            this.BtnGenerateXML.AutoRoundBorders = false;
+            this.BtnGenerateXML.AutoSizeLeftIcon = true;
+            this.BtnGenerateXML.AutoSizeRightIcon = true;
+            this.BtnGenerateXML.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGenerateXML.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.BtnGenerateXML.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnGenerateXML.BackgroundImage")));
+            this.BtnGenerateXML.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGenerateXML.ButtonText = "Generar XML";
+            this.BtnGenerateXML.ButtonTextMarginLeft = 0;
+            this.BtnGenerateXML.ColorContrastOnClick = 45;
+            this.BtnGenerateXML.ColorContrastOnHover = 45;
+            this.BtnGenerateXML.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.BtnGenerateXML.CustomizableEdges = borderEdges2;
+            this.BtnGenerateXML.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnGenerateXML.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnGenerateXML.DisabledFillColor = System.Drawing.Color.Empty;
+            this.BtnGenerateXML.DisabledForecolor = System.Drawing.Color.Empty;
+            this.BtnGenerateXML.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnGenerateXML.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnGenerateXML.ForeColor = System.Drawing.Color.White;
+            this.BtnGenerateXML.IconLeft = null;
+            this.BtnGenerateXML.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGenerateXML.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnGenerateXML.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.BtnGenerateXML.IconMarginLeft = 11;
+            this.BtnGenerateXML.IconPadding = 10;
+            this.BtnGenerateXML.IconRight = null;
+            this.BtnGenerateXML.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGenerateXML.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnGenerateXML.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.BtnGenerateXML.IconSize = 25;
+            this.BtnGenerateXML.IdleBorderColor = System.Drawing.Color.Empty;
+            this.BtnGenerateXML.IdleBorderRadius = 0;
+            this.BtnGenerateXML.IdleBorderThickness = 0;
+            this.BtnGenerateXML.IdleFillColor = System.Drawing.Color.Empty;
+            this.BtnGenerateXML.IdleIconLeftImage = null;
+            this.BtnGenerateXML.IdleIconRightImage = null;
+            this.BtnGenerateXML.IndicateFocus = false;
+            this.BtnGenerateXML.Location = new System.Drawing.Point(476, 170);
+            this.BtnGenerateXML.Name = "BtnGenerateXML";
+            this.BtnGenerateXML.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnGenerateXML.OnDisabledState.BorderRadius = 1;
+            this.BtnGenerateXML.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGenerateXML.OnDisabledState.BorderThickness = 1;
+            this.BtnGenerateXML.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnGenerateXML.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnGenerateXML.OnDisabledState.IconLeftImage = null;
+            this.BtnGenerateXML.OnDisabledState.IconRightImage = null;
+            this.BtnGenerateXML.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.BtnGenerateXML.onHoverState.BorderRadius = 1;
+            this.BtnGenerateXML.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGenerateXML.onHoverState.BorderThickness = 1;
+            this.BtnGenerateXML.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.BtnGenerateXML.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnGenerateXML.onHoverState.IconLeftImage = null;
+            this.BtnGenerateXML.onHoverState.IconRightImage = null;
+            this.BtnGenerateXML.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnGenerateXML.OnIdleState.BorderRadius = 1;
+            this.BtnGenerateXML.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGenerateXML.OnIdleState.BorderThickness = 1;
+            this.BtnGenerateXML.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.BtnGenerateXML.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnGenerateXML.OnIdleState.IconLeftImage = null;
+            this.BtnGenerateXML.OnIdleState.IconRightImage = null;
+            this.BtnGenerateXML.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.BtnGenerateXML.OnPressedState.BorderRadius = 1;
+            this.BtnGenerateXML.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGenerateXML.OnPressedState.BorderThickness = 1;
+            this.BtnGenerateXML.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.BtnGenerateXML.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnGenerateXML.OnPressedState.IconLeftImage = null;
+            this.BtnGenerateXML.OnPressedState.IconRightImage = null;
+            this.BtnGenerateXML.Size = new System.Drawing.Size(88, 28);
+            this.BtnGenerateXML.TabIndex = 24;
+            this.BtnGenerateXML.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnGenerateXML.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnGenerateXML.TextMarginLeft = 0;
+            this.BtnGenerateXML.TextPadding = new System.Windows.Forms.Padding(0);
+            this.BtnGenerateXML.UseDefaultRadiusAndThickness = true;
+            this.BtnGenerateXML.Click += new System.EventHandler(this.BtnGenerateXML_Click);
+            // 
             // FormDetalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnGenerateXML);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DGdetallesView);
             this.Controls.Add(this.DGventaView);
@@ -353,5 +449,6 @@
         private Bunifu.UI.WinForms.BunifuDataGridView DGdetallesView;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnMostrar;
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnGenerateXML;
     }
 }
