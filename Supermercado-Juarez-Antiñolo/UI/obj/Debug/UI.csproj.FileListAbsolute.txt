@@ -131,5 +131,5 @@ C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\ob
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.pdb
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.Login.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.Register.resources
-C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.Administrador.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.Cliente.resources
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormAdministrador.resources

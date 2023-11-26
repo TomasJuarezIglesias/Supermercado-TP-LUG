@@ -64,14 +64,14 @@ namespace UI
             if (user.Admin)
             {
                 // Redireccion a vista admin
-                Administrador formInicioAdmin = new Administrador(user);
+                FormAdministrador formInicioAdmin = new FormAdministrador(user);
                 formInicioAdmin.Show();
                 this.Hide();
                 return;
             }
 
             // Redireccion a vista cliente
-            Cliente formCliente =  new Cliente();
+            Cliente formCliente =  new Cliente(user);
             formCliente.Show();
             this.Hide();
             return;

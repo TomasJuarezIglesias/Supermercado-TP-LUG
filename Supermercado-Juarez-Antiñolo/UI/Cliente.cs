@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,19 @@ namespace UI
 {
     public partial class Cliente : Form
     {
-        public Cliente()
+        EntityLoginUser _loginUser;
+        public Cliente(EntityLoginUser user)
         {
             InitializeComponent();
+            _loginUser = user;
+            lblSaludo.Text = $"{user.Nombre} {user.Apellido}!";
         }
 
         private void btnAgregarMedioPago_Click(object sender, EventArgs e)
         {
-
+            FormMedioPago formMedioPago = new FormMedioPago(this);
+            formMedioPago.Show();
+            this.Hide();
         }
     }
 }

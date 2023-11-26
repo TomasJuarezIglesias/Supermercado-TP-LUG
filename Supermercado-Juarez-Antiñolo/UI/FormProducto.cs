@@ -8,8 +8,8 @@ namespace UI
 {
     public partial class FormProducto : ServiceForm
     {
-        Administrador _administrador;
-        public FormProducto(Administrador administrador)
+        FormAdministrador _administrador;
+        public FormProducto(FormAdministrador administrador)
         {
             InitializeComponent();
             _administrador = administrador;

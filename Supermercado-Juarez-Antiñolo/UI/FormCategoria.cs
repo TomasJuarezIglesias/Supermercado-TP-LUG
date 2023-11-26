@@ -7,9 +7,9 @@ namespace UI
 {
     public partial class FormCategoria : ServiceForm
     {
-        Administrador _administrador;
+        FormAdministrador _administrador;
         FormProducto _formProducto;
-        public FormCategoria(Administrador administrador, FormProducto formProducto)
+        public FormCategoria(FormAdministrador administrador, FormProducto formProducto)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

@@ -7,8 +7,8 @@ namespace UI
 {
     public partial class FormCliente : ServiceForm
     {
-        Administrador _administrador;
-        public FormCliente(Administrador administrador)
+        FormAdministrador _administrador;
+        public FormCliente(FormAdministrador administrador)
         {
             InitializeComponent();
             _administrador = administrador;
@@ -92,14 +92,6 @@ namespace UI
             cliente.Apellido = txtApellido.Text;
             this.RevisarRespuestaServicio(gestor.Modificar(cliente));
             mostrarLista();
-        }
-
-
-        private void btnMetodosPago_Click(object sender, EventArgs e)
-        {
-            FormMedioPago frm = new FormMedioPago(new Cliente());
-            frm.Show();
-            this.Close();
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)

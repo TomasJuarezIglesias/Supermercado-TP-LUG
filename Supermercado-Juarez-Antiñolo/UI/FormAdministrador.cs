@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Administrador : Form
+    public partial class FormAdministrador : Form
     {
-        public Administrador(EntityLoginUser user)
+        public FormAdministrador(EntityLoginUser user)
         {
             InitializeComponent();
             businessVenta = new BusinessVenta();
@@ -54,7 +54,15 @@ namespace UI
 
         private void btnGenerarXML_Click(object sender, EventArgs e)
         {
-            businessVenta.GenerarMetricasXML();
+            bool isGenerated = businessVenta.GenerarMetricasXML();
+            if (isGenerated) 
+            {
+                MessageBox.Show("Descargado con exito");
+                return;
+            }
+
+            MessageBox.Show("Error al descargar");
+            return;
         }
     }
 }

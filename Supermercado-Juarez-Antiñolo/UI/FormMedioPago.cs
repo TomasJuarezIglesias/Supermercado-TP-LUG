@@ -38,7 +38,7 @@ namespace UI
         private void btnSalir_Click(object sender, EventArgs e)
         {
             _formCliente.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void DGmediosView_CellContentClick(object sender, DataGridViewCellEventArgs e)
