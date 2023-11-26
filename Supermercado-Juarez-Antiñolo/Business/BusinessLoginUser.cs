@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess;
+using Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -9,13 +11,26 @@ namespace Business
 {
     public class BusinessLoginUser
     {
+        private readonly DataAccessLoginUser _dataAccesLoginUser;
 
-        
+        public BusinessLoginUser()
+        {
+            _dataAccesLoginUser = new DataAccessLoginUser();
+        }
 
+        public EntityLoginUser Login(string password, int dni)
+        {
+            string passHash = EncryptPass(password);
 
+            return _dataAccesLoginUser.Login(passHash, dni);
+        }
 
+        public bool Register(EntityCliente cliente, string password)
+        {
+            string passHash = EncryptPass(password);
 
-
+            return _dataAccesLoginUser.Register(cliente, passHash);
+        }
 
         private string EncryptPass(string pass)
         {
