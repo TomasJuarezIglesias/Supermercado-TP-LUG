@@ -7,7 +7,13 @@ namespace DataAccess
 {
     public class DataAccessCategoria
     {
-        DBConnection conn = new DBConnection();
+
+        private readonly DBConnection conn;
+
+        public DataAccessCategoria()
+        {
+            conn = DBConnection.GetInstance;
+        }
 
         public bool Delete(EntityCategoria categoria)
         {

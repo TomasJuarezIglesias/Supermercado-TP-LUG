@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DataAccessCategoria.cs" />
     <Compile Include="DataAccessCiente.cs" />
+    <Compile Include="DataAccessLoginUser.cs" />
     <Compile Include="DataAccessMedioPago.cs" />
     <Compile Include="DataAccessVenta.cs" />
     <Compile Include="DBConnection.cs" />

@@ -117,7 +117,6 @@ C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\ob
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormInicio.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormMedioPago.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormProducto.resources
-C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormRegistrarse.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.Label_TxtBox.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.lbl_cmb.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.lbl_DG.resources
@@ -131,3 +130,5 @@ C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\ob
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.exe
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.pdb
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.Login.resources
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.Register.resources

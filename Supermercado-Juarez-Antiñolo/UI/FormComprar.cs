@@ -189,18 +189,6 @@ namespace UI
             mostrarLista();
         }
 
-        private void btnRegistro_Click(object sender, EventArgs e)
-        {
-            FormRegistrarse frm = new FormRegistrarse();
-            if (montoAcumulado > 0)
-            {
-                foreach (var item in gestor.detallesActuales)
-                {
-                    CancelarProductoVenta(item);
-                }
-            }
-            frm.Show();
-            this.Close();
-        }
+        
     }
 }

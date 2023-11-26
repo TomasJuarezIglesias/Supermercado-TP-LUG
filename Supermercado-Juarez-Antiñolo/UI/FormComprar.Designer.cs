@@ -47,9 +47,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRegistro = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_numeric = new UI.lbl_numeric();
             this.btnSeleccionar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -57,7 +54,6 @@
             this.DGdetalleView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnFinalizarVentas = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetalleView)).BeginInit();
@@ -196,42 +192,6 @@
             this.cmbTarjeta.Name = "cmbTarjeta";
             this.cmbTarjeta.Size = new System.Drawing.Size(121, 21);
             this.cmbTarjeta.TabIndex = 18;
-            // 
-            // lblCliente
-            // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.BackColor = System.Drawing.Color.White;
-            this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(7, 9);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(201, 20);
-            this.lblCliente.TabIndex = 20;
-            this.lblCliente.Text = "Si aun no sos cliente =>";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.panel1.Controls.Add(this.btnRegistro);
-            this.panel1.Controls.Add(this.lblCliente);
-            this.panel1.Location = new System.Drawing.Point(627, 55);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 41);
-            this.panel1.TabIndex = 22;
-            // 
-            // btnRegistro
-            // 
-            this.btnRegistro.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnRegistro.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.btnRegistro.FlatAppearance.BorderSize = 0;
-            this.btnRegistro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistro.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegistro.Location = new System.Drawing.Point(214, 0);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(103, 41);
-            this.btnRegistro.TabIndex = 27;
-            this.btnRegistro.Text = "REGISTRARSE";
-            this.btnRegistro.UseVisualStyleBackColor = false;
-            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // panel2
             // 
@@ -535,7 +495,6 @@
             this.Controls.Add(this.DGdetalleView);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblNroVenta);
             this.Controls.Add(this.label5);
@@ -544,8 +503,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FormComprar";
             this.Text = "FormComprar";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -572,15 +529,12 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbTarjeta;
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.UI.WinForms.BunifuDataGridView DGdetalleView;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnFinalizarVentas;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSeleccionar;
         private lbl_numeric lbl_numeric;
-        private System.Windows.Forms.Button btnRegistro;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
     }
 }

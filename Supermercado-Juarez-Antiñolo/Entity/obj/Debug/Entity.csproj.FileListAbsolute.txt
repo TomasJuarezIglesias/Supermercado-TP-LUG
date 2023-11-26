@@ -16,3 +16,9 @@ C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\En
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\obj\Debug\Entity.dll
 C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\obj\Debug\Entity.pdb
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\bin\Debug\Entity.dll
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\bin\Debug\Entity.pdb
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\obj\Debug\Entity.dll
+C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\Entity\obj\Debug\Entity.pdb

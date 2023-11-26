@@ -47,6 +47,7 @@
     <Compile Include="EntityCategoria.cs" />
     <Compile Include="EntityCliente.cs" />
     <Compile Include="EntityDetalle.cs" />
+    <Compile Include="EntityLoginUser.cs" />
     <Compile Include="EntityMedioPago.cs" />
     <Compile Include="EntityProducto.cs" />
     <Compile Include="EntityTipoTarjeta.cs" />
