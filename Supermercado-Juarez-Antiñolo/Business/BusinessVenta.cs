@@ -53,5 +53,15 @@ namespace Business
             return MPventa.GenerateVentaXML(numeroVenta);
         }
 
+        public MetricaUltimaSemana ObtenerMetricas()
+        {
+            return MPventa.GetMetricas();
+        }
+
+        public bool GenerarMetricasXML()
+        {
+            return MPventa.GenerarMetricasXML();
+        }
+
     }
 }

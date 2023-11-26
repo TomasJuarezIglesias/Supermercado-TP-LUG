@@ -1,4 +1,5 @@
 ﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -86,6 +87,22 @@ namespace DataAccess
             };
 
             return conect.WriteXml("sp_select_venta_xml", $"Detalle-{numeroVenta}", parameters);
+        }
+
+        public MetricaUltimaSemana GetMetricas()
+        {
+            DataTable data = conect.Read("sp_get_metricas_ultima_semana", null);
+
+            MetricaUltimaSemana metricas = new MetricaUltimaSemana();
+            metricas.TotalRecaudado = Convert.ToDecimal(data.Rows[0]["TotalRecaudado"]);
+            metricas.CantidadProducto = Convert.ToInt32(data.Rows[0]["CantidadProductoVendido"]);
+
+            return metricas;
+        }
+
+        public bool GenerarMetricasXML()
+        {
+            return conect.WriteXml("sp_get_metricas_ultima_semana", $"Metricas-{DateTime.Now.ToString("yyyy-MM")}");
         }
     }
 }

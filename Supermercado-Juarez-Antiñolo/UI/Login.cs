@@ -64,15 +64,17 @@ namespace UI
             if (user.Admin)
             {
                 // Redireccion a vista admin
-                FormInicio formInicioAdmin = new FormInicio();
+                Administrador formInicioAdmin = new Administrador(user);
                 formInicioAdmin.Show();
                 this.Hide();
+                return;
             }
 
             // Redireccion a vista cliente
             FormInicio formInicio = new FormInicio();
             formInicio.Show();
             this.Hide();
+            return;
         }
 
         private void txtDni_Click(object sender, EventArgs e)

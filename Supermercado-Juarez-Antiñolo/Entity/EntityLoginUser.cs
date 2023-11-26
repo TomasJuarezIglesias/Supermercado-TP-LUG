@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class EntityLoginUser
+    public class EntityLoginUser : EntityCliente
     {
 		private int _userId;
 

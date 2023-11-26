@@ -35,6 +35,8 @@ namespace DataAccess
             user.UserId = Convert.ToInt32(data.Rows[0]["user_id"]);
             user.IdCliente = Convert.ToInt32(data.Rows[0]["id_cliente"]);
             user.Admin = Convert.ToBoolean(data.Rows[0]["admin"]);
+            user.Nombre = data.Rows[0]["nombre"].ToString();
+            user.Apellido = data.Rows[0]["apellido"].ToString();
 
             return user;
         }
