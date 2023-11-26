@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lblSaludo = new Bunifu.UI.WinForms.BunifuLabel();
+            this.btnAgregarMedioPago = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +48,7 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.btnAgregarMedioPago);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel2);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel4);
             this.bunifuPanel1.Controls.Add(this.bunifuPictureBox1);
@@ -120,6 +123,98 @@
             this.lblSaludo.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblSaludo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // btnAgregarMedioPago
+            // 
+            this.btnAgregarMedioPago.AllowAnimations = true;
+            this.btnAgregarMedioPago.AllowMouseEffects = true;
+            this.btnAgregarMedioPago.AllowToggling = false;
+            this.btnAgregarMedioPago.AnimationSpeed = 200;
+            this.btnAgregarMedioPago.AutoGenerateColors = false;
+            this.btnAgregarMedioPago.AutoRoundBorders = false;
+            this.btnAgregarMedioPago.AutoSizeLeftIcon = true;
+            this.btnAgregarMedioPago.AutoSizeRightIcon = true;
+            this.btnAgregarMedioPago.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarMedioPago.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnAgregarMedioPago.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarMedioPago.BackgroundImage")));
+            this.btnAgregarMedioPago.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAgregarMedioPago.ButtonText = "Agregar Medio De Pago";
+            this.btnAgregarMedioPago.ButtonTextMarginLeft = 0;
+            this.btnAgregarMedioPago.ColorContrastOnClick = 45;
+            this.btnAgregarMedioPago.ColorContrastOnHover = 45;
+            this.btnAgregarMedioPago.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnAgregarMedioPago.CustomizableEdges = borderEdges1;
+            this.btnAgregarMedioPago.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAgregarMedioPago.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnAgregarMedioPago.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnAgregarMedioPago.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnAgregarMedioPago.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnAgregarMedioPago.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAgregarMedioPago.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarMedioPago.IconLeft = null;
+            this.btnAgregarMedioPago.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarMedioPago.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnAgregarMedioPago.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnAgregarMedioPago.IconMarginLeft = 11;
+            this.btnAgregarMedioPago.IconPadding = 10;
+            this.btnAgregarMedioPago.IconRight = null;
+            this.btnAgregarMedioPago.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarMedioPago.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnAgregarMedioPago.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnAgregarMedioPago.IconSize = 25;
+            this.btnAgregarMedioPago.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnAgregarMedioPago.IdleBorderRadius = 0;
+            this.btnAgregarMedioPago.IdleBorderThickness = 0;
+            this.btnAgregarMedioPago.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnAgregarMedioPago.IdleIconLeftImage = null;
+            this.btnAgregarMedioPago.IdleIconRightImage = null;
+            this.btnAgregarMedioPago.IndicateFocus = false;
+            this.btnAgregarMedioPago.Location = new System.Drawing.Point(611, 12);
+            this.btnAgregarMedioPago.Name = "btnAgregarMedioPago";
+            this.btnAgregarMedioPago.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnAgregarMedioPago.OnDisabledState.BorderRadius = 1;
+            this.btnAgregarMedioPago.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAgregarMedioPago.OnDisabledState.BorderThickness = 1;
+            this.btnAgregarMedioPago.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnAgregarMedioPago.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnAgregarMedioPago.OnDisabledState.IconLeftImage = null;
+            this.btnAgregarMedioPago.OnDisabledState.IconRightImage = null;
+            this.btnAgregarMedioPago.onHoverState.BorderColor = System.Drawing.Color.BurlyWood;
+            this.btnAgregarMedioPago.onHoverState.BorderRadius = 1;
+            this.btnAgregarMedioPago.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAgregarMedioPago.onHoverState.BorderThickness = 1;
+            this.btnAgregarMedioPago.onHoverState.FillColor = System.Drawing.Color.BurlyWood;
+            this.btnAgregarMedioPago.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarMedioPago.onHoverState.IconLeftImage = null;
+            this.btnAgregarMedioPago.onHoverState.IconRightImage = null;
+            this.btnAgregarMedioPago.OnIdleState.BorderColor = System.Drawing.Color.Tan;
+            this.btnAgregarMedioPago.OnIdleState.BorderRadius = 1;
+            this.btnAgregarMedioPago.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAgregarMedioPago.OnIdleState.BorderThickness = 1;
+            this.btnAgregarMedioPago.OnIdleState.FillColor = System.Drawing.Color.Tan;
+            this.btnAgregarMedioPago.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarMedioPago.OnIdleState.IconLeftImage = null;
+            this.btnAgregarMedioPago.OnIdleState.IconRightImage = null;
+            this.btnAgregarMedioPago.OnPressedState.BorderColor = System.Drawing.Color.Tan;
+            this.btnAgregarMedioPago.OnPressedState.BorderRadius = 1;
+            this.btnAgregarMedioPago.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAgregarMedioPago.OnPressedState.BorderThickness = 1;
+            this.btnAgregarMedioPago.OnPressedState.FillColor = System.Drawing.Color.Tan;
+            this.btnAgregarMedioPago.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarMedioPago.OnPressedState.IconLeftImage = null;
+            this.btnAgregarMedioPago.OnPressedState.IconRightImage = null;
+            this.btnAgregarMedioPago.Size = new System.Drawing.Size(150, 39);
+            this.btnAgregarMedioPago.TabIndex = 50;
+            this.btnAgregarMedioPago.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAgregarMedioPago.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAgregarMedioPago.TextMarginLeft = 0;
+            this.btnAgregarMedioPago.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnAgregarMedioPago.UseDefaultRadiusAndThickness = true;
+            this.btnAgregarMedioPago.Click += new System.EventHandler(this.btnAgregarMedioPago_Click);
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,5 +238,6 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         private Bunifu.UI.WinForms.BunifuLabel lblSaludo;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAgregarMedioPago;
     }
 }

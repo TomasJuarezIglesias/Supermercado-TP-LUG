@@ -7,10 +7,14 @@ namespace UI
 {
     public partial class FormCategoria : ServiceForm
     {
-        public FormCategoria()
+        Administrador _administrador;
+        FormProducto _formProducto;
+        public FormCategoria(Administrador administrador, FormProducto formProducto)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            _administrador = administrador;
+            _formProducto = formProducto;
             CrearDG();
             MostrarDatos();
         }
@@ -50,15 +54,13 @@ namespace UI
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
-            frm.Show();
+            _administrador.Show();
             this.Close();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            FormProducto frm = new FormProducto();
-            frm.Show();
+            _formProducto.Show();
             this.Close();
         }
 

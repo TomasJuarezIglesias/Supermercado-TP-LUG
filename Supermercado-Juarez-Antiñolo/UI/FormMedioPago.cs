@@ -7,8 +7,10 @@ namespace UI
 {
     public partial class FormMedioPago : ServiceForm
     {
-        public FormMedioPago()
+        Cliente _formCliente;
+        public FormMedioPago(Cliente formCliente)
         {
+            _formCliente = formCliente;
             InitializeComponent();
         }
 
@@ -35,8 +37,7 @@ namespace UI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
-            frm.Show();
+            _formCliente.Show();
             this.Hide();
         }
 

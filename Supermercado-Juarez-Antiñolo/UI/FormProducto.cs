@@ -8,15 +8,19 @@ namespace UI
 {
     public partial class FormProducto : ServiceForm
     {
-        public FormProducto()
+        Administrador _administrador;
+        public FormProducto(Administrador administrador)
         {
             InitializeComponent();
+            _administrador = administrador;
             this.StartPosition = FormStartPosition.CenterScreen;
             cmbCategoria.DataSource = gestor.categorias;
             cmbCategoria.DisplayMember = "Nombre";
             crearDG();
             MostrarLista();
         }
+
+
         BusinessProducto gestor = new BusinessProducto();
         private void crearDG()
         {
@@ -43,8 +47,7 @@ namespace UI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
-            frm.Show();
+            _administrador.Show();
             this.Close();
         }
 
@@ -107,7 +110,7 @@ namespace UI
 
         private void btnGestionarCate_Click(object sender, EventArgs e)
         {
-            FormCategoria frm = new FormCategoria();
+            FormCategoria frm = new FormCategoria(_administrador, this);
             frm.Show();
             this.Hide();
         }

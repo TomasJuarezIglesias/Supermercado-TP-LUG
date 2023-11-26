@@ -72,7 +72,6 @@ namespace UI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
             if (montoAcumulado > 0)
             {
                 foreach (var item in gestor.detallesActuales)
@@ -80,8 +79,6 @@ namespace UI
                     CancelarProductoVenta(item);
                 }
             }
-            frm.Show();
-            this.Close();
         }
 
         private void cmbDni_SelectedValueChanged(object sender, EventArgs e)
@@ -99,7 +96,6 @@ namespace UI
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            FormCliente frm = new FormCliente();
             if (montoAcumulado > 0)
             {
                 foreach (var item in gestor.detallesActuales)
@@ -107,8 +103,6 @@ namespace UI
                     CancelarProductoVenta(item);
                 }
             }
-            frm.Show();
-            this.Close();
         }
 
         private void DGdetalleView_CellContentClick(object sender, DataGridViewCellEventArgs e)

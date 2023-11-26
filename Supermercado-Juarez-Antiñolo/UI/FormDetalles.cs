@@ -8,8 +8,10 @@ namespace UI
 {
     public partial class FormDetalles : ServiceForm
     {
-        public FormDetalles()
+        Administrador _administrador;
+        public FormDetalles(Administrador administrador)
         {
+            _administrador = administrador;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             cargarCmb();
@@ -43,8 +45,7 @@ namespace UI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
-            frm.Show();
+            _administrador.Show();
             this.Close();
         }
 

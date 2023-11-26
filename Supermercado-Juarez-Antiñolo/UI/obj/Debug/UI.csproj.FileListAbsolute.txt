@@ -114,7 +114,6 @@ C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\ob
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormCliente.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormComprar.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormDetalles.resources
-C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormInicio.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormMedioPago.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.FormProducto.resources
 C:\Users\Usuario\Desktop\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\UI\obj\Debug\UI.Label_TxtBox.resources

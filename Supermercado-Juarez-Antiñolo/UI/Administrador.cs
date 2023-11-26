@@ -33,21 +33,21 @@ namespace UI
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            FormCliente frm = new FormCliente();
+            FormCliente frm = new FormCliente(this);
             frm.Show();
             this.Hide();
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            FormProducto frm = new FormProducto();
+            FormProducto frm = new FormProducto(this);
             frm.Show();
             this.Hide();
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            FormDetalles frm = new FormDetalles();
+            FormDetalles frm = new FormDetalles(this);
             frm.Show();
             this.Hide();
         }

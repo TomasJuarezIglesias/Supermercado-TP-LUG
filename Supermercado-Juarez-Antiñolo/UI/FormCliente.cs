@@ -7,9 +7,11 @@ namespace UI
 {
     public partial class FormCliente : ServiceForm
     {
-        public FormCliente()
+        Administrador _administrador;
+        public FormCliente(Administrador administrador)
         {
             InitializeComponent();
+            _administrador = administrador;
             this.StartPosition = FormStartPosition.CenterScreen;
             mostrarLista();
         }
@@ -24,8 +26,7 @@ namespace UI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
-            frm.Show();
+            _administrador.Show();
             this.Close();
         }
 
@@ -96,7 +97,7 @@ namespace UI
 
         private void btnMetodosPago_Click(object sender, EventArgs e)
         {
-            FormMedioPago frm = new FormMedioPago();
+            FormMedioPago frm = new FormMedioPago(new Cliente());
             frm.Show();
             this.Close();
         }

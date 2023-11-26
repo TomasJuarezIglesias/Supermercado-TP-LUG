@@ -71,8 +71,8 @@ namespace UI
             }
 
             // Redireccion a vista cliente
-            FormInicio formInicio = new FormInicio();
-            formInicio.Show();
+            Cliente formCliente =  new Cliente();
+            formCliente.Show();
             this.Hide();
             return;
         }
