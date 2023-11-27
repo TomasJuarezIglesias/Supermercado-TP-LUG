@@ -114,7 +114,7 @@ namespace DataAccess
                     adapter.SelectCommand.Parameters.AddRange(parameters);
                 }
                 adapter.Fill(ds);
-                ds.WriteXml(@"C:\Users\Usuario\Desktop\Supermercado-TP-LUG" + nombreArchivo);
+                ds.WriteXml(@"C:\Users\lukit\source\repos\Supermercado-TP-LUG\Supermercado-Juarez-Antiñolo\ArchivosXml\ " + nombreArchivo);
                 
                 canCreate = true;
             }

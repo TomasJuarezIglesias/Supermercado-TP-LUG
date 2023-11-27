@@ -1,106 +1,188 @@
 ﻿using Business;
 using Entity;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
 {
     public partial class FormCliente : ServiceForm
     {
-        FormAdministrador _administrador;
-        public FormCliente(FormAdministrador administrador)
+        EntityLoginUser _loginUser;
+        public FormCliente(EntityLoginUser user)
         {
             InitializeComponent();
-            _administrador = administrador;
             this.StartPosition = FormStartPosition.CenterScreen;
-            mostrarLista();
+            _loginUser = user;
+            lblSaludo.Text = $"{user.Nombre} {user.Apellido}!";
         }
+
+        private void Cliente_Load(object sender, EventArgs e)
+        {
+            cargarCmb();
+            crearDG();
+            actualizar();
+            cmbProducto.SelectedIndex = -1;
+            lbl_numeric.lbl.Text = "Cantidad";
+        }
+
+        BusinessVenta gestor = new BusinessVenta();
+        BusinessProducto gestorProducto = new BusinessProducto();
+        BusinessCliente gestorClientes = new BusinessCliente();
+        BusinessMedioPago GestorMedioPago = new BusinessMedioPago();
+
+        int montoAcumulado;
+        int ventaActual;
+
+        private void crearDG()
+        {
+            DGdetalleView.AutoGenerateColumns = false;
+            DGdetalleView.Columns.Add("NombreProducto", "Nombre Producto");
+            DGdetalleView.Columns.Add("Cantidad", "Cantidad");
+            DGdetalleView.Columns.Add("Sub total", "Sub total");
+            DGdetalleView.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
+        }
+
+        private void actualizar()
+        {
+            ventaActual = gestor.getId();
+            lblNroVenta.Text = ventaActual.ToString();
+            montoAcumulado = 0;
+            lblMonto.Text = "0";
+            DGdetalleView.Rows.Clear();
+            gestor.detallesActuales.Clear();
+            lbl_numeric.numeric.Value = 1;
+        }
+
+        private void cargarCmb()
+        {
+            cmbProducto.DataSource = null;
+            cmbProducto.DataSource = gestorProducto.listar().Data;
+            cmbProducto.DisplayMember = "Nombre";
+            cmbTarjeta.Items.Clear();
+            foreach (var item in GestorMedioPago.listar().Data)
+            {
+                if (item.Id_cliente == _loginUser.IdCliente)
+                {
+                    cmbTarjeta.Items.Add(item);
+                }
+                cmbTarjeta.DisplayMember = "NroTarjeta";
+            }
+        }
+
 
         private void mostrarLista()
         {
-            DGclienteView.DataSource = null;
-            DGclienteView.DataSource = gestor.listar().Data;
+            DGdetalleView.Rows.Clear();
+            montoAcumulado = 0;
+            foreach (var item in gestor.detallesActuales)
+            {
+                DGdetalleView.Rows.Add(gestorProducto.listar().Data.FirstOrDefault(producto => item.Id_Producto == producto.Id).Nombre, item.CantProducto, item.SubTotal);
+                montoAcumulado += item.SubTotal;
+            }
+            lblMonto.Text = montoAcumulado.ToString();
         }
 
-        BusinessCliente gestor = new BusinessCliente();
+        private void btnAgregarMedioPago_Click(object sender, EventArgs e)
+        {
+            FormMedioPago formMedioPago = new FormMedioPago(this, _loginUser);
+            formMedioPago.Show();
+            this.Hide();
+        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            _administrador.Show();
+            if (montoAcumulado > 0)
+            {
+                foreach (var item in gestor.detallesActuales)
+                {
+                    CancelarProductoVenta(item);
+                }
+            }
             this.Close();
+            Login frm = new Login();
+            frm.Show();
         }
 
-        private void DGclienteView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void CancelarProductoVenta(EntityDetalle item)
+        {
+            foreach (var producto in gestorProducto.listar().Data)
+            {
+                if (producto.Id == item.Id_Producto)
+                {
+                    producto.Stock += item.CantProducto;
+                    gestorProducto.modificar(producto);
+                }
+            }
+        }
+
+        private void DGdetalleView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex is -1) { return; }
-            txtDni.Text = DGclienteView.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
-            txtNombre.Text = DGclienteView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-            txtApellido.Text = DGclienteView.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
-            txtTelefono.Text = DGclienteView.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
-        }
-
-        private void btnAgregar_Click_1(object sender, EventArgs e)
-        {
-            EntityCliente cliente = new EntityCliente();
-            try
+            DialogResult res = MessageBox.Show("Desea borrar el producto seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
             {
-                cliente.Dni = int.Parse(txtDni.Text);
-                cliente.Telefono = int.Parse(txtTelefono.Text);
-                cliente.Nombre = txtNombre.Text;
-                cliente.Apellido = txtApellido.Text;
-                this.RevisarRespuestaServicio(gestor.Agregar(cliente));
+                CancelarProductoVenta(gestor.detallesActuales[e.RowIndex]);
+                gestor.detallesActuales.Remove(gestor.detallesActuales[e.RowIndex]);
                 mostrarLista();
             }
-            catch
-            {
-                MessageBox.Show("Formato incorrecto en DNI o telefono");
-                return;
-            }
         }
 
-        private void btnEliminar_Click_1(object sender, EventArgs e)
+        private void cmbProducto_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            EntityCliente cliente = new EntityCliente();
-            try
+            EntityProducto prod = (EntityProducto)cmbProducto.SelectedItem;
+            lbl_numeric.numeric.Maximum = prod.Stock;
+            if (prod.Stock <= 0) { MessageBox.Show("No hay stock del producto seleccionado"); cmbProducto.SelectedIndex = -1; }
+        }
+
+        private void btnFinalizarVentas_Click(object sender, EventArgs e)
+        {
+            if (montoAcumulado <= 0) { MessageBox.Show("Seleccione productos"); return; }
+            EntityVenta venta = new EntityVenta
             {
-                cliente.Dni = int.Parse(txtDni.Text);
-            }
-            catch
+                Id = ventaActual,
+                ID_Cliente = _loginUser.IdCliente,
+                Total = montoAcumulado,
+                Fecha = DateTime.Now,
+                Nro_Tarjeta = int.Parse(cmbTarjeta.Text),
+            };
+            
+            this.RevisarRespuestaServicio(gestor.agregar(venta));
+            gestor.crearXml(ventaActual);
+            actualizar();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if (cmbProducto.SelectedIndex == -1 || lbl_numeric.numeric.Value.Equals(0))
             {
-                MessageBox.Show("Formato incorrecto en DNI o telefono");
+                string mensaje = cmbProducto.SelectedIndex is -1 ? "Debe seleccionar un producto" : "No se puede agregar cantidad = 0";
+                MessageBox.Show(mensaje);
                 return;
             }
-            this.RevisarRespuestaServicio(gestor.Eliminar(cliente));
+
+            EntityProducto prod = (EntityProducto)cmbProducto.SelectedItem;
+
+            EntityDetalle detail = new EntityDetalle
+            {
+                Nro_Venta = ventaActual,
+                Id_Producto = prod.Id,
+                CantProducto = (int)lbl_numeric.numeric.Value,
+                SubTotal = (int)((int)lbl_numeric.numeric.Value * prod.Precio),
+            };
+            prod.Stock -= (int)lbl_numeric.numeric.Value;
+            gestorProducto.modificar(prod);
+            cmbProducto.SelectedIndex = -1;
+            lbl_numeric.numeric.Value = 1;
+            gestor.detallesActuales.Add(detail);
             mostrarLista();
         }
 
-        private void btnModificar_Click_1(object sender, EventArgs e)
-        {
-            EntityCliente cliente = new EntityCliente();
-            try
-            {
-                cliente.Dni = int.Parse(txtDni.Text);
-                cliente.Telefono = int.Parse(txtTelefono.Text);
-
-            }
-            catch
-            {
-                MessageBox.Show("Formato incorrecto en DNI o telefono");
-                return;
-            }
-            cliente.Nombre = txtNombre.Text;
-            cliente.Apellido = txtApellido.Text;
-            this.RevisarRespuestaServicio(gestor.Modificar(cliente));
-            mostrarLista();
-        }
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-            if (gestor.xml())
-            {
-                MessageBox.Show("Impresion correcta!"); return;
-            }
-            MessageBox.Show("Error en la impresion");
-        }
     }
 }

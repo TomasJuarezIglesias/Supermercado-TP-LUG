@@ -86,7 +86,7 @@ namespace DataAccess
                 new SqlParameter("@In_venta_id", SqlDbType.Int){ Value = numeroVenta}
             };
 
-            return conect.WriteXml("sp_select_venta_xml", $"Detalle-{numeroVenta}", parameters);
+            return conect.WriteXml("sp_select_venta_xml", $"Detalle de venta número:-{numeroVenta}", parameters);
         }
 
         public MetricaUltimaSemana GetMetricas()
@@ -103,6 +103,16 @@ namespace DataAccess
         public bool GenerarMetricasXML()
         {
             return conect.WriteXml("sp_get_metricas_ultima_semana", $"Metricas-{DateTime.Now.ToString("yyyy-MM")}");
+        }
+
+        public void generateFactura(int numeroVenta)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_venta_id", SqlDbType.Int){ Value = numeroVenta}
+            };
+
+            conect.WriteXml("sp_select_venta_xml", $"Factura de la ultima venta", parameters);
         }
     }
 }

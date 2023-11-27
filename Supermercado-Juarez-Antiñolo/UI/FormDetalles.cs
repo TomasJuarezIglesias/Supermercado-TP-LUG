@@ -1,6 +1,8 @@
-﻿using Business;
+﻿using Bunifu.UI.WinForms;
+using Business;
 using Entity;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -33,6 +35,8 @@ namespace UI
             DGventaView.Columns.Add("Cliente", "Cliente");
             DGventaView.Columns.Add("Total", "Total");
             DGventaView.Columns.Add("Medio de Pago", "Medio de Pago");
+            DGventaView.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
+            DGdetallesView.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
         }
 
         private void cargarCmb()

@@ -1,6 +1,8 @@
-﻿using Business;
+﻿using Bunifu.UI.WinForms;
+using Business;
 using Entity;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace UI
@@ -33,6 +35,8 @@ namespace UI
             DGcatView.AutoGenerateColumns = false;
             DGcatView.Columns.Add("Nombre", "Nombre");
             DGcatView.Columns.Add("Descripcion", "Descripcion");
+
+            DGcatView.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
         }
         BusinessCategoria gestor = new BusinessCategoria();
 

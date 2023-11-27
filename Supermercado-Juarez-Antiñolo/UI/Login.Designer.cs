@@ -537,6 +537,7 @@
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.bunifuPictureBox1);
             this.Controls.Add(this.bunifuLabel1);
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();

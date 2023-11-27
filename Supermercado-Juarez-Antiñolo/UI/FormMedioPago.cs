@@ -7,31 +7,16 @@ namespace UI
 {
     public partial class FormMedioPago : ServiceForm
     {
-        Cliente _formCliente;
-        public FormMedioPago(Cliente formCliente)
+        FormCliente _formCliente;
+        EntityLoginUser _user;
+
+        public FormMedioPago(FormCliente formCliente, EntityLoginUser user)
         {
             _formCliente = formCliente;
+            _user = user;
             InitializeComponent();
         }
 
-        private void MostrarLista()
-        {
-            lbl_DG.DG.Rows.Clear();
-            foreach (var medios in gestor.listar().Data)
-            {
-                lbl_DG.DG.Rows.Add(medios.NroTarjeta, medios.Id_Tipo_Tarjeta, medios.Id_cliente, medios.FechaCaducidad, medios.Cvv);
-            }
-        }
-
-        private void crearDG()
-        {
-            lbl_DG.DG.AutoGenerateColumns = false;
-            lbl_DG.DG.Columns.Add("Nro Tarjeta", "Nro Tarjeta");
-            lbl_DG.DG.Columns.Add("Tipo Tarjeta", "Tipo Tarjeta");
-            lbl_DG.DG.Columns.Add("Dni Cliente", "DNI cliente");
-            lbl_DG.DG.Columns.Add("Fecha Caducidad", "Fecha Caducidad");
-            lbl_DG.DG.Columns.Add("Codigo Seguridad", " Codigo Seguridad");
-        }
 
         BusinessMedioPago gestor = new BusinessMedioPago();
 
@@ -41,14 +26,6 @@ namespace UI
             this.Close();
         }
 
-        private void DGmediosView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1) { return; }
-            txtDni.Text = lbl_DG.DG.Rows[e.RowIndex].Cells["Dni cliente"].Value.ToString();
-            lbl_txtBox.txt.Text = lbl_DG.DG.Rows[e.RowIndex].Cells["Nro Tarjeta"].Value.ToString();
-            lbl_cmb.cmb.Text = lbl_DG.DG.Rows[e.RowIndex].Cells["Tipo Tarjeta"].Value.ToString();
-            txtCvv.Text = lbl_DG.DG.Rows[e.RowIndex].Cells["Codigo Seguridad"].Value.ToString();
-        }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
@@ -57,14 +34,13 @@ namespace UI
                 EntityTipoTarjeta tarj = (EntityTipoTarjeta)lbl_cmb.cmb.SelectedItem;
                 EntityMedioPago medio = new EntityMedioPago
                 {
-                    Id_cliente = int.Parse(txtDni.Text),
+                    Id_cliente = _user.IdCliente,
                     NroTarjeta = int.Parse(lbl_txtBox.txt.Text),
                     FechaCaducidad = datePick.Value,
                     Cvv = int.Parse(txtCvv.Text),
                     Id_Tipo_Tarjeta = tarj.Id,
                 };
                 this.RevisarRespuestaServicio(gestor.agregar(medio));
-                MostrarLista();
             }
             catch
             {
@@ -79,7 +55,6 @@ namespace UI
                 EntityMedioPago medio = new EntityMedioPago();
                 medio.NroTarjeta = int.Parse(lbl_txtBox.txt.Text);
                 this.RevisarRespuestaServicio(gestor.eliminar(medio));
-                MostrarLista();
             }
             catch
             {
@@ -94,14 +69,13 @@ namespace UI
                 EntityTipoTarjeta tarj = (EntityTipoTarjeta)lbl_cmb.cmb.SelectedItem;
                 EntityMedioPago medio = new EntityMedioPago
                 {
-                    Id_cliente = int.Parse(txtDni.Text),
+                    Id_cliente = _user.IdCliente,
                     NroTarjeta = int.Parse(lbl_txtBox.txt.Text),
                     FechaCaducidad = datePick.Value,
                     Cvv = int.Parse(txtCvv.Text),
                     Id_Tipo_Tarjeta = tarj.Id,
                 };
                 this.RevisarRespuestaServicio(gestor.modificar(medio));
-                MostrarLista();
             }
             catch
             {
@@ -114,10 +88,7 @@ namespace UI
             this.StartPosition = FormStartPosition.CenterScreen;
             lbl_cmb.cmb.DataSource = gestor.tiposTarjeta;
             lbl_cmb.cmb.DisplayMember = "Nombre";
-            crearDG();
-            MostrarLista();
             lbl_txtBox.lbl.Text = "Numero de Tarjeta";
-            lbl_DG.lbl.Text = "Medios de pago:";
             lbl_cmb.lbl.Text = "Tipo Tarejta";
         }
     }

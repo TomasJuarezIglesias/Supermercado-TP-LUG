@@ -35,6 +35,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.lblSaludo = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -43,11 +44,10 @@
             this.btnClientes = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGenerarXML = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.lblCantidadVentas = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblTotalRecaudado = new Bunifu.UI.WinForms.BunifuLabel();
-            this.btnGenerarXML = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -92,6 +92,22 @@
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(776, 426);
             this.bunifuPanel1.TabIndex = 38;
+            // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Arial", 20F);
+            this.bunifuLabel2.Location = new System.Drawing.Point(66, 3);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel2.Size = new System.Drawing.Size(133, 32);
+            this.bunifuLabel2.TabIndex = 49;
+            this.bunifuLabel2.Text = "Bienvenido ";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel6
             // 
@@ -264,51 +280,6 @@
             this.panel1.Size = new System.Drawing.Size(296, 97);
             this.panel1.TabIndex = 41;
             // 
-            // lblCantidadVentas
-            // 
-            this.lblCantidadVentas.AllowParentOverrides = false;
-            this.lblCantidadVentas.AutoEllipsis = false;
-            this.lblCantidadVentas.CursorType = null;
-            this.lblCantidadVentas.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblCantidadVentas.Location = new System.Drawing.Point(170, 27);
-            this.lblCantidadVentas.Name = "lblCantidadVentas";
-            this.lblCantidadVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCantidadVentas.Size = new System.Drawing.Size(100, 16);
-            this.lblCantidadVentas.TabIndex = 41;
-            this.lblCantidadVentas.Text = "Cantidad Ventas:";
-            this.lblCantidadVentas.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblCantidadVentas.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel1
-            // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Arial", 12F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(76, 3);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(153, 18);
-            this.bunifuLabel1.TabIndex = 40;
-            this.bunifuLabel1.Text = "Metricas Ult. Semana:";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lblTotalRecaudado
-            // 
-            this.lblTotalRecaudado.AllowParentOverrides = false;
-            this.lblTotalRecaudado.AutoEllipsis = false;
-            this.lblTotalRecaudado.CursorType = null;
-            this.lblTotalRecaudado.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRecaudado.Location = new System.Drawing.Point(3, 27);
-            this.lblTotalRecaudado.Name = "lblTotalRecaudado";
-            this.lblTotalRecaudado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTotalRecaudado.Size = new System.Drawing.Size(101, 16);
-            this.lblTotalRecaudado.TabIndex = 39;
-            this.lblTotalRecaudado.Text = "Total Recaudado:";
-            this.lblTotalRecaudado.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblTotalRecaudado.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // btnGenerarXML
             // 
             this.btnGenerarXML.AllowAnimations = true;
@@ -401,30 +372,60 @@
             this.btnGenerarXML.UseDefaultRadiusAndThickness = true;
             this.btnGenerarXML.Click += new System.EventHandler(this.btnGenerarXML_Click);
             // 
-            // bunifuLabel2
+            // lblCantidadVentas
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Arial", 20F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(66, 3);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(133, 32);
-            this.bunifuLabel2.TabIndex = 49;
-            this.bunifuLabel2.Text = "Bienvenido ";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblCantidadVentas.AllowParentOverrides = false;
+            this.lblCantidadVentas.AutoEllipsis = false;
+            this.lblCantidadVentas.CursorType = null;
+            this.lblCantidadVentas.Font = new System.Drawing.Font("Arial", 10F);
+            this.lblCantidadVentas.Location = new System.Drawing.Point(170, 27);
+            this.lblCantidadVentas.Name = "lblCantidadVentas";
+            this.lblCantidadVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCantidadVentas.Size = new System.Drawing.Size(100, 16);
+            this.lblCantidadVentas.TabIndex = 41;
+            this.lblCantidadVentas.Text = "Cantidad Ventas:";
+            this.lblCantidadVentas.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblCantidadVentas.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // Administrador
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.CursorType = null;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Arial", 12F);
+            this.bunifuLabel1.Location = new System.Drawing.Point(76, 3);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(153, 18);
+            this.bunifuLabel1.TabIndex = 40;
+            this.bunifuLabel1.Text = "Metricas Ult. Semana:";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblTotalRecaudado
+            // 
+            this.lblTotalRecaudado.AllowParentOverrides = false;
+            this.lblTotalRecaudado.AutoEllipsis = false;
+            this.lblTotalRecaudado.CursorType = null;
+            this.lblTotalRecaudado.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRecaudado.Location = new System.Drawing.Point(3, 27);
+            this.lblTotalRecaudado.Name = "lblTotalRecaudado";
+            this.lblTotalRecaudado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTotalRecaudado.Size = new System.Drawing.Size(101, 16);
+            this.lblTotalRecaudado.TabIndex = 39;
+            this.lblTotalRecaudado.Text = "Total Recaudado:";
+            this.lblTotalRecaudado.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblTotalRecaudado.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // FormAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bunifuPanel1);
-            this.Name = "Administrador";
+            this.MinimizeBox = false;
+            this.Name = "FormAdministrador";
             this.Text = "Administrador";
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();

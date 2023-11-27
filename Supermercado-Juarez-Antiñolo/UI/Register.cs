@@ -24,6 +24,7 @@ namespace UI
             InitializeComponent();
             _loginForm = loginForm;
             _businessLogin = new BusinessLoginUser();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
 

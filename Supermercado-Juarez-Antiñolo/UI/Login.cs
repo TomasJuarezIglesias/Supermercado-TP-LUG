@@ -18,6 +18,7 @@ namespace UI
         {
             InitializeComponent();
             _businessLogin = new BusinessLoginUser();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
 
@@ -71,7 +72,7 @@ namespace UI
             }
 
             // Redireccion a vista cliente
-            Cliente formCliente =  new Cliente(user);
+            FormCliente formCliente =  new FormCliente(user);
             formCliente.Show();
             this.Hide();
             return;

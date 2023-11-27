@@ -17,6 +17,7 @@ namespace UI
         public FormAdministrador(EntityLoginUser user)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             businessVenta = new BusinessVenta();
             MostrarMetricas();
             lblSaludo.Text = $"{user.Nombre} {user.Apellido}!";
@@ -33,7 +34,7 @@ namespace UI
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            FormCliente frm = new FormCliente(this);
+            FormGestionCliente frm = new FormGestionCliente(this);
             frm.Show();
             this.Hide();
         }

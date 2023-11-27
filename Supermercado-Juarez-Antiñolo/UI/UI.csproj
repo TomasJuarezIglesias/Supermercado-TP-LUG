@@ -226,11 +226,11 @@
     <Compile Include="FormAdministrador.Designer.cs">
       <DependentUpon>FormAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente.cs">
+    <Compile Include="FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente.Designer.cs">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <Compile Include="FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCategoria.cs">
       <SubType>Form</SubType>
@@ -238,17 +238,11 @@
     <Compile Include="FormCategoria.Designer.cs">
       <DependentUpon>FormCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCliente.cs">
+    <Compile Include="FormGestionCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCliente.Designer.cs">
-      <DependentUpon>FormCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormComprar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormComprar.Designer.cs">
-      <DependentUpon>FormComprar.cs</DependentUpon>
+    <Compile Include="FormGestionCliente.Designer.cs">
+      <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDetalles.cs">
       <SubType>Form</SubType>
@@ -312,17 +306,14 @@
     <EmbeddedResource Include="FormAdministrador.resx">
       <DependentUpon>FormAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cliente.resx">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <EmbeddedResource Include="FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCategoria.resx">
       <DependentUpon>FormCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCliente.resx">
-      <DependentUpon>FormCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormComprar.resx">
-      <DependentUpon>FormComprar.cs</DependentUpon>
+    <EmbeddedResource Include="FormGestionCliente.resx">
+      <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetalles.resx">
       <DependentUpon>FormDetalles.cs</DependentUpon>

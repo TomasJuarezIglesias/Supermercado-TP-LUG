@@ -26,6 +26,7 @@ namespace UI
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "ServiceForm";
             this.ResumeLayout(false);
 

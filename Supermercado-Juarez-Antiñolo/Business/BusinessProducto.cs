@@ -1,6 +1,7 @@
 ﻿using DataAccess;
 using Entity;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Business
@@ -15,10 +16,13 @@ namespace Business
             categorias = MPproducto.LoadCategorias();
         }
 
-        public BusinessRespuesta<bool> agregar(EntityProducto producto)
+        public BusinessRespuesta<bool> agregar(EntityProducto producto, string precio, string stock)
         {
-            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion))
+            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion) || int.TryParse(precio, out int _precio) || !int.TryParse(stock, out int _stock))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+
+            producto.Precio = _precio;
+            producto.Stock = _stock;
 
             return MPproducto.Insert(producto) ?
                 new BusinessRespuesta<bool>(true, true, "Agregado Correctamente!") :
@@ -51,10 +55,27 @@ namespace Business
             }
         }
 
+        public BusinessRespuesta<bool> modificar(EntityProducto producto, string precio, string stock)
+        {
+            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion)|| !int.TryParse(precio, out int _precio) || !int.TryParse(stock, out int _stock))
+                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+
+            producto.Precio = _precio;
+            producto.Stock = _stock;
+
+            if (MPproducto.Update(producto))
+                return new BusinessRespuesta<bool>(true, true, "Modificado Correctamente!");
+            else
+            {
+                return new BusinessRespuesta<bool>(false, false, "Error al modificar");
+            }
+        }
         public BusinessRespuesta<bool> modificar(EntityProducto producto)
         {
             if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+
+
             if (MPproducto.Update(producto))
                 return new BusinessRespuesta<bool>(true, true, "Modificado Correctamente!");
             else

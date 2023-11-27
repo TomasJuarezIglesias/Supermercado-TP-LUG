@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using Entity;
+using System;
 using System.Collections.Generic;
 
 namespace Business
@@ -30,7 +31,7 @@ namespace Business
         {
             if (MPventa.Insert(venta) && MPventa.InsertDetails(detallesActuales) && venta.Total > 0)
             {
-                return new BusinessRespuesta<bool>(true, true, "Se registro la venta");
+                return new BusinessRespuesta<bool>(true, true, "Se registro la venta. Factura impresa en xml!");
             }
             return new BusinessRespuesta<bool>(false, false, "No se pudo completar la venta");
         }
@@ -63,5 +64,9 @@ namespace Business
             return MPventa.GenerarMetricasXML();
         }
 
+        public void crearXml(int ventaActual)
+        {
+           MPventa.generateFactura(ventaActual);
+        }
     }
 }
