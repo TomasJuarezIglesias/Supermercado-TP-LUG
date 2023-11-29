@@ -65,5 +65,12 @@ namespace UI
             MessageBox.Show("Error al descargar");
             return;
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login frm = new Login();
+            frm.Show();
+        }
     }
 }

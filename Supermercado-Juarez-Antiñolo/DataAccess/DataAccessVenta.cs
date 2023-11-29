@@ -86,7 +86,7 @@ namespace DataAccess
                 new SqlParameter("@In_venta_id", SqlDbType.Int){ Value = numeroVenta}
             };
 
-            return conect.WriteXml("sp_select_venta_xml", $"Detalle de venta número:-{numeroVenta}", parameters);
+            return conect.WriteXml("sp_select_venta_xml", $"Detalle de venta solictado", parameters);
         }
 
         public MetricaUltimaSemana GetMetricas()

@@ -108,5 +108,10 @@ namespace UI
             txtDni.Text = "";
             txtPassword.Text = "";
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

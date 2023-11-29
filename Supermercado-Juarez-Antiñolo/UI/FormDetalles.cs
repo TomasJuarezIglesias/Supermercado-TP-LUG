@@ -82,7 +82,9 @@ namespace UI
                 return;
             }
 
-            gestorVenta.GenerateXML(Convert.ToInt32(cmbDetalles.Text));
+            if (gestorVenta.GenerateXML(Convert.ToInt32(cmbDetalles.Text))) {
+                MessageBox.Show("Impresion correcta!"); return; }
+            MessageBox.Show("Error en la impresion");
         }
     }
 }

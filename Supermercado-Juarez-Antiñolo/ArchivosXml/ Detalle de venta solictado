@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <nombre>Gnoque</nombre>
+    <precio>68.0000</precio>
+    <cant_producto>2</cant_producto>
+    <subtotal>20</subtotal>
+  </Table>
+</NewDataSet>

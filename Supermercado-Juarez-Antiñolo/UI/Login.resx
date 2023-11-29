@@ -333,10 +333,10 @@
   <data name="btnIniciarSesion.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAHMAAAAnCAYAAAA8XHcHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVHhe7dE7DYBQAMBA9EMCgsAJMhDAZ8fAa264qWOn
-        7VjO183wzm/mX2BAZoaYGWJmiJkhZoaYGWJmiJkhZoaYGWJmiJkhZoaYGWJmiJkhZoaYGWJmiJkhZoaY
-        GWJmiJkhZoaYGWJmiJkhZoaYGWJmiJkhZoaYGWJmiJkh07rP119gLOs+Xw+6P6AjpkmfIwAAAABJRU5E
-        rkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACVSURBVHhe7dFBDcJAAADBaqpHHhfSIKggAQXIqADI4eI2
+        85hk/7uN1+3zeN6/rG1+3Gbs753FzY9mRpgZYmaImSFmhpgZYmaImSFmhpgZYmaImSFmhpgZYmaImSFm
+        hpgZYmaImSFmhpgZYmaImSFmhpgZYmaImSFmhpgZYmaImSFmhpgZYmaImSH/mcc5rhms7TjH9QOO6Biq
+        vIYnYQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="txtPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -144,6 +144,7 @@ namespace UI
         private void btnFinalizarVentas_Click(object sender, EventArgs e)
         {
             if (montoAcumulado <= 0) { MessageBox.Show("Seleccione productos"); return; }
+            if (cmbTarjeta.SelectedIndex == -1) { MessageBox.Show("Seleccione tarjeta"); return; }
             EntityVenta venta = new EntityVenta
             {
                 Id = ventaActual,

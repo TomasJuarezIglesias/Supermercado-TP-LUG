@@ -19,7 +19,7 @@ namespace Business
         public BusinessRespuesta<bool> agregar(EntityProducto producto, string precio, string stock)
         {
             if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion) || int.TryParse(precio, out int _precio) || !int.TryParse(stock, out int _stock))
-                return new BusinessRespuesta<bool>(false, false, "Rellene campos");
+                return new BusinessRespuesta<bool>(false, false, "Error en los campos");
 
             producto.Precio = _precio;
             producto.Stock = _stock;
@@ -55,13 +55,14 @@ namespace Business
             }
         }
 
-        public BusinessRespuesta<bool> modificar(EntityProducto producto, string precio, string stock)
+        public BusinessRespuesta<bool> modificar(EntityProducto producto, string precio, string stock, string id)
         {
-            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion)|| !int.TryParse(precio, out int _precio) || !int.TryParse(stock, out int _stock))
+            if (string.IsNullOrEmpty(producto.Nombre) || string.IsNullOrEmpty(producto.Descripcion)|| !int.TryParse(precio, out int _precio) || !int.TryParse(stock, out int _stock) || !int.TryParse(id, out int _id))
                 return new BusinessRespuesta<bool>(false, false, "Rellene campos");
 
             producto.Precio = _precio;
             producto.Stock = _stock;
+            producto.Id = _id;
 
             if (MPproducto.Update(producto))
                 return new BusinessRespuesta<bool>(true, true, "Modificado Correctamente!");

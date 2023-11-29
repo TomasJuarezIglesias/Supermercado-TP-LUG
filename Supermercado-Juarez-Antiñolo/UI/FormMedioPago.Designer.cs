@@ -47,12 +47,16 @@
             this.btnModificar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.lbl_txtBox = new UI.Label_TxtBox();
             this.lbl_cmb = new UI.lbl_cmb();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 175);
+            this.label3.Location = new System.Drawing.Point(24, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 25;
@@ -61,7 +65,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 228);
+            this.label4.Location = new System.Drawing.Point(24, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 13);
             this.label4.TabIndex = 26;
@@ -77,7 +81,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 33;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.Text = "Volver";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -85,7 +89,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(-4, 9);
+            this.label5.Location = new System.Drawing.Point(64, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(209, 25);
             this.label5.TabIndex = 34;
@@ -120,7 +124,7 @@
             this.txtCvv.IconRight = null;
             this.txtCvv.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCvv.Lines = new string[0];
-            this.txtCvv.Location = new System.Drawing.Point(43, 244);
+            this.txtCvv.Location = new System.Drawing.Point(27, 177);
             this.txtCvv.MaxLength = 32767;
             this.txtCvv.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtCvv.Modified = false;
@@ -186,10 +190,10 @@
             this.datePick.IconColor = System.Drawing.Color.Gray;
             this.datePick.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.datePick.LeftTextMargin = 5;
-            this.datePick.Location = new System.Drawing.Point(40, 193);
+            this.datePick.Location = new System.Drawing.Point(24, 126);
             this.datePick.MinimumSize = new System.Drawing.Size(4, 32);
             this.datePick.Name = "datePick";
-            this.datePick.Size = new System.Drawing.Size(220, 32);
+            this.datePick.Size = new System.Drawing.Size(237, 32);
             this.datePick.TabIndex = 39;
             // 
             // btnAgregar
@@ -241,7 +245,7 @@
             this.btnAgregar.IdleIconLeftImage = null;
             this.btnAgregar.IdleIconRightImage = null;
             this.btnAgregar.IndicateFocus = false;
-            this.btnAgregar.Location = new System.Drawing.Point(73, 274);
+            this.btnAgregar.Location = new System.Drawing.Point(94, 284);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAgregar.OnDisabledState.BorderRadius = 1;
@@ -333,7 +337,7 @@
             this.btnEliminar.IdleIconLeftImage = null;
             this.btnEliminar.IdleIconRightImage = null;
             this.btnEliminar.IndicateFocus = false;
-            this.btnEliminar.Location = new System.Drawing.Point(23, 312);
+            this.btnEliminar.Location = new System.Drawing.Point(30, 324);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnEliminar.OnDisabledState.BorderRadius = 1;
@@ -425,7 +429,7 @@
             this.btnModificar.IdleIconLeftImage = null;
             this.btnModificar.IdleIconRightImage = null;
             this.btnModificar.IndicateFocus = false;
-            this.btnModificar.Location = new System.Drawing.Point(148, 312);
+            this.btnModificar.Location = new System.Drawing.Point(156, 324);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnModificar.OnDisabledState.BorderRadius = 1;
@@ -470,17 +474,46 @@
             // 
             // lbl_txtBox
             // 
-            this.lbl_txtBox.Location = new System.Drawing.Point(40, 59);
+            this.lbl_txtBox.Location = new System.Drawing.Point(24, 1);
             this.lbl_txtBox.Name = "lbl_txtBox";
             this.lbl_txtBox.Size = new System.Drawing.Size(125, 60);
             this.lbl_txtBox.TabIndex = 45;
             // 
             // lbl_cmb
             // 
-            this.lbl_cmb.Location = new System.Drawing.Point(40, 125);
+            this.lbl_cmb.Location = new System.Drawing.Point(24, 58);
             this.lbl_cmb.Name = "lbl_cmb";
             this.lbl_cmb.Size = new System.Drawing.Size(147, 40);
             this.lbl_cmb.TabIndex = 47;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbl_cmb);
+            this.panel1.Controls.Add(this.lbl_txtBox);
+            this.panel1.Controls.Add(this.datePick);
+            this.panel1.Controls.Add(this.txtCvv);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(12, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(279, 208);
+            this.panel1.TabIndex = 48;
+            // 
+            // bunifuPictureBox1
+            // 
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BorderRadius = 28;
+            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
+            this.bunifuPictureBox1.IsCircle = false;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(1, -2);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(57, 57);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 49;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // FormMedioPago
             // 
@@ -488,21 +521,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(625, 444);
-            this.Controls.Add(this.lbl_cmb);
-            this.Controls.Add(this.lbl_txtBox);
+            this.Controls.Add(this.bunifuPictureBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.datePick);
-            this.Controls.Add(this.txtCvv);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FormMedioPago";
             this.Text = "FormMedioPago";
             this.Load += new System.EventHandler(this.FormMedioPago_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +553,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnModificar;
         private Label_TxtBox lbl_txtBox;
         private lbl_cmb lbl_cmb;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
     }
 }

@@ -55,15 +55,6 @@ namespace UI
             this.Close();
         }
 
-        private void DGproductoView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtNombre.Text = DGproductoView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-            txtDescripcion.Text = DGproductoView.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
-            txtPrecio.Text = DGproductoView.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
-            txtStock.Text = DGproductoView.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
-            cmbCategoria.Text = DGproductoView.Rows[e.RowIndex].Cells["Categoria"].Value.ToString();
-            txtId.Text = DGproductoView.Rows[e.RowIndex].Cells["CodigoProducto"].Value.ToString();
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -89,11 +80,9 @@ namespace UI
 
                 EntityCategoria categoria = (EntityCategoria)cmbCategoria.SelectedItem;
                 producto.Id_Categoria = categoria.Id;
-
-                producto.Id = int.Parse(txtId.Text);
                 producto.Nombre = txtNombre.Text;
                 producto.Descripcion = txtDescription.Text;
-                this.RevisarRespuestaServicio(gestor.modificar(producto, txtPrecio.Text , txtStock.Text));
+                this.RevisarRespuestaServicio(gestor.modificar(producto, txtPrecio.Text , txtStock.Text, txtId.Text));
                 MostrarLista();
         }
 
@@ -108,6 +97,17 @@ namespace UI
         {
             if (gestor.xml()) { MessageBox.Show("Impresion correcta"); return; }
             MessageBox.Show("Error en la impresion");
+        }
+
+        private void DGproductoView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex is -1) { return; }
+            txtNombre.Text = DGproductoView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+            txtDescripcion.Text = DGproductoView.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+            txtPrecio.Text = DGproductoView.Rows[e.RowIndex].Cells["Precio"].Value.ToString();
+            txtStock.Text = DGproductoView.Rows[e.RowIndex].Cells["Stock"].Value.ToString();
+            cmbCategoria.Text = DGproductoView.Rows[e.RowIndex].Cells["Categoria"].Value.ToString();
+            txtId.Text = DGproductoView.Rows[e.RowIndex].Cells["CodigoProducto"].Value.ToString();
         }
     }
 }

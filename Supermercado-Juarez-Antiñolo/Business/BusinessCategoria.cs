@@ -49,13 +49,15 @@ namespace Business
             }
         }
 
-        public BusinessRespuesta<bool> Modificar(EntityCategoria cat)
+        public BusinessRespuesta<bool> Modificar(string nombre, string categoria)
         {
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(categoria)) { return new BusinessRespuesta<bool>(false, false, "Error en los campos"); }
+            EntityCategoria cat = new EntityCategoria();
+            cat.Nombre = nombre;
+            cat.Descripcion = categoria;
+
             cat.Id = Listar().Data.FirstOrDefault(item => item.Nombre == cat.Nombre).Id;
-            if (string.IsNullOrEmpty(cat.Nombre) || string.IsNullOrEmpty(cat.Descripcion))
-            {
-                return new BusinessRespuesta<bool>(false, false, "Error en los campos");
-            }
+
             try
             {
                 return new BusinessRespuesta<bool>(true, MPcat.Update(cat), "Se modificó correctamente!");

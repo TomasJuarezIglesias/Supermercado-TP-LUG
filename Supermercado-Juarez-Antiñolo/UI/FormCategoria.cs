@@ -41,21 +41,6 @@ namespace UI
         BusinessCategoria gestor = new BusinessCategoria();
 
 
-        private void DGcatView_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex is -1) { return; }
-            DialogResult res = MessageBox.Show("¿Desea Eliminar la categoria? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res == DialogResult.Yes)
-            {
-                EntityCategoria categoria = new EntityCategoria
-                {
-                    Nombre = txtNombre.Text,
-                };
-                this.RevisarRespuestaServicio(gestor.Eliminar(categoria));
-                MostrarDatos();
-            }
-        }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             _administrador.Show();
@@ -79,13 +64,26 @@ namespace UI
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
-            EntityCategoria categoria = new EntityCategoria
-            {
-                Nombre = txtNombre.Text,
-                Descripcion = txtCategoria.Text
-            };
-            this.RevisarRespuestaServicio(gestor.Modificar(categoria));
+            this.RevisarRespuestaServicio(gestor.Modificar(txtNombre.Text , txtCategoria.Text));
             MostrarDatos();
+        }
+
+        private void DGcatView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex is -1) { return; }
+
+            txtNombre.Text = DGcatView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+            txtCategoria.Text = DGcatView.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
+
+            DialogResult res = MessageBox.Show("¿Desea Eliminar la categoria? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                EntityCategoria categoria = new EntityCategoria
+                {
+                    Nombre = txtNombre.Text,
+                };
+                this.RevisarRespuestaServicio(gestor.Eliminar(categoria));
+            }
         }
     }
 }

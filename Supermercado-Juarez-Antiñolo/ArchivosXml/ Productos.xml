@@ -6,7 +6,7 @@
     <descripcion>...</descripcion>
     <id_categoria>4</id_categoria>
     <precio>90.0000</precio>
-    <stock>0</stock>
+    <stock>8</stock>
   </Table>
   <Table>
     <id>2</id>
@@ -14,31 +14,31 @@
     <descripcion>...</descripcion>
     <id_categoria>1</id_categoria>
     <precio>90.0000</precio>
-    <stock>0</stock>
+    <stock>10</stock>
   </Table>
   <Table>
     <id>4</id>
-    <nombre>PeneRigate</nombre>
-    <descripcion>FideosItalianos</descripcion>
-    <id_categoria>3</id_categoria>
-    <precio>10.0000</precio>
-    <stock>0</stock>
+    <nombre>Gnoque</nombre>
+    <descripcion>....</descripcion>
+    <id_categoria>1</id_categoria>
+    <precio>68.0000</precio>
+    <stock>26</stock>
   </Table>
   <Table>
     <id>5</id>
     <nombre>Fideos</nombre>
-    <descripcion>Tirabuzon</descripcion>
+    <descripcion>...</descripcion>
     <id_categoria>1</id_categoria>
     <precio>25.0000</precio>
-    <stock>981</stock>
+    <stock>96</stock>
   </Table>
   <Table>
     <id>6</id>
     <nombre>Moñito</nombre>
     <descripcion>...</descripcion>
-    <id_categoria>7</id_categoria>
+    <id_categoria>1</id_categoria>
     <precio>90.0000</precio>
-    <stock>0</stock>
+    <stock>10</stock>
   </Table>
   <Table>
     <id>8</id>
@@ -54,7 +54,7 @@
     <descripcion>Pollo</descripcion>
     <id_categoria>4</id_categoria>
     <precio>450.0000</precio>
-    <stock>78</stock>
+    <stock>64</stock>
   </Table>
   <Table>
     <id>10</id>

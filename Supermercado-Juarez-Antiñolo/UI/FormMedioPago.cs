@@ -15,6 +15,7 @@ namespace UI
             _formCliente = formCliente;
             _user = user;
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
 
@@ -29,58 +30,33 @@ namespace UI
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            try
+
+            EntityTipoTarjeta tarj = (EntityTipoTarjeta)lbl_cmb.cmb.SelectedItem;
+            EntityMedioPago medio = new EntityMedioPago
             {
-                EntityTipoTarjeta tarj = (EntityTipoTarjeta)lbl_cmb.cmb.SelectedItem;
-                EntityMedioPago medio = new EntityMedioPago
-                {
-                    Id_cliente = _user.IdCliente,
-                    NroTarjeta = int.Parse(lbl_txtBox.txt.Text),
-                    FechaCaducidad = datePick.Value,
-                    Cvv = int.Parse(txtCvv.Text),
-                    Id_Tipo_Tarjeta = tarj.Id,
-                };
-                this.RevisarRespuestaServicio(gestor.agregar(medio));
-            }
-            catch
-            {
-                MessageBox.Show("Rellene Campos o arregle formato");
-            }
+                Id_cliente = _user.IdCliente,
+                FechaCaducidad = datePick.Value,
+                Id_Tipo_Tarjeta = tarj.Id,
+            };
+            this.RevisarRespuestaServicio(gestor.agregar(medio, lbl_txtBox.txt.Text, txtCvv.Text));
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                EntityMedioPago medio = new EntityMedioPago();
-                medio.NroTarjeta = int.Parse(lbl_txtBox.txt.Text);
-                this.RevisarRespuestaServicio(gestor.eliminar(medio));
-            }
-            catch
-            {
-                MessageBox.Show("Error en el formato");
-            }
+            this.RevisarRespuestaServicio(gestor.eliminar(lbl_txtBox.txt.Text));
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
-            try
+
+            EntityTipoTarjeta tarj = (EntityTipoTarjeta)lbl_cmb.cmb.SelectedItem;
+            EntityMedioPago medio = new EntityMedioPago
             {
-                EntityTipoTarjeta tarj = (EntityTipoTarjeta)lbl_cmb.cmb.SelectedItem;
-                EntityMedioPago medio = new EntityMedioPago
-                {
-                    Id_cliente = _user.IdCliente,
-                    NroTarjeta = int.Parse(lbl_txtBox.txt.Text),
-                    FechaCaducidad = datePick.Value,
-                    Cvv = int.Parse(txtCvv.Text),
-                    Id_Tipo_Tarjeta = tarj.Id,
-                };
-                this.RevisarRespuestaServicio(gestor.modificar(medio));
-            }
-            catch
-            {
-                MessageBox.Show("Rellene Campos o arregle formato");
-            }
+                Id_cliente = _user.IdCliente,
+                FechaCaducidad = datePick.Value,
+                Id_Tipo_Tarjeta = tarj.Id,
+            };
+            this.RevisarRespuestaServicio(gestor.modificar(medio, lbl_txtBox.txt.Text , txtCvv.Text));
         }
 
         private void FormMedioPago_Load(object sender, EventArgs e)
