@@ -63,6 +63,7 @@
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.lbl_DG = new UI.lbl_DG();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -736,12 +737,21 @@
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(5, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(249, 48);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Recuerde que si el cliente tiene ventas a su nombre, no podra ser eliminado.";
+            // 
             // FormGestionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(800, 465);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuPictureBox1);
             this.Controls.Add(this.lbl_DG);
             this.Controls.Add(this.bunifuButton1);
@@ -783,5 +793,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private lbl_DG lbl_DG;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

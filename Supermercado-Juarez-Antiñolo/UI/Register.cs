@@ -14,7 +14,7 @@ using Entity;
 
 namespace UI
 {
-    public partial class Register : Form
+    public partial class Register : ServiceForm
     {
         private Login _loginForm;
         private readonly BusinessLoginUser _businessLogin;
@@ -24,7 +24,6 @@ namespace UI
             InitializeComponent();
             _loginForm = loginForm;
             _businessLogin = new BusinessLoginUser();
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
 

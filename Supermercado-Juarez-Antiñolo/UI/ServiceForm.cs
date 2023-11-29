@@ -6,6 +6,11 @@ namespace UI
     public class ServiceForm : Form
     {
 
+        public ServiceForm()
+        {
+             this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
         protected void RevisarRespuestaServicio<T>(BusinessRespuesta<T> respuesta)
         {
             if (!respuesta.Ok)
@@ -14,7 +19,7 @@ namespace UI
                 return;
             }
             else if (!string.IsNullOrEmpty(respuesta.Mensaje))
-                MessageBox.Show(respuesta.Mensaje, "Great!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(respuesta.Mensaje, "Great!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void InitializeComponent()

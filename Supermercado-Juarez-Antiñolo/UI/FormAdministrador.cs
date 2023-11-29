@@ -12,12 +12,11 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class FormAdministrador : Form
+    public partial class FormAdministrador : ServiceForm
     {
         public FormAdministrador(EntityLoginUser user)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
             businessVenta = new BusinessVenta();
             MostrarMetricas();
             lblSaludo.Text = $"{user.Nombre} {user.Apellido}!";

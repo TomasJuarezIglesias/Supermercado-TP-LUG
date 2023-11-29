@@ -13,11 +13,9 @@ namespace UI
         {
             InitializeComponent();
             _administrador = administrador;
-            this.StartPosition = FormStartPosition.CenterScreen;
             lbl_DG.DG.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
             mostrarLista();
             lbl_DG.lbl.Text = "Clientes";
-            
         }
 
         private void mostrarLista()

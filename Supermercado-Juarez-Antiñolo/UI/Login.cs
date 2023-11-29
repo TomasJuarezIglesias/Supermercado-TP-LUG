@@ -1,4 +1,5 @@
-﻿using Business;
+﻿using Bunifu.UI.WinForms;
+using Business;
 using Entity;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,13 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Login : Form
+    public partial class Login : ServiceForm
     {
         public Login()
         {
             InitializeComponent();
             _businessLogin = new BusinessLoginUser();
-            this.StartPosition = FormStartPosition.CenterScreen;
+            this.AcceptButton = btnIniciarSesion;
         }
 
 
@@ -29,36 +30,26 @@ namespace UI
             string dni = txtDni.Text;
             string password = txtPassword.Text;
 
-            if (dni.Length is 0)
+            if (string.IsNullOrEmpty(dni) && string.IsNullOrEmpty(password))
             {
-                lblErrorDni.Text = "Debe Ingresar DNI";
-                lblErrorDni.Visible = true;
+                mostrarError("Debe Ingresar DNI", lblErrorDni);
+                mostrarError("Debe Ingresar Password", lblErrorPass);
                 return;
             }
 
-            if (password.Length is 0)
-            {
-                lblErrorPass.Text = "Debe Ingresar Password";
-                lblErrorPass.Visible = true;
-                return;
-            }
+            if (string.IsNullOrEmpty(dni)) { mostrarError("Debe Ingresar DNI", lblErrorDni); return; }
 
-            if (!int.TryParse(dni, out int _))
-            {
-                lblErrorDni.Text = "Formato del Dni Incorrecto, Ingrese solo numeros";
-                lblErrorDni.Visible = true;
-                return;
-            }
+            if (string.IsNullOrEmpty(password)) { mostrarError("Debe Ingresar Password", lblErrorPass); return; }
+
+            if (!int.TryParse(dni, out int _)) { mostrarError("Formato del Dni Incorrecto, Ingrese solo numeros", lblErrorDni); return; }
 
 
             EntityLoginUser user = _businessLogin.Login(password, Convert.ToInt32(dni));
 
             if (user is null)
             {
-                lblErrorDni.Text = "Verifique DNI";
-                lblErrorDni.Visible = true;
-                lblErrorPass.Text = "Verifique Password";
-                lblErrorPass.Visible = true;
+                mostrarError("Verifique DNI", lblErrorDni);
+                mostrarError("Verifique Password", lblErrorPass);
                 return;
             }
 
@@ -72,11 +63,18 @@ namespace UI
             }
 
             // Redireccion a vista cliente
-            FormCliente formCliente =  new FormCliente(user);
+            FormCliente formCliente = new FormCliente(user);
             formCliente.Show();
             this.Hide();
             return;
         }
+
+        void mostrarError(string mensaje, BunifuLabel lbl)
+        {
+            lbl.Text = mensaje;
+            lbl.Visible = true;
+        }
+
 
         private void txtDni_Click(object sender, EventArgs e)
         {

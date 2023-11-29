@@ -15,7 +15,6 @@ namespace UI
             _formCliente = formCliente;
             _user = user;
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
 
@@ -61,7 +60,6 @@ namespace UI
 
         private void FormMedioPago_Load(object sender, EventArgs e)
         {
-            this.StartPosition = FormStartPosition.CenterScreen;
             lbl_cmb.cmb.DataSource = gestor.tiposTarjeta;
             lbl_cmb.cmb.DisplayMember = "Nombre";
             lbl_txtBox.lbl.Text = "Numero de Tarjeta";

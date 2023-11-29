@@ -15,7 +15,6 @@ namespace UI
         {
             _administrador = administrador;
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
             cargarCmb();
             crearDG();
             

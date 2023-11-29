@@ -14,7 +14,6 @@ namespace UI
         public FormCategoria(FormAdministrador administrador, FormProducto formProducto)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
             _administrador = administrador;
             _formProducto = formProducto;
             CrearDG();

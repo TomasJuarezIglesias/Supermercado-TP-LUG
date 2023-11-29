@@ -15,7 +15,6 @@ namespace UI
         {
             InitializeComponent();
             _administrador = administrador;
-            this.StartPosition = FormStartPosition.CenterScreen;
             cmbCategoria.DataSource = gestor.categorias;
             cmbCategoria.DisplayMember = "Nombre";
             crearDG();

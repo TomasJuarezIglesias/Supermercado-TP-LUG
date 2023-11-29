@@ -18,7 +18,6 @@ namespace UI
         public FormCliente(EntityLoginUser user)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
             _loginUser = user;
             lblSaludo.Text = $"{user.Nombre} {user.Apellido}!";
         }
